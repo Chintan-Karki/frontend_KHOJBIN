@@ -61,20 +61,20 @@ export default function Navbar({ fixed }) {
 					>
 						<ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
 							<li className="nav-item">
-								<a
-									className="px-3 py-2 flex items-center  text-xs uppercase font-bold leading-snug text-gray hover:opacity-75"
+								<button
+									className="px-3 py-2 flex items-center mr-4 text-xs uppercase font-bold leading-snug text-gray hover:opacity-75"
 									href="#sign up"
 								>
 									SIGN UP
-								</a>
+								</button>
 							</li>
 							<li className="nav-item">
-								<a
+								<button
 									className="px-3 py-2 flex items-center border rounded bg-indigo-500  text-white active:bg-pink-600 text-xs uppercase font-bold leading-snug text-gray hover:opacity-75"
 									href="#login"
 								>
 									LOG IN
-								</a>
+								</button>
 							</li>
 						</ul>
 					</div>
