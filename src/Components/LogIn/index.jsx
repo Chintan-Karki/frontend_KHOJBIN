@@ -32,7 +32,7 @@ export default function LogIn() {
 				/>
 				<div className="flex flex-col md:flex-row ">
 					<div className="h-32 md:h-auto bg-green-200 md:w-2/5 rounded-xl flex justify-center items-center">
-						<img className="md:h-52 " src={sideImage} alt="img" />
+						<img className="md:h-52 max-h-52" src={sideImage} alt="img" />
 					</div>
 					<div className="flex items-center justify-center p-6 sm:p-12 md:w-3/5 bg-white rounded-xl">
 						<div className="w-full">
