@@ -3,11 +3,9 @@ import sideImage from "../../assets/Saly-26.svg";
 import logo from "../../assets/logoPrimary.svg";
 import smile from "../../assets/smile.png";
 import smile2 from "../../assets/smile2.png";
-import { useForm } from "react-hook-form";
-// import PasswordField from "../SignUp/PasswordField/PasswordField";
+import PasswordField from "../SignUp/PasswordField/PasswordField";
 
 export default function LogIn() {
-	const { register } = useForm();
 	return (
 		<div className=" flex items-center min-h-screen bg-indigo-50">
 			<div className="relative flex-1 h-full max-w-4xl mx-auto rounded-xl shadow-xl transition bg-white">
@@ -37,25 +35,13 @@ export default function LogIn() {
 							<div className="mt-4">
 								<label className="block text-sm mb-1">Email</label>
 								<input
-									defaultValue=""
-									{...register("email")}
 									type="email"
 									className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 									placeholder="Email Address"
 								/>
 							</div>
 
-							<div className="mt-4">
-								<label className="block text-sm mb-1">Password</label>
-								<input
-									// {...register("password", { required: true })}
-									type="password"
-									className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-									placeholder="Password"
-								/>
-							</div>
-
-							{/* <PasswordField placeholder="Password" /> */}
+							<PasswordField placeholder="Password" />
 							<button className="block w-full px-4 py-2 mt-8 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
 								Log In
 							</button>
