@@ -8,7 +8,7 @@ export default function PasswordField({ placeholder }) {
 	}
 	return (
 		<div>
-			<label className="block mt-4 text-sm">{placeholder}</label>
+			<label className="block mt-4 text-sm mb-1">{placeholder}</label>
 			<div className="relative w-full px-4 py-2 text-sm bg-white border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600">
 				<input
 					placeholder={placeholder}
