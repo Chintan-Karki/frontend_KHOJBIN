@@ -21,6 +21,7 @@ export default function SignUp() {
 
 	const onSubmit = (data) => {
 		console.log(data);
+		alert(JSON.stringify(data));
 	};
 
 	return (

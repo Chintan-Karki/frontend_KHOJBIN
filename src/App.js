@@ -1,6 +1,6 @@
 import React from "react";
-import Search from "./Components/Search";
-import NavBar from "./Components/NavBar";
+import Search from "./Components/Global Components/Search";
+import NavBar from "./Components/Global Components/NavBar";
 
 function App() {
 	return (
