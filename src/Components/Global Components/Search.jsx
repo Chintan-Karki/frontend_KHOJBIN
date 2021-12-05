@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 export default function Search() {
 	const { register, handleSubmit } = useForm();
@@ -12,6 +13,7 @@ export default function Search() {
 			data = { ...data, searchTime };
 			console.log(data);
 			alert(JSON.stringify(data));
+			window.history.pushState({}, undefined, "/searchresults");
 		}
 	};
 
@@ -33,6 +35,7 @@ export default function Search() {
 				>
 					SEARCH
 				</button>
+				<Link to="/searchresults">Test</Link>
 			</div>
 		</form>
 	);
