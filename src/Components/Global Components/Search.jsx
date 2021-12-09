@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 export default function Search() {
 	const { register, handleSubmit } = useForm();
 
+	const twClasses = {
+		mainDiv:
+			"relative flex flex-col  justify-center items-center  md:flex-row w-screen",
+	};
+
 	const onSubmit = (data) => {
 		let searchTime = new Date();
 		if (data.searchQuery === "") {
@@ -19,10 +24,7 @@ export default function Search() {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div
-				style={{ height: "90vh" }}
-				className="relative flex flex-col  justify-center items-center  md:flex-row w-screen"
-			>
+			<div style={{ height: "90vh" }} className={twClasses.mainDiv}>
 				<input
 					{...register("searchQuery")}
 					className=" rounded-lg p-4 m-2  h-12 border-t border-b border-l text-gray-800 bg-white md:w-6/12 w-11/12 min-w-12 shadow-2xl max-w-md  "
