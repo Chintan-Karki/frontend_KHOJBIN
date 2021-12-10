@@ -3,7 +3,7 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				image: "url('/src/assets/Background.svg')",
+				image: "url('/src/assets/bg-svg.svg')",
 			},
 		},
 	},

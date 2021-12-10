@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../Global Components/NavBar";
+import Navbar from "../atoms/NavBar";
 
 export default function SearchResults() {
 	return (

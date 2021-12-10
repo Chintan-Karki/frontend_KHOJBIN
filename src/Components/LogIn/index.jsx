@@ -4,7 +4,7 @@ import logo from "../../assets/logoPrimary.svg";
 import smile from "../../assets/smile.png";
 import smile2 from "../../assets/smile2.png";
 import { useForm } from "react-hook-form";
-import ErrorMessage from "../Global Components/ErrorMessage";
+import ErrorMessage from "../atoms/ErrorMessage";
 
 export default function LogIn() {
 	const {
