@@ -4,9 +4,15 @@ import logo from "../../assets/logoPrimary.svg";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+	let twNavBarClasses = {
+		navDivClasses:
+			"relative flex flex-wrap items-center justify-between px-2 py-3 mb-3",
+	};
+
 	return (
 		<>
-			<nav className=" relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 ">
+			<nav className={twNavBarClasses.navDivClasses}>
 				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
 					<div className=" relative flex justify-between lg:w-auto w-screen lg:static lg:block lg:justify-start">
 						<Link
@@ -64,9 +70,8 @@ export default function Navbar() {
 							<li className="nav-item">
 								<Link
 									to="/signup"
-									className="px-3 py-2 flex items-center mr-4 text-xs uppercase
+									className="px-3 py-2 flex items-center mr-4 text-xs uppercase hover:bg-green-400 rounded-sm border-none active:bg-pink-400 active:text-slate-50
 									font-bold leading-snug text-gray hover:opacity-75"
-
 								>
 									{" "}
 									SIGN UP

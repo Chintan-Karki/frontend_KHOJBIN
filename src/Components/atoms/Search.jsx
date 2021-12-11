@@ -7,7 +7,7 @@ export default function Search() {
 
 	const twClasses = {
 		mainDiv:
-			"relative flex flex-col  justify-center items-center  md:flex-row w-screen",
+			"relative flex flex-col justify-center items-center  md:flex-row w-screen",
 		searchInputDiv:
 			"rounded-lg p-4 m-2  h-12 border-t border-b border-l text-gray-800 bg-white md:w-6/12 w-11/12 min-w-12 shadow-lg shadow-indigo-500/50 max-w-md",
 		searchButton:
