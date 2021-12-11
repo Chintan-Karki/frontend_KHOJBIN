@@ -6,7 +6,9 @@ import smile2 from "../../assets/smile2.png";
 import { useForm } from "react-hook-form";
 
 import ErrorMessage from "../atoms/ErrorMessage";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Eye from "../../assets/icons/Eye";
+import EyeClosed from "../../assets/icons/EyeClosed";
 
 export default function SignUp() {
 	const {
@@ -15,6 +17,8 @@ export default function SignUp() {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+
+	const [showPassword, setShowPassword] = useState(false);
 
 	const password = useRef({});
 	password.current = watch("password", "");
@@ -94,7 +98,7 @@ export default function SignUp() {
 										<ErrorMessage message={errors.email.message} />
 									)}
 								</div>
-								<div className="mt-4">
+								<div className="mt-4 relative">
 									<label className="block text-sm mb-1">Password</label>
 									<input
 										{...register("password", {
@@ -104,15 +108,24 @@ export default function SignUp() {
 												message: "Minimum 8 Characters required.",
 											},
 										})}
-										type="password"
-										className=" relative w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										type={showPassword ? "text" : "password"}
+										className="relative w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Password"
 									/>
 									{errors.password && (
 										<ErrorMessage message={errors.password.message} />
 									)}
 								</div>
-								<div className="mt-4">
+								<i
+									className="absolute top-[57.5%] left-[91%]"
+									onClick={(e) => {
+										setShowPassword(!showPassword);
+									}}
+								>
+									{showPassword ? <EyeClosed /> : <Eye />}
+								</i>
+
+								<div className="mt-4 relative">
 									<label className="block text-sm mb-1">Confirm Password</label>
 									<input
 										{...register("confirmpassword", {
@@ -125,7 +138,7 @@ export default function SignUp() {
 												value === password.current ||
 												"The passwords do not match",
 										})}
-										type="password"
+										type={showPassword ? "text" : "password"}
 										className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Confirm Password"
 									/>
@@ -133,6 +146,14 @@ export default function SignUp() {
 										<ErrorMessage message={errors.confirmpassword.message} />
 									)}
 								</div>
+								<i
+									className="absolute top-[70%] left-[91%]"
+									onClick={(e) => {
+										setShowPassword(!showPassword);
+									}}
+								>
+									{showPassword ? <EyeClosed /> : <Eye />}
+								</i>
 								<button className="block w-full px-4 py-2 mt-8 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
 									Sign up
 								</button>
