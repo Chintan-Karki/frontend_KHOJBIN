@@ -5,6 +5,9 @@ import smile from "../../assets/smile.png";
 import smile2 from "../../assets/smile2.png";
 import { useForm } from "react-hook-form";
 import ErrorMessage from "../atoms/ErrorMessage";
+import { useState } from "react";
+import EyeClosed from "../../assets/icons/EyeClosed";
+import Eye from "../../assets/icons/Eye";
 
 export default function LogIn() {
 	const {
@@ -12,6 +15,8 @@ export default function LogIn() {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+
+	const [showPassword, setShowPassword] = useState(false);
 
 	const onSubmit = (data) => {
 		console.log(data);
@@ -70,7 +75,7 @@ export default function LogIn() {
 								</div>
 
 								{/* Password   */}
-								<div className="mt-4">
+								<div className="mt-4 relative">
 									<label className="block text-sm mb-1">Password</label>
 									<input
 										{...register("password", {
@@ -80,13 +85,21 @@ export default function LogIn() {
 												message: "Minimum 8 Characters required.",
 											},
 										})}
-										type="password"
+										type={showPassword ? "text" : "password"}
 										className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Password"
 									/>
 									{errors.password && (
 										<ErrorMessage message={errors.password.message} />
 									)}
+									<i
+										className="absolute top-[30px] left-[91%]"
+										onClick={(e) => {
+											setShowPassword(!showPassword);
+										}}
+									>
+										{showPassword ? <EyeClosed /> : <Eye />}
+									</i>
 								</div>
 
 								<button

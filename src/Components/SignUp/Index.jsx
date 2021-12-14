@@ -57,7 +57,7 @@ export default function SignUp() {
 							<h1 className="mb-4 text-2xl font-bold text-left text-indigo-900 ">
 								Sign up
 							</h1>
-							<form onSubmit={handleSubmit(onSubmit)}>
+							<form onSubmit={handleSubmit(onSubmit)} className="relative">
 								<div>
 									<label className="block text-sm" htmlFor="name">
 										Name
@@ -99,7 +99,9 @@ export default function SignUp() {
 									)}
 								</div>
 								<div className="mt-4 relative">
-									<label className="block text-sm mb-1">Password</label>
+									<label className="relative block text-sm mb-1">
+										Password
+									</label>
 									<input
 										{...register("password", {
 											required: "Password is required",
@@ -109,21 +111,21 @@ export default function SignUp() {
 											},
 										})}
 										type={showPassword ? "text" : "password"}
-										className="relative w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										className=" w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Password"
 									/>
 									{errors.password && (
 										<ErrorMessage message={errors.password.message} />
 									)}
+									<i
+										className="absolute top-[30px] left-[91%]"
+										onClick={(e) => {
+											setShowPassword(!showPassword);
+										}}
+									>
+										{showPassword ? <EyeClosed /> : <Eye />}
+									</i>
 								</div>
-								<i
-									className="absolute top-[57.5%] left-[91%]"
-									onClick={(e) => {
-										setShowPassword(!showPassword);
-									}}
-								>
-									{showPassword ? <EyeClosed /> : <Eye />}
-								</i>
 
 								<div className="mt-4 relative">
 									<label className="block text-sm mb-1">Confirm Password</label>
@@ -139,21 +141,22 @@ export default function SignUp() {
 												"The passwords do not match",
 										})}
 										type={showPassword ? "text" : "password"}
-										className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										className="relative w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Confirm Password"
-									/>
+									></input>
 									{errors.confirmpassword && (
 										<ErrorMessage message={errors.confirmpassword.message} />
 									)}
+									<i
+										className="absolute top-[30px] left-[91%]"
+										onClick={(e) => {
+											setShowPassword(!showPassword);
+										}}
+									>
+										{showPassword ? <EyeClosed /> : <Eye />}
+									</i>
 								</div>
-								<i
-									className="absolute top-[70%] left-[91%]"
-									onClick={(e) => {
-										setShowPassword(!showPassword);
-									}}
-								>
-									{showPassword ? <EyeClosed /> : <Eye />}
-								</i>
+
 								<button className="block w-full px-4 py-2 mt-8 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
 									Sign up
 								</button>
