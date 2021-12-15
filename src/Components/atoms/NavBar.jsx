@@ -66,11 +66,11 @@ export default function Navbar() {
 							(navbarOpen ? " flex" : " hidden")
 						}
 					>
-						<ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+						<ul className="flex my-2 lg:my-0 flex-row lg:flex-row list-none lg:ml-auto">
 							<li className="nav-item">
 								<Link
 									to="/signup"
-									className="px-3 py-2 flex items-center mr-4 text-xs uppercase hover:bg-green-400 rounded-sm border-none active:bg-pink-400 active:text-slate-50 transition ease-in-out duration-200
+									className="px-3 py-2 flex items-center mr-4 text-xs uppercase hover:bg-green-600 hover:text-gray-50 rounded-sm border-none active:scale-90 active:text-slate-50 transition ease-in-out duration-50
 									font-bold leading-snug text-gray hover:opacity-75"
 								>
 									{" "}
@@ -80,7 +80,7 @@ export default function Navbar() {
 							<li className="nav-item">
 								<Link
 									to="/login"
-									className="px-3 py-2 flex items-center border rounded bg-indigo-500  text-white active:bg-pink-600 text-xs uppercase font-bold leading-snug text-gray hover:opacity-75 transition ease-in-out duration-200"
+									className="px-3 py-2 flex items-center border rounded bg-indigo-500  text-white active:scale-90 text-xs uppercase font-bold leading-snug text-gray hover:opacity-75 transition ease-in-out duration-200"
 								>
 									LOG IN
 								</Link>

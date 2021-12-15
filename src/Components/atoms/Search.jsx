@@ -17,7 +17,7 @@ export default function Search() {
 	const onSubmit = (data) => {
 		let searchTime = new Date();
 		if (data.searchQuery === "") {
-			alert("Please fill the inputbox");
+			alert("Please fill the input box");
 		} else {
 			data = { ...data, searchTime };
 			console.log(data);
