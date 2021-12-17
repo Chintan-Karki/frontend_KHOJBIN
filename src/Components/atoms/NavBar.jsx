@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logoPrimary.svg";
+import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
+import logo from "../../assets/images/logoPrimary.svg";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -67,11 +68,10 @@ export default function Navbar() {
 						}
 					>
 						<ul className="flex my-2 lg:my-0 flex-row lg:flex-row list-none lg:ml-auto">
-							<li className="nav-item">
+							<li className="nav-item mr-2">
 								<Link
 									to="/signup"
-									className="px-3 py-2 flex items-center mr-4 text-xs uppercase hover:bg-green-600 hover:text-gray-50 rounded-sm border-none active:scale-90 active:text-slate-50 transition ease-in-out duration-50
-									font-bold leading-snug text-gray hover:opacity-75"
+									className={tailwindCommonClasses.smallButtonNofocus}
 								>
 									{" "}
 									SIGN UP
@@ -80,7 +80,7 @@ export default function Navbar() {
 							<li className="nav-item">
 								<Link
 									to="/login"
-									className="px-3 py-2 flex items-center border rounded bg-indigo-500  text-white active:scale-90 text-xs uppercase font-bold leading-snug text-gray hover:opacity-75 transition ease-in-out duration-200"
+									className={tailwindCommonClasses.smallButtonFocus}
 								>
 									LOG IN
 								</Link>

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import sideImage from "../../assets/Saly-26.svg";
-import logo from "../../assets/logoPrimary.svg";
-import smile from "../../assets/smile.png";
-import smile2 from "../../assets/smile2.png";
+import sideImage from "../../assets/images/Saly-26.svg";
+import logo from "../../assets/images/logoPrimary.svg";
+import smile from "../../assets/images/smile.png";
+import smile2 from "../../assets/images/smile2.png";
 import { useForm } from "react-hook-form";
 import ErrorMessage from "../atoms/ErrorMessage";
 import { useState } from "react";
 import EyeClosed from "../../assets/icons/EyeClosed";
 import Eye from "../../assets/icons/Eye";
+import WarningMessage from "../atoms/WarningMessage";
 
 export default function LogIn() {
 	const {
@@ -18,8 +19,8 @@ export default function LogIn() {
 
 	const [showPassword, setShowPassword] = useState(false);
 
+	console.log(errors);
 	const onSubmit = (data) => {
-		console.log(data);
 		alert(JSON.stringify(data));
 	};
 
@@ -89,9 +90,12 @@ export default function LogIn() {
 										className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Password"
 									/>
-									{errors.password && (
-										<ErrorMessage message={errors.password.message} />
-									)}
+									{errors.password &&
+										(errors.password.type === "minLength" ? (
+											<WarningMessage message={errors.password.message} />
+										) : (
+											<ErrorMessage message={errors.password.message} />
+										))}
 									<i
 										className="absolute top-[30px] left-[91%]"
 										onClick={(e) => {
@@ -101,7 +105,6 @@ export default function LogIn() {
 										{showPassword ? <EyeClosed /> : <Eye />}
 									</i>
 								</div>
-
 								<button
 									type="submit"
 									className="block w-full px-4 py-2 mt-8 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"

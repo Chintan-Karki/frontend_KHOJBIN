@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import sideImage from "../../assets/Saly-25.svg";
-import logo from "../../assets/logoPrimary.svg";
-import smile from "../../assets/smile.png";
-import smile2 from "../../assets/smile2.png";
+import sideImage from "../../assets/images/Saly-25.svg";
+import logo from "../../assets/images/logoPrimary.svg";
+import smile from "../../assets/images/smile.png";
+import smile2 from "../../assets/images/smile2.png";
 import { useForm } from "react-hook-form";
 
 import ErrorMessage from "../atoms/ErrorMessage";
