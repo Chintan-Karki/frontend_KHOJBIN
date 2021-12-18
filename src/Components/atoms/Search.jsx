@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Search() {
 	const { register, handleSubmit } = useForm();
@@ -14,15 +14,15 @@ export default function Search() {
 			"py-2 m-2 border-none active:scale-90 transition ease-in-out duration-200 rounded-lg h-12 md:w-36 w-11/12 bg-indigo-500  font-bold px-9 uppercase text-gray-50 border-t border-b border-r shadow-lg hover:shadow-indigo-500/50 hover:bg-indigo-600 max-w-md",
 	};
 
+	let navigate = useNavigate();
 	const onSubmit = (data) => {
 		let searchTime = new Date();
+
 		if (data.searchQuery === "") {
 			alert("Please fill the input box");
 		} else {
 			data = { ...data, searchTime };
-			console.log(data);
-			alert(JSON.stringify(data));
-			window.history.pushState({}, undefined, "/searchresults");
+			navigate("/searchresults", { state: data });
 		}
 	};
 
@@ -41,7 +41,6 @@ export default function Search() {
 				>
 					SEARCH
 				</button>
-				<Link to="/searchresults">Test</Link>
 			</div>
 		</form>
 	);
