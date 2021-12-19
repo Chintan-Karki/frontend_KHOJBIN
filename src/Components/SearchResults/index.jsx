@@ -4,8 +4,9 @@ import Navbar from "../atoms/NavBar";
 
 export default function SearchResults() {
 	const location = useLocation();
-	let searchQuery = location.state.searchQuery;
+	let searchQuery = location.state.searchQuery.trim();
 	let searchTime = location.state.searchTime;
+
 	return (
 		<>
 			<Navbar />
@@ -19,6 +20,7 @@ export default function SearchResults() {
 				</div>
 			</div>
 			;
+
 		</>
 	);
 }
