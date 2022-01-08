@@ -1,39 +1,49 @@
 import React from "react";
+import productImg from "../../assets/images/productDemo.jpeg";
+import { Link } from "react-router-dom";
 
-export default function Product({ product }) {
+export default function Product({
+	product,
+	searchQuery,
+	altText,
+	seller,
+	ratingPer5,
+	price,
+}) {
 	return (
-		<div>
-			<div className="wrapper bg-gray-400 antialiased text-gray-900">
-				<div>
+		<div className="">
+			<div className="my-2 antialiased text-gray-900 w-auto">
+				<div className="relative">
 					<img
-						src="https://source.unsplash.com/random/350x350"
-						alt=" random that shows flower"
-						className="object-cover object-center rounded-lg shadow-md"
-					/>
+						src={productImg}
+						alt={altText}
+						className="object-cover w-full h-72 object-center rounded-lg shadow-md "
+					></img>
 
-					<div className="relative px-4 -mt-16  ">
+					<div className="relative px-4 -mt-14 ">
 						<div className="bg-white p-6 rounded-lg shadow-lg">
-							<div className="flex items-baseline">
-								<span className="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
-									New
+							<div className="flex items-baseline ">
+								<span className="-mt-1 bg-indigo-100 text-indigo-500 text-xs px-2 py-1 inline-block rounded-full  uppercase font-semibold tracking-wide">
+									{seller}
 								</span>
-								<div className="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-									2 baths &bull; 3 rooms
+								<div className="ml-2 text-indigo-600 uppercase text-xs font-semibold tracking-wider w-30">
+									<Link to="test">Go to site</Link>
 								</div>
 							</div>
 
-							<h4 className="mt-1 text-xl font-semibold uppercase leading-tight truncate">
-								A random Title
+							<h4 className="mt-2 text-xl font-semibold uppercase leading-tight truncate">
+								{searchQuery}
 							</h4>
 
 							<div className="mt-1">
-								$1800
-								<span className="text-gray-600 text-sm"> /wk</span>
+								Nrs. {price * 100}
+								<span className="text-gray-600 text-sm"> </span>
 							</div>
 							<div className="mt-4">
-								<span className="text-teal-600 text-md font-semibold">
-									4/5 ratings{" "}
+								<span className="text-indigo-600 text-md font-semibold">
+									{ratingPer5}/5 ratings{" "}
 								</span>
+								<br />
 								<span className="text-sm text-gray-600">
 									(based on 234 ratings)
 								</span>
@@ -42,6 +52,13 @@ export default function Product({ product }) {
 					</div>
 				</div>
 			</div>
+			{/* <ProductReusable
+				altText={altText}
+				seller={seller}
+				searchQuery={searchQuery}
+				ratingPer5={ratingPer5}
+				price={price}
+			/> */}
 		</div>
 	);
 }

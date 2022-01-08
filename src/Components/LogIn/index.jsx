@@ -67,7 +67,8 @@ export default function LogIn() {
 											},
 										})}
 										type="email"
-										className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										className="peer w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600  disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none
+      invalid:border-pink-500 invalid:text-pink-600"
 										placeholder="Email Address"
 									/>
 									{errors.email && (
