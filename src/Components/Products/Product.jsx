@@ -22,12 +22,17 @@ export default function Product({
 
 					<div className="relative px-4 -mt-14 ">
 						<div className="bg-white p-6 rounded-lg shadow-lg">
-							<div className="flex items-baseline ">
-								<span className="-mt-1 bg-indigo-100 text-indigo-500 text-xs px-2 py-1 inline-block rounded-full  uppercase font-semibold tracking-wide">
+							<div className="flex items-baseline justify-between ">
+								<span className="-mt-1 mb-1 bg-indigo-100 text-indigo-500 text-xs px-2 py-1 inline-block rounded-full  uppercase font-semibold tracking-wide">
 									{seller}
 								</span>
-								<div className="ml-2 text-indigo-600 uppercase text-xs font-semibold tracking-wider w-30">
-									<Link to="test">Go to site</Link>
+								<div className="ml-2 group text-indigo-600 uppercase text-xs font-semibold tracking-wider w-30 hover:text-green-900 hover:underline hover:underline-offset-4 ">
+									<Link to="test">
+										<span className="invisible group-hover:visible">
+											&nbsp;➹
+										</span>{" "}
+										Visit site
+									</Link>
 								</div>
 							</div>
 
@@ -52,13 +57,6 @@ export default function Product({
 					</div>
 				</div>
 			</div>
-			{/* <ProductReusable
-				altText={altText}
-				seller={seller}
-				searchQuery={searchQuery}
-				ratingPer5={ratingPer5}
-				price={price}
-			/> */}
 		</div>
 	);
 }

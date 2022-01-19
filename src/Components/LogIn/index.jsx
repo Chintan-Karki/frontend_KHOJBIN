@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import sideImage from "../../assets/images/Saly-26.svg";
+import sideImage from "../../assets/images/Saly-26.png";
 import logo from "../../assets/images/logoPrimary.svg";
 import smile from "../../assets/images/smile.png";
 import smile2 from "../../assets/images/smile2.png";

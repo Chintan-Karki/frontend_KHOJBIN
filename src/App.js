@@ -6,7 +6,7 @@ function App() {
 	return (
 		<>
 			<NavBar />
-			<div className="SearchBar bg-image lg:bg-40% bg-no-repeat bg-90% sm:bg-contain bg-center">
+			<div className="SearchBar bg-image bg-center bg-no-repeat bg-90% md:bg-80% lg:bg-50% xl:bg-40%">
 				<Search />
 			</div>
 		</>
