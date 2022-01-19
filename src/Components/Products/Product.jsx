@@ -17,10 +17,10 @@ export default function Product({
 					<img
 						src={productImg}
 						alt={altText}
-						className="object-cover w-full h-72 object-center rounded-lg shadow-md "
+						className=" object-cover w-full h-72 object-center rounded-lg shadow-md "
 					></img>
 
-					<div className="relative px-4 -mt-14 ">
+					<div className="relative px-2 -mt-14 ">
 						<div className="bg-white p-6 rounded-lg shadow-lg">
 							<div className="flex items-baseline justify-between ">
 								<span className="-mt-1 mb-1 bg-indigo-100 text-indigo-500 text-xs px-2 py-1 inline-block rounded-full  uppercase font-semibold tracking-wide">

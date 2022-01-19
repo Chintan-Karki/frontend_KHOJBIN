@@ -25,7 +25,7 @@ export default function LogIn() {
 	};
 
 	return (
-		<div className=" flex items-center min-h-screen bg-indigo-50">
+		<div className="flex items-center min-h-screen bg-indigo-50">
 			<div className="relative flex-1 h-full max-w-4xl mx-auto rounded-xl shadow-xl transition bg-white">
 				<img
 					src={smile}
