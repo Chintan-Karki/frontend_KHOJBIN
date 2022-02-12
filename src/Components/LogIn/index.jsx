@@ -1,16 +1,24 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../utils/axios";
+import { useForm } from "react-hook-form";
+
+// Local Variables
 import sideImage from "../../assets/images/Saly-26.png";
 import logo from "../../assets/images/logoPrimary.svg";
 import smile from "../../assets/images/smile.png";
 import smile2 from "../../assets/images/smile2.png";
-import { useForm } from "react-hook-form";
 import ErrorMessage from "../atoms/ErrorMessage";
-import { useState } from "react";
 import EyeClosed from "../../assets/icons/EyeClosed";
 import Eye from "../../assets/icons/Eye";
-import WarningMessage from "../atoms/WarningMessage";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import WarningMessage from "../atoms/WarningMessage";
 
 export default function LogIn() {
+	let navigate = useNavigate();
+
 	const {
 		register,
 		handleSubmit,
@@ -21,7 +29,31 @@ export default function LogIn() {
 
 	console.log(errors);
 	const onSubmit = (data) => {
-		alert(JSON.stringify(data));
+		console.log(data);
+
+		axiosInstance
+			.post(`token/`, {
+				email: data.email,
+				password: data.password,
+			})
+			.then((res) => {
+				localStorage.setItem("access_token", res.data.access);
+				localStorage.setItem("refresh_token", res.data.refresh);
+				axiosInstance.defaults.headers["Authorization"] =
+					"JWT " + localStorage.getItem("access_token");
+				navigate("/");
+				// toast.success("✅ Login Successfull", {
+				// 	position: "top-right",
+				// 	autoClose: 4000,
+				// 	hideProgressBar: true,
+				// 	closeOnClick: true,
+				// 	pauseOnHover: true,
+				// 	draggable: true,
+				// 	progress: undefined,
+				// });
+				alert(`Login Successfull\n Welcome onboard ${res.data.name}`);
+				console.log(res);
+			});
 	};
 
 	return (
@@ -80,23 +112,29 @@ export default function LogIn() {
 								<div className="mt-4 relative">
 									<label className="block text-sm mb-1">Password</label>
 									<input
-										{...register("password", {
-											required: "Password is required",
-											minLength: {
-												value: 8,
-												message: "Minimum 8 Characters required.",
-											},
-										})}
+										{...register(
+											"password"
+											// Setting up the rules for password **in production
+											// {
+											// 	required: "Password is required",
+											// 	minLength: {
+											// 		value: 8,
+											// 		message: "Minimum 8 Characters required.",
+											// 	},
+											// }
+										)}
 										type={showPassword ? "text" : "password"}
 										className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Password"
 									/>
+									{/* 
+									// Display error message during login
 									{errors.password &&
 										(errors.password.type === "minLength" ? (
 											<WarningMessage message={errors.password.message} />
 										) : (
 											<ErrorMessage message={errors.password.message} />
-										))}
+										))} */}
 									<i
 										className="absolute top-[30px] left-[91%]"
 										onClick={(e) => {

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
 import logo from "../../assets/images/logoPrimary.svg";
+import Logout from "./Logout.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -84,6 +85,9 @@ export default function Navbar() {
 								>
 									LOG IN
 								</Link>
+							</li>
+							<li>
+								<Logout/>
 							</li>
 						</ul>
 					</div>

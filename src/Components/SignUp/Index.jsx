@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import sideImage from "../../assets/images/Saly-25.png";
 import logo from "../../assets/images/logoPrimary.svg";
 import smile from "../../assets/images/smile.png";
@@ -9,8 +10,12 @@ import ErrorMessage from "../atoms/ErrorMessage";
 import { useRef, useState } from "react";
 import Eye from "../../assets/icons/Eye";
 import EyeClosed from "../../assets/icons/EyeClosed";
+import axiosInstance from "../../utils/axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
+	let navigate = useNavigate();
 	const {
 		register,
 		watch,
@@ -25,7 +30,17 @@ export default function SignUp() {
 
 	const onSubmit = (data) => {
 		console.log(data);
-		alert(JSON.stringify(data));
+		axiosInstance
+			.post(`user/register/`, {
+				email: data.email,
+				name: data.name,
+				password: data.password,
+			})
+			.then((res) => {
+				navigate("/login");
+				console.log(res);
+				console.log(res.data);
+			});
 	};
 
 	return (
