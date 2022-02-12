@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 export default function Search() {
+	
 	const { register, handleSubmit } = useForm();
 
 	const twClasses = {

@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
 import logo from "../../assets/images/logoPrimary.svg";
-import Logout from "./Logout.jsx";
+import useStore from "../../utils/store.js";
+import LogBtn from "./LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
+	let userName = useStore((state) => state.userName);
 
 	let twNavBarClasses = {
 		navDivClasses:
@@ -16,7 +18,7 @@ export default function Navbar() {
 		<>
 			<nav className={twNavBarClasses.navDivClasses}>
 				<div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-					<div className=" relative flex justify-between lg:w-auto w-screen lg:static lg:block lg:justify-start">
+					<div className=" relative flex justify-between sm:w-auto w-screen sm:static sm:block sm:justify-start">
 						<Link
 							to="/"
 							className="text-sm font-bold leading-relaxed inline-block py-2
@@ -25,7 +27,7 @@ export default function Navbar() {
 							<img src={logo} alt="logo" />
 						</Link>
 						<button
-							className="text-gray transition-transform cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+							className="text-gray transition-transform cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block sm:hidden outline-none focus:outline-none"
 							type="button"
 							onClick={() => setNavbarOpen(!navbarOpen)}
 						>
@@ -64,30 +66,28 @@ export default function Navbar() {
 					</div>
 					<div
 						className={
-							"lg:flex flex-grow items-center" +
+							"sm:flex flex-grow items-center" +
 							(navbarOpen ? " flex" : " hidden")
 						}
 					>
-						<ul className="flex my-2 lg:my-0 flex-row lg:flex-row list-none lg:ml-auto">
-							<li className="nav-item mr-2">
-								<Link
-									to="/signup"
-									className={tailwindCommonClasses.smallButtonNofocus}
-								>
-									{" "}
-									SIGN UP
-								</Link>
-							</li>
-							<li className="nav-item">
-								<Link
-									to="/login"
-									className={tailwindCommonClasses.smallButtonFocus}
-								>
-									LOG IN
-								</Link>
-							</li>
+						<ul className="flex my-2 sm:my-0 flex-row sm:flex-row list-none sm:ml-auto">
+							{userName.trim() === "" ? (
+								<li className="nav-item mr-2">
+									<Link
+										to="/signup"
+										className={tailwindCommonClasses.smallButtonNofocus}
+									>
+										{" "}
+										SIGN UP
+									</Link>
+								</li>
+							) : (
+								<p className="px-3 py-2 border-2 flex items-center text-xs uppercase text-indigo-900 rounded-md">
+									{userName.trim()}
+								</p>
+							)}
 							<li>
-								<Logout/>
+								<LogBtn />
 							</li>
 						</ul>
 					</div>

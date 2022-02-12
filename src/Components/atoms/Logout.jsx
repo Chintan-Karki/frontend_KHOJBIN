@@ -2,13 +2,15 @@ import React from "react";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import useStore from "../../utils/store";
 
 export default function Logout() {
 	const navigate = useNavigate();
+	const setUserName = useStore((state) => state.setUserName);
+	const setIsLoggedIn = useStore((state) => state.setIsLoggedIn);
 
 	const handleClick = () => {
+		// getting from the store
 		const response = axiosInstance.post("user/logout/blacklist", {
 			refresh_token: localStorage.getItem("refresh_token"),
 		});
@@ -16,6 +18,8 @@ export default function Logout() {
 		localStorage.removeItem("refresh_token");
 		axiosInstance.defaults.headers["Authorization"] = null;
 		console.log("Logged Out");
+		setUserName("");
+		setIsLoggedIn(false);
 		navigate("/login");
 		// toast.success("🙂 Logout Succesful", {
 		// 	position: "top-right",
@@ -26,7 +30,7 @@ export default function Logout() {
 		// 	draggable: true,
 		// 	progress: undefined,
 		// });
-        alert("Logout Successfull");
+		alert("Logout Successfull");
 	};
 
 	return (

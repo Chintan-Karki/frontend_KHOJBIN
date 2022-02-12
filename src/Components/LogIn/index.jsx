@@ -12,11 +12,13 @@ import smile2 from "../../assets/images/smile2.png";
 import ErrorMessage from "../atoms/ErrorMessage";
 import EyeClosed from "../../assets/icons/EyeClosed";
 import Eye from "../../assets/icons/Eye";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import useStore from "../../utils/store";
 // import WarningMessage from "../atoms/WarningMessage";
 
 export default function LogIn() {
+	const userName = useStore((state) => state.userName);
+	const setUserName = useStore((state) => state.setUserName);
+	const setIsLoggedIn = useStore((state) => state.setIsLoggedIn);
 	let navigate = useNavigate();
 
 	const {
@@ -42,6 +44,9 @@ export default function LogIn() {
 				axiosInstance.defaults.headers["Authorization"] =
 					"JWT " + localStorage.getItem("access_token");
 				navigate("/");
+				console.log(res.data);
+				setUserName(res.data.name);
+				setIsLoggedIn(true);
 				// toast.success("✅ Login Successfull", {
 				// 	position: "top-right",
 				// 	autoClose: 4000,
@@ -52,8 +57,8 @@ export default function LogIn() {
 				// 	progress: undefined,
 				// });
 				alert(`Login Successfull\n Welcome onboard ${res.data.name}`);
-				console.log(res);
 			});
+		console.log(userName);
 	};
 
 	return (

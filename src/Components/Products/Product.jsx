@@ -1,6 +1,8 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import ImageNotFound from "../../assets/images/ImageNotFound.png";
+import Like from "../../assets/icons/like.png";
+import useStore from "../../utils/store";
 
 export default function Product({
 	product,
@@ -10,6 +12,7 @@ export default function Product({
 	ratingPer5,
 	price,
 }) {
+	const isLoggedIn = useStore((state) => state.isLoggedIn);
 	return (
 		<div className="">
 			<div className="my-2 antialiased text-gray-900 w-auto ">
@@ -44,14 +47,25 @@ export default function Product({
 								Nrs. {price}
 								<span className="text-gray-600 text-sm"> </span>
 							</div>
-							<div className="mt-4">
-								<span className="text-indigo-600 text-md font-semibold">
-									{ratingPer5}/5 ratings{" "}
-								</span>
-								<br />
-								<span className="text-sm text-gray-600">
-									(based on 234 ratings)
-								</span>
+							<div className="mt-4 flex wrap justify-between items-center">
+								<div>
+									<span className="text-indigo-600 text-md font-semibold">
+										{ratingPer5}/5 ratings{" "}
+									</span>
+									<br />
+									<span className="text-sm text-gray-600">
+										(based on 234 ratings)
+									</span>
+								</div>
+								{isLoggedIn && (
+									<div>
+									<img
+											src={Like}
+											alt="Like button for adding product to the wishlist"
+											className="transform h-6 hover:scale-125 transition-all focus:scale-95 cursor-pointer"
+										/>
+									</div>
+								)}
 							</div>
 						</div>
 					</div>

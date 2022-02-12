@@ -11,8 +11,6 @@ import { useRef, useState } from "react";
 import Eye from "../../assets/icons/Eye";
 import EyeClosed from "../../assets/icons/EyeClosed";
 import axiosInstance from "../../utils/axios";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
 	let navigate = useNavigate();
