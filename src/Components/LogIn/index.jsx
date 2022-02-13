@@ -41,6 +41,7 @@ export default function LogIn() {
 			.then((res) => {
 				localStorage.setItem("access_token", res.data.access);
 				localStorage.setItem("refresh_token", res.data.refresh);
+				localStorage.setItem("userName", res.data.name);
 				axiosInstance.defaults.headers["Authorization"] =
 					"JWT " + localStorage.getItem("access_token");
 				navigate("/");
