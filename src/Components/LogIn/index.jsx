@@ -12,13 +12,12 @@ import smile2 from "../../assets/images/smile2.png";
 import ErrorMessage from "../atoms/ErrorMessage";
 import EyeClosed from "../../assets/icons/EyeClosed";
 import Eye from "../../assets/icons/Eye";
-import useStore from "../../utils/store";
+import { useAuthStore } from "../../utils/store";
 // import WarningMessage from "../atoms/WarningMessage";
 
 export default function LogIn() {
-	const userName = useStore((state) => state.userName);
-	const setUserName = useStore((state) => state.setUserName);
-	const setIsLoggedIn = useStore((state) => state.setIsLoggedIn);
+	const setUserName = useAuthStore((state) => state.setUserName);
+	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 	let navigate = useNavigate();
 
 	const {
@@ -31,8 +30,6 @@ export default function LogIn() {
 
 	console.log(errors);
 	const onSubmit = (data) => {
-		console.log(data);
-
 		axiosInstance
 			.post(`token/`, {
 				email: data.email,
@@ -42,12 +39,13 @@ export default function LogIn() {
 				localStorage.setItem("access_token", res.data.access);
 				localStorage.setItem("refresh_token", res.data.refresh);
 				localStorage.setItem("userName", res.data.name);
+				localStorage.setItem("userId", res.data.id.toString());
 				axiosInstance.defaults.headers["Authorization"] =
 					"JWT " + localStorage.getItem("access_token");
-				navigate("/");
 				console.log(res.data);
 				setUserName(res.data.name);
 				setIsLoggedIn(true);
+				navigate("/");
 				// toast.success("✅ Login Successfull", {
 				// 	position: "top-right",
 				// 	autoClose: 4000,
@@ -59,7 +57,6 @@ export default function LogIn() {
 				// });
 				alert(`Login Successfull\n Welcome onboard ${res.data.name}`);
 			});
-		console.log(userName);
 	};
 
 	return (

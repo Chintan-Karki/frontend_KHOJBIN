@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
 import logo from "../../assets/images/logoPrimary.svg";
-import useStore from "../../utils/store.js";
+import { useAuthStore } from "../../utils/store.js";
 import LogBtn from "./LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
-	let userName = useStore((state) => state.userName);
+	let userName = useAuthStore((state) => state.userName);
+	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
 	let twNavBarClasses = {
 		navDivClasses:
@@ -26,6 +27,7 @@ export default function Navbar() {
 						>
 							<img src={logo} alt="logo" />
 						</Link>
+
 						<button
 							className="text-gray transition-transform cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block sm:hidden outline-none focus:outline-none"
 							type="button"
@@ -71,7 +73,7 @@ export default function Navbar() {
 						}
 					>
 						<ul className="flex my-2 sm:my-0 flex-row sm:flex-row list-none sm:ml-auto">
-							{userName.trim() === "" ? (
+							{!isLoggedIn ? (
 								<li className="nav-item mr-2">
 									<Link
 										to="/signup"

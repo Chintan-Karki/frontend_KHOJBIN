@@ -39,7 +39,8 @@ export default function SignUp() {
 				console.log(res.data);
 				navigate("/login");
 				console.log(res["non_field_errors"]);
-			}).catch((err) => {
+			})
+			.catch((err) => {
 				alert(err.response.data.non_field_errors[0]);
 			});
 	};

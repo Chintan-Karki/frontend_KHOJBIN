@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../utils/axios";
+import { useProductsStore, useSearchStore } from "../../utils/store";
 
 export default function Search() {
-	
 	const { register, handleSubmit } = useForm();
+	const setProducts = useProductsStore((state) => state.setProducts);
+	const setSearch = useSearchStore((state) => state.setSearch);
+	const [loading, setLoading] = useState(false);
 
 	const twClasses = {
 		mainDiv:
@@ -16,14 +20,25 @@ export default function Search() {
 	};
 
 	let navigate = useNavigate();
-	const onSubmit = (data) => {
+
+	const onSubmit = async (data) => {
 		let searchTime = new Date();
+		let userId = localStorage.getItem("userId")
+			? localStorage.getItem("userId")
+			: "";
 
 		if (data.searchQuery === "") {
 			alert("Please fill the input box");
 		} else {
-			data = { ...data, searchTime };
-			navigate("/searchresults", { state: data });
+			data = { ...data, searchTime, userId };
+			setLoading(true);
+			await setSearch(data);
+			await axiosInstance.post(`search/`, data).then((res) => {
+				console.log(res.data);
+				setProducts(res.data);
+			});
+			await setLoading(false);
+			await navigate("/searchresults", { state: data });
 		}
 	};
 
@@ -40,7 +55,17 @@ export default function Search() {
 					onClick={handleSubmit(onSubmit)}
 					className={twClasses.searchButton}
 				>
-					SEARCH
+					{/* Search */}
+					{!loading ? (
+						"SEARCH"
+					) : (
+						<div className="flex justify-center items-center">
+							<div
+								className="spinner-border animate-spin inline-block w-2 h-8 border-4 rounded-md text-gray-50"
+								role="status"
+							></div>
+						</div>
+					)}
 				</button>
 			</div>
 		</form>

@@ -1,20 +1,37 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import axiosInstance from "./axios";
 
-localStorage.getItem("access_token");
-localStorage.getItem("refresh_token");
 let nameFromStorage = localStorage.getItem("userName");
-let authParam = (axiosInstance.defaults.headers["Authorization"] =
-	"JWT " + localStorage.getItem("access_token"));
+let access_token = localStorage.getItem("access_token");
 
-const store = (set) => ({
-	isLoggedIn: authParam !== null ? true : false,
+let userStore = (set) => ({
+	isLoggedIn: access_token ? true : false,
 	userName: nameFromStorage === "" ? "" : nameFromStorage,
-	setIsLoggedIn: (isLoggedIn) => set((state) => ({ isLoggedIn: isLoggedIn })),
-	setUserName: (newUserName) => set((state) => ({ userName: newUserName })),
+	setIsLoggedIn: (isLoggedIn) =>
+		set((state) => ({ isLoggedIn: isLoggedIn }), false, "Login"),
+	setUserName: (newUserName) =>
+		set((state) => ({ userName: newUserName }), false, "Set UserName"),
 });
 
-const useStore = create(devtools(store));
+let productsStore = (set) => ({
+	products: [],
+	setProducts: (products) =>
+		set((state) => ({ products: products }), false, "SetProducts"),
+});
 
-export default useStore;
+let searchStore = (set) => ({
+	search: {},
+	searchTime: "",
+	setSearch: (search) =>
+		set((state) => ({ search: search }), false, "Set Search"),
+	setSearchTime: (searchTime) =>
+		set((state) => ({ searchTime: searchTime }), false, "setSearchTime"),
+});
+
+userStore = devtools(userStore);
+productsStore = devtools(productsStore);
+searchStore = devtools(searchStore);
+
+export const useAuthStore = create(userStore);
+export const useProductsStore = create(productsStore);
+export const useSearchStore = create(searchStore);

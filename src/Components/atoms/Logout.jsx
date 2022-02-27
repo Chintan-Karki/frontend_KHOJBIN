@@ -2,15 +2,17 @@ import React from "react";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
-import useStore from "../../utils/store";
+import { useAuthStore } from "../../utils/store";
+import { toast } from "react-toastify";
 
 export default function Logout() {
 	const navigate = useNavigate();
-	const setUserName = useStore((state) => state.setUserName);
-	const setIsLoggedIn = useStore((state) => state.setIsLoggedIn);
+	const setUserName = useAuthStore((state) => state.setUserName);
+	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 
-	const handleClick = () => {
+	const handleClick = async () => {
 		// getting from the store
+
 		const response = axiosInstance.post("user/logout/blacklist", {
 			refresh_token: localStorage.getItem("refresh_token"),
 		});
@@ -18,20 +20,20 @@ export default function Logout() {
 		localStorage.removeItem("refresh_token");
 		localStorage.removeItem("userName");
 		axiosInstance.defaults.headers["Authorization"] = null;
-		console.log("Logged Out");
-		setUserName("");
-		setIsLoggedIn(false);
+		console.log("Logged Out", response);
+		await setUserName("");
+		await setIsLoggedIn(false);
 		navigate("/login");
-		// toast.success("🙂 Logout Succesful", {
-		// 	position: "top-right",
-		// 	autoClose: 4000,
-		// 	hideProgressBar: false,
-		// 	closeOnClick: true,
-		// 	pauseOnHover: true,
-		// 	draggable: true,
-		// 	progress: undefined,
-		// });
-		alert("Logout Successfull");
+		toast("Logged Out Successfull", {
+			type: "dark",
+			progressClassName: "fancy-progress-bar",
+			position: "top-right",
+			autoClose: 2000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+		});
 	};
 
 	return (
