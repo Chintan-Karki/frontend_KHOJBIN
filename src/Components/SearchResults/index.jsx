@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import gyapu_filter from "../../utils/data_filter";
 import { useProductsStore } from "../../utils/store";
 import Filters from "../atoms/Filters";
 import Navbar from "../atoms/NavBar";
@@ -14,33 +15,48 @@ export default function SearchResults() {
 
 	let searchTime = location.state.searchTime ? location.state.searchTime : "";
 	let [loading, setLoading] = useState(true);
-	// let [products, setProducts] = useState([]);
+	let [productsData, setProductsData] = useState([]);
 	const navigate = useNavigate();
 
-	const productsData = useProductsStore(
+	// const productsData = useProductsStore(
+	// 	(state) => state.products.filteredResponses
+	// );
+
+	const darazProductsData = useProductsStore(
 		(state) => state.products.filteredResponses
 	);
+	const gyapuProductsData = useProductsStore(
+		(state) => state.products.gyapuResponses
+	);
+	let filtered_gyapu_data = gyapu_filter(gyapuProductsData);
+
+	productsData = [...darazProductsData, ...filtered_gyapu_data];
+
+	let sortAscending = () => {
+		productsData.sort((a, b) => {
+			return b.price - a.price;
+		});
+		setProductsData(productsData);
+	};
 
 	useEffect(() => {
-		if (productsData.length === 0) {
+		if (darazProductsData.length === 0 && gyapuProductsData.length === 0) {
 			navigate("/");
 		} else {
 			setLoading(false);
-			productsData.map(
-				(product) => console.log(product)
-				// *
-				// * DEMO RESPONSE
-				// *
-				// description: []
-				// image_url: "https://static-01.daraz.com.np/p/4e43a2b5132f03d3cae8c1d8ba502bd9.jpg"
-				// itemId: "106137527"
-				// name: "Nillkin Matte Case  for Apple iPhone SE (2020) Super Frosted Shield Cover"
-				// price: "900.00"
-				// productUrl: "//www.daraz.com.np/products/nillkin-matte-case-for-apple-iphone-se-2020-super-frosted-shield-cover-i106137527-s1027979030.html?search=1"
-				// ratingScore: "0"
-				// reviewCount: "0"
-				// sellerName: "246Impex"
-			);
+
+			// *
+			// * DEMO RESPONSE
+			// *
+			// description: []
+			// image_url: "https://static-01.daraz.com.np/p/4e43a2b5132f03d3cae8c1d8ba502bd9.jpg"
+			// itemId: "106137527"
+			// name: "Nillkin Matte Case  for Apple iPhone SE (2020) Super Frosted Shield Cover"
+			// price: "900.00"
+			// productUrl: "//www.daraz.com.np/products/nillkin-matte-case-for-apple-iphone-se-2020-super-frosted-shield-cover-i106137527-s1027979030.html?search=1"
+			// ratingScore: "0"
+			// reviewCount: "0"
+			// sellerName: "246Impex"
 
 			// *
 			// * TEST FETCH
@@ -52,7 +68,8 @@ export default function SearchResults() {
 			// 	.finally(() => setLoading(false));
 		}
 		// eslint-disable-next-line
-	}, [productsData]);
+	}, [productsData, setProductsData]);
+
 	return (
 		<>
 			<Navbar />
@@ -69,6 +86,13 @@ export default function SearchResults() {
 						<br />
 						<span className="bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent ">
 							Time of search : {searchTime.toUTCString()}
+							<hr></hr>
+							<button
+								className="text-blue-100 bg-slate-500 p-2 rounded-lg mt-2 "
+								onClick={sortAscending}
+							>
+								test sort ascending
+							</button>
 						</span>
 						{productsData.length < 1 ? (
 							<h1 className="text-xl sm:text-2xl  md:text-6xl mt-10">

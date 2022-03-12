@@ -34,7 +34,7 @@ export default function Search() {
 			setLoading(true);
 			await setSearch(data);
 			await axiosInstance.post(`search/`, data).then((res) => {
-				console.log(res.data);
+				// console.log(res.data);
 				setProducts(res.data);
 			});
 			await setLoading(false);

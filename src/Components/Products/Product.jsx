@@ -6,14 +6,13 @@ import { useAuthStore } from "../../utils/store";
 
 export default function Product({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-
 	return (
 		<div className="">
 			<div className="my-2 antialiased text-gray-900 w-auto ">
 				<div className="relative">
 					<img
 						src={product.image_url ? product.image_url : ImageNotFound}
-						alt={altText}
+						alt={product.name}
 						className=" object-scale-down bg-white w-full h-72 object-center rounded-lg "
 					></img>
 
