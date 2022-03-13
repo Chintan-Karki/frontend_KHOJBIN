@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import gyapu_filter from "../../utils/data_filter";
+
 import { useProductsStore } from "../../utils/store";
 import Filters from "../atoms/Filters";
 import Navbar from "../atoms/NavBar";
@@ -15,32 +15,17 @@ export default function SearchResults() {
 
 	let searchTime = location.state.searchTime ? location.state.searchTime : "";
 	let [loading, setLoading] = useState(true);
-	let [productsData, setProductsData] = useState([]);
+	let productsData = useProductsStore((state) => state.productsFiltered);
 	const navigate = useNavigate();
-
-	// const productsData = useProductsStore(
-	// 	(state) => state.products.filteredResponses
-	// );
-
-	const darazProductsData = useProductsStore(
-		(state) => state.products.filteredResponses
-	);
-	const gyapuProductsData = useProductsStore(
-		(state) => state.products.gyapuResponses
-	);
-	let filtered_gyapu_data = gyapu_filter(gyapuProductsData);
-
-	productsData = [...darazProductsData, ...filtered_gyapu_data];
 
 	let sortAscending = () => {
 		productsData.sort((a, b) => {
 			return b.price - a.price;
 		});
-		setProductsData(productsData);
 	};
 
 	useEffect(() => {
-		if (darazProductsData.length === 0 && gyapuProductsData.length === 0) {
+		if (productsData.length === 0) {
 			navigate("/");
 		} else {
 			setLoading(false);
@@ -68,7 +53,7 @@ export default function SearchResults() {
 			// 	.finally(() => setLoading(false));
 		}
 		// eslint-disable-next-line
-	}, [productsData, setProductsData]);
+	}, [productsData]);
 
 	return (
 		<>

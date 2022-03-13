@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
+import {
+	daraz_filter,
+	gyapu_filter,
+	hamrobazaar_filter,
+} from "../../utils/data_filter";
 import { useProductsStore, useSearchStore } from "../../utils/store";
 
 export default function Search() {
 	const { register, handleSubmit } = useForm();
 	const setProducts = useProductsStore((state) => state.setProducts);
+	const setProductsFiltered = useProductsStore(
+		(state) => state.setProductsFiltered
+	);
 	const setSearch = useSearchStore((state) => state.setSearch);
 	const [loading, setLoading] = useState(false);
 
@@ -36,6 +44,16 @@ export default function Search() {
 			await axiosInstance.post(`search/`, data).then((res) => {
 				// console.log(res.data);
 				setProducts(res.data);
+				let filtered_daraz_data = daraz_filter(res.data.darazResponses);
+				let filtered_hamrobazaar_data = hamrobazaar_filter(
+					res.data.hamrobazaarResponses
+				);
+				let filtered_gyapu_data = gyapu_filter(res.data.gyapuResponses);
+				setProductsFiltered([
+					...filtered_daraz_data,
+					...filtered_gyapu_data,
+					...filtered_hamrobazaar_data,
+				]);
 			});
 			await setLoading(false);
 			await navigate("/searchresults", { state: data });

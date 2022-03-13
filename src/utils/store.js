@@ -15,8 +15,15 @@ let userStore = (set) => ({
 
 let productsStore = (set) => ({
 	products: [],
+	productsFiltered: [],
 	setProducts: (products) =>
 		set((state) => ({ products: products }), false, "SetProducts"),
+	setProductsFiltered: (productsFiltered) =>
+		set(
+			(state) => ({ productsFiltered: productsFiltered }),
+			false,
+			"SetProductsFiltered"
+		),
 });
 
 let searchStore = (set) => ({

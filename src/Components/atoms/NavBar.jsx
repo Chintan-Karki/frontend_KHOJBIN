@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
-import logo from "../../assets/images/logoPrimary.svg";
+import logo from "../../assets/images/chillLogoNew.svg";
 import { useAuthStore } from "../../utils/store.js";
 import LogBtn from "./LogBtn.jsx";
 
@@ -25,7 +25,7 @@ export default function Navbar() {
 							className="text-sm font-bold leading-relaxed inline-block py-2
 							whitespace-nowrap uppercase text-gray"
 						>
-							<img src={logo} alt="logo" />
+							<img src={logo} className="h-10 min-h-fit" alt="logo" />
 						</Link>
 
 						<button
