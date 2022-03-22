@@ -46,15 +46,6 @@ export default function LogIn() {
 				setUserName(res.data.name);
 				setIsLoggedIn(true);
 				navigate("/");
-				// toast.success("✅ Login Successfull", {
-				// 	position: "top-right",
-				// 	autoClose: 4000,
-				// 	hideProgressBar: true,
-				// 	closeOnClick: true,
-				// 	pauseOnHover: true,
-				// 	draggable: true,
-				// 	progress: undefined,
-				// });
 				alert(`Login Successfull\n Welcome onboard ${res.data.name}`);
 			});
 	};

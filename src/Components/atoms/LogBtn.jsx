@@ -56,7 +56,7 @@ export default function LogBtn() {
 			</button>
 		</>
 	) : (
-		<Link to="/login" className={tailwindCommonClasses.smallButtonFocus}>
+		<Link to="/login" className={tailwindCommonClasses.smallButtonFocus }>
 			LOG IN
 		</Link>
 	);

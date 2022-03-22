@@ -6,7 +6,9 @@ import {
 	daraz_filter,
 	gyapu_filter,
 	hamrobazaar_filter,
+	sastodeal_filter,
 } from "../../utils/data_filter";
+import { dummy_data } from "../../utils/dummy_data";
 import { useProductsStore, useSearchStore } from "../../utils/store";
 
 export default function Search() {
@@ -29,15 +31,9 @@ export default function Search() {
 
 	let navigate = useNavigate();
 
-	const onSubmit = async (data) => {
-		let searchTime = new Date();
-		let userId = localStorage.getItem("userId")
-			? localStorage.getItem("userId")
-			: "";
-
-		if (data.searchQuery === "") {
-			alert("Please fill the input box");
-		} else {
+	// eslint-disable-next-line no-unused-vars
+	const getData = async (data, searchTime, userId) => {
+		try {
 			data = { ...data, searchTime, userId };
 			setLoading(true);
 			await setSearch(data);
@@ -49,14 +45,66 @@ export default function Search() {
 					res.data.hamrobazaarResponses
 				);
 				let filtered_gyapu_data = gyapu_filter(res.data.gyapuResponses);
+				let filtered_sastodeal_data = sastodeal_filter(
+					res.data.sastodealResponses
+				);
 				setProductsFiltered([
 					...filtered_daraz_data,
 					...filtered_gyapu_data,
 					...filtered_hamrobazaar_data,
+					...filtered_sastodeal_data,
 				]);
 			});
 			await setLoading(false);
 			await navigate("/searchresults", { state: data });
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const getDummyData = async (data, searchTime, userId) => {
+		try {
+			data = { ...data, searchTime, userId };
+			setLoading(true);
+			await setSearch(data);
+
+			// console.log(res.data);
+			setProducts(dummy_data);
+			let filtered_daraz_data = daraz_filter(dummy_data.darazResponses);
+			let filtered_hamrobazaar_data = hamrobazaar_filter(
+				dummy_data.hamrobazaarResponses
+			);
+			let filtered_gyapu_data = gyapu_filter(dummy_data.gyapuResponses);
+			let filtered_sastodeal_data = sastodeal_filter(
+				dummy_data.sastodealResponses
+			);
+			setProductsFiltered([
+				...filtered_daraz_data,
+				...filtered_gyapu_data,
+				...filtered_hamrobazaar_data,
+				...filtered_sastodeal_data,
+			]);
+			await setLoading(false);
+			await navigate("/searchresults", { state: data });
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const onSubmit = async (data) => {
+		let searchTime = new Date();
+		let userId = localStorage.getItem("userId")
+			? localStorage.getItem("userId")
+			: "";
+
+		if (data.searchQuery === "") {
+			alert("Please fill the input box");
+		} else {
+			data = { ...data, searchTime, userId };
+			//! FOR REAL-TIME DATA ::
+			// getData(data, searchTime, userId);
+			//* FOR DUMMY DATA ::
+			getDummyData(data, searchTime, userId);
 		}
 	};
 
@@ -66,7 +114,7 @@ export default function Search() {
 				<input
 					{...register("searchQuery")}
 					className={twClasses.searchInputDiv}
-					placeholder="Search 🙂"
+					placeholder="eg. Iphone 13 pro 🙂"
 				/>
 				<button
 					type="submit"

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
-import logo from "../../assets/images/chillLogoNew.svg";
+import logo from "../../assets/images/logoPrimary.svg";
 import { useAuthStore } from "../../utils/store.js";
 import LogBtn from "./LogBtn.jsx";
 
@@ -72,7 +72,7 @@ export default function Navbar() {
 							(navbarOpen ? " flex" : " hidden")
 						}
 					>
-						<ul className="flex my-2 sm:my-0 flex-row sm:flex-row list-none sm:ml-auto">
+						<ul className="flex my-2 sm:my-0 flex-row sm:flex-row list-none sm:ml-auto ">
 							{!isLoggedIn ? (
 								<li className="nav-item mr-2">
 									<Link
@@ -84,9 +84,18 @@ export default function Navbar() {
 									</Link>
 								</li>
 							) : (
-								<p className="px-3 py-2 border-2 flex items-center text-xs uppercase text-indigo-900 rounded-md">
-									{userName.trim()}
-								</p>
+								<>
+									<Link to="/profile">
+										<p
+											className="transition h-10 px-3 py-2 mr-2 border-2 hover:text-orange-50 hover:border-orange-500 hover:bg-orange-500
+										 border-indigo-300 font-bold font-mono 
+										 hover:shadow-lg hover:shadow-orange-400/60 focus:shadow-none
+										 flex items-center text-xs uppercase  text-indigo-900 rounded-md"
+										>
+											{userName.trim()}
+										</p>
+									</Link>
+								</>
 							)}
 							<li>
 								<LogBtn />
