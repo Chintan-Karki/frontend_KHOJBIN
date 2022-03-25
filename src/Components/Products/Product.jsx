@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 // import { createBrowserHistory } from "react-router-dom";
 import ImageNotFound from "../../assets/images/ImageNotFound.png";
@@ -6,27 +6,45 @@ import Like from "../../assets/icons/like.png";
 import { useAuthStore } from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios";
+import Modal from "../atoms/Modal";
 
 export default function Product({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+	let [isOpen, setIsOpen] = useState(false);
+	let [headerTextForModal, setHeaderTextForModal] = useState("");
+	let [bodyTextForModal, setBodyTextForModal] = useState("");
 
 	const handleAddToWishlist = async () => {
 		let userId = localStorage.getItem("userId");
+
 		let data = {
 			name: product.name,
 			price: product.price,
 			member: Number(userId),
 			description: "No description",
-			imageUrl: product.image_url,
-			sellerName: product.sellerName,
-			sellerImageUrl: product.sellerImageUrl,
-			productUrl: product.productUrl,
+			image_url: product.image_url,
+			seller_name: product.sellerName,
+			seller_image_url: product.sellerImageUrl,
+			product_url: product.productUrl,
 			previous_price: Number(0),
 			current_price: Number(product.price),
+			product_id: product.itemId + "" + userId,
+			rating_score: product.ratingScore,
 		};
-		await axiosInstance.post(`wishlist/`, data).then((res) => {
-			alert("Added to wishlist ✅");
-		});
+		console.log(data);
+		await axiosInstance
+			.post(`wishlist/`, data)
+			.then((res) => {
+				// alert("Added to wishlist ✅");
+				setHeaderTextForModal("Product Added to wishlist ✅");
+				setBodyTextForModal(
+					"You can view your wishlist in the 'My wishlist' section in the 'Profile' tab in the website 🙂"
+				);
+				setIsOpen(true);
+			})
+			.catch((err) => {
+				alert(err.response.data.product_id[0]);
+			});
 	};
 
 	return (
@@ -38,7 +56,13 @@ export default function Product({ product, altText, seller, price }) {
 			transition={{ duration: 0.5 }}
 			className=""
 		>
-			<motion.div className="my-2 antialiased text-gray-900 w-auto ">
+			<motion.div className="my-2  antialiased text-gray-900 w-auto ">
+				<Modal
+					isOpen={isOpen}
+					setIsOpen={setIsOpen}
+					headerText={headerTextForModal}
+					bodyText={bodyTextForModal}
+				/>
 				<div className="relative">
 					<img
 						src={product.image_url ? product.image_url : ImageNotFound}

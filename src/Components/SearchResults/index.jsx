@@ -1,35 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { useProductsStore } from "../../utils/store";
+import { useProductsStore, useSearchStore } from "../../utils/store";
 import Navbar from "../atoms/NavBar";
 import Product from "../Products/Product";
 
 import Filters from "../Filters/Filters";
-import Sort from "../Filters/Sort";
+import SortMenu from "../Filters/SortMenu";
 
 export default function SearchResults() {
-	const location = useLocation();
-
-	let searchQuery = location.state.searchQuery
-		? location.state.searchQuery
-		: "No search queries found";
-
-	let searchTime = location.state.searchTime ? location.state.searchTime : "";
+	// toast("hello");
+	let searchTime = useSearchStore((state) => state.search.searchTime);
+	let searchQuery = useSearchStore((state) => state.search.search_query);
 	let [loading, setLoading] = useState(true);
 
 	// Setting up the product's data
-	let productsDataFromStore = useProductsStore(
-		(state) => state.productsFiltered
-	);
-	const productsData = productsDataFromStore;
+	const productsData = useProductsStore((state) => state.productsFiltered);
 
-	const [filteredProductsData, setfilteredProductsData] =
-		useState(productsData);
-
-	const [selectedSellerSite, setSelectedSellerSite] = useState("All");
-	const [sortOrder, setSortOrder] = useState("");
+	// Passed to sorting
+	let productsFiltered = useProductsStore((state) => state.productsFiltered);
 
 	// For redirecting to certain pages
 	const navigate = useNavigate();
@@ -39,9 +29,8 @@ export default function SearchResults() {
 			navigate("/");
 			return;
 		}
-		
 		setLoading(false);
-	}, [filteredProductsData, navigate, productsData.length]);
+	}, [navigate, productsData.length]);
 
 	return (
 		<>
@@ -67,27 +56,18 @@ export default function SearchResults() {
 							</h1>
 						) : null}
 						<div className="flex pt-8 pb-16 lg:pb-20">
-							<Filters
-								productsData={productsData}
-								filteredProductsData={filteredProductsData}
-								setfilteredProductsData={setfilteredProductsData}
-								selectedSellerSite={selectedSellerSite}
-								setSelectedSellerSite={setSelectedSellerSite}
-							/>
+							<Filters />
 							<div className="flex flex-col">
-								<Sort
-									sortOrder={sortOrder}
-									setSortOrder={setSortOrder}
-									filteredProductsData={filteredProductsData}
-									setfilteredProductsData={setfilteredProductsData}
-								/>
+								<div className="flex flex-row-reverse mb-2">
+									<SortMenu />
+								</div>
 								<section>
 									<motion.div
 										layout
 										className="w-full grid grid-cols-1  xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-x-5  xl:gap-x-7 gap-y-3 xl:gap-y-5 2xl:gap-y-8 "
 									>
 										<AnimatePresence>
-											{filteredProductsData.map((product) => (
+											{productsFiltered.map((product) => (
 												<Product
 													key={product.itemId}
 													product={product}

@@ -21,7 +21,10 @@ export function gyapu_filter(gyapu_data) {
 		newObj.image_url = "https://www.gyapu.com/" + item.image[0].document.path;
 		newObj.description = "";
 		newObj.productUrl = "https://www.gyapu.com/detail/" + item.url_key;
-		newObj.ratingScore = item.confidenceScore.toString().substring(0, 4);
+		newObj.ratingScore =
+			item.confidenceScore < 5
+				? item.confidenceScore.toString().substring(0, 4)
+				: "0";
 		newObj.reviewCount = "unknown";
 		newObj.sellerName = "Gyapu";
 		newObj.sellerImageUrl =

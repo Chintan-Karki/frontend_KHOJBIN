@@ -1,30 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useProductsStore, useSortStore } from "../../utils/store";
+import _ from "lodash";
 
-export default function Filters({
-	productsData,
-	filteredProductsData,
-	setfilteredProductsData,
-	selectedSellerSite,
-	setSelectedSellerSite,
-}) {
+export default function Filters() {
+	let productsFiltered = useProductsStore((state) => state.productsFiltered);
+	let setProductsFiltered = useProductsStore(
+		(state) => state.setProductsFiltered
+	);
 	const pillBtnClass =
 		"transition ease-in-out duration-75 border-2 border-indigo-200 p-1  px-2 rounded-3xl text-xs text-gray-700 hover:bg-indigo-400 hover:text-white";
 	const activePillBtnClass =
 		"transition ease-in-out duration-75 border-2 border-indigo-400 p-1 px-2 rounded-3xl text-xs bg-indigo-400 text-white";
 
+	let dataProductsTempStored = useRef(productsFiltered);
+	let [selectedSellerSite, setSelectedSellerSite] = useState("All");
+	// let sortOption = useSortStore((state) => state.sortOrder);
+	let setSortOption = useSortStore((state) => state.setSortOrder);
+
 	useEffect(() => {
 		if (selectedSellerSite === "All") {
-			setfilteredProductsData(productsData);
+			setProductsFiltered(dataProductsTempStored.current);
 			return;
 		}
-		const filteredProducts = productsData.filter(
-			(product) =>
-				product.sellerName.toString().toLowerCase() ===
-				selectedSellerSite.toString().toLowerCase()
+		let filteredProductsData = _.filter(
+			[...dataProductsTempStored.current],
+			function (o) {
+				return (
+					o.sellerName.toString().toLowerCase() ===
+					selectedSellerSite.toString().toLowerCase()
+				);
+			}
 		);
-		setfilteredProductsData(filteredProducts);
-		console.log(filteredProducts);
+		setProductsFiltered(filteredProductsData);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectedSellerSite]);
 
@@ -37,7 +45,10 @@ export default function Filters({
 				<button
 					className="flex-shrink text-xs mt-0.5 transition duration-150 ease-in focus:outline-none hover:text-heading"
 					aria-label="Clear All"
-					onClick={() => setSelectedSellerSite("All")}
+					onClick={() => {
+						setSelectedSellerSite("All");
+						setSortOption(-1);
+					}}
 				>
 					Clear All
 				</button>
@@ -58,7 +69,7 @@ export default function Filters({
 					All{" "}
 					{
 						<span className="text-xs ">
-							(<span>{productsData.length}</span>)
+							(<span>{dataProductsTempStored.current.length}</span>)
 						</span>
 					}
 				</button>
@@ -74,7 +85,7 @@ export default function Filters({
 							(
 							<span>
 								{
-									productsData.filter(
+									dataProductsTempStored.current.filter(
 										(product) =>
 											product.sellerName.toString().toLowerCase() === "daraz"
 									).length
@@ -98,7 +109,7 @@ export default function Filters({
 							(
 							<span>
 								{
-									productsData.filter(
+									dataProductsTempStored.current.filter(
 										(product) =>
 											product.sellerName.toString().toLowerCase() ===
 											"sastodeal"
@@ -123,7 +134,7 @@ export default function Filters({
 							(
 							<span>
 								{
-									productsData.filter(
+									dataProductsTempStored.current.filter(
 										(product) =>
 											product.sellerName.toString().toLowerCase() ===
 											"hamrobazaar"
@@ -146,7 +157,7 @@ export default function Filters({
 							(
 							<span>
 								{
-									productsData.filter(
+									dataProductsTempStored.current.filter(
 										(product) =>
 											product.sellerName.toString().toLowerCase() === "gyapu"
 									).length

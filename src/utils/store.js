@@ -16,6 +16,7 @@ let userStore = (set) => ({
 let productsStore = (set) => ({
 	products: [],
 	productsFiltered: [],
+	productsFilteredSorted: [],
 	setProducts: (products) =>
 		set((state) => ({ products: products }), false, "SetProducts"),
 	setProductsFiltered: (productsFiltered) =>
@@ -24,6 +25,18 @@ let productsStore = (set) => ({
 			false,
 			"SetProductsFiltered"
 		),
+	setProductsFilteredSorted: (productsFilteredSorted) =>
+		set(
+			(state) => ({ productsFilteredSorted: productsFilteredSorted }),
+			false,
+			"SetproductsFilteredSorted"
+		),
+});
+
+let sortStore = (set) => ({
+	sortOrder: 4,
+	setSortOrder: (order) =>
+		set((state) => ({ sortOrder: order }), false, "SetSortOrder"),
 });
 
 let searchStore = (set) => ({
@@ -38,7 +51,9 @@ let searchStore = (set) => ({
 userStore = devtools(userStore);
 productsStore = devtools(productsStore);
 searchStore = devtools(searchStore);
+sortStore = devtools(sortStore);
 
 export const useAuthStore = create(userStore);
 export const useProductsStore = create(productsStore);
 export const useSearchStore = create(searchStore);
+export const useSortStore = create(sortStore);

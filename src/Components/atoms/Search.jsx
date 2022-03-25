@@ -13,6 +13,7 @@ import { useProductsStore, useSearchStore } from "../../utils/store";
 
 export default function Search() {
 	const { register, handleSubmit } = useForm();
+
 	const setProducts = useProductsStore((state) => state.setProducts);
 	const setProductsFiltered = useProductsStore(
 		(state) => state.setProductsFiltered
@@ -34,10 +35,16 @@ export default function Search() {
 	// eslint-disable-next-line no-unused-vars
 	const getData = async (data, searchTime, userId) => {
 		try {
-			data = { ...data, searchTime, userId };
+			data = { ...data, searchTime, member: userId };
 			setLoading(true);
+			console.log(data);
 			await setSearch(data);
-			await axiosInstance.post(`search/`, data).then((res) => {
+			let postData = {
+				member: userId,
+				search_query: data.search_query,
+			};
+			console.log(postData);
+			await axiosInstance.post(`search/`, postData).then((res) => {
 				// console.log(res.data);
 				setProducts(res.data);
 				let filtered_daraz_data = daraz_filter(res.data.darazResponses);
@@ -64,7 +71,8 @@ export default function Search() {
 
 	const getDummyData = async (data, searchTime, userId) => {
 		try {
-			data = { ...data, searchTime, userId };
+			data = { ...data, searchTime, member: userId };
+			console.log(data);
 			setLoading(true);
 			await setSearch(data);
 
@@ -112,7 +120,13 @@ export default function Search() {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className={twClasses.mainDiv}>
 				<input
-					{...register("searchQuery")}
+					{...register("search_query", {
+						required: "Search Query is required",
+						minLength: {
+							value: 1,
+							message: "Minimum 1 character required.",
+						},
+					})}
 					className={twClasses.searchInputDiv}
 					placeholder="eg. Iphone 13 pro 🙂"
 				/>

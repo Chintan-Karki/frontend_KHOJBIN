@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
 import axiosInstance from "../../utils/axios";
 import { useAuthStore } from "../../utils/store";
+import Modal from "./Modal";
 
 export default function LogBtn() {
 	const navigate = useNavigate();
-
+	// For Modal
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let setUserName = useAuthStore((state) => state.setUserName);
 	let setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
+
+	// For Modal
+	let [isOpen, setIsOpen] = useState(false);
+	let [headerTextForModal, setHeaderTextForModal] = useState("");
+	let [bodyTextForModal, setBodyTextForModal] = useState("");
 
 	const handleClick = () => {
 		// getting from the store
@@ -26,38 +32,43 @@ export default function LogBtn() {
 				localStorage.removeItem("userId");
 				axiosInstance.defaults.headers["Authorization"] = null;
 				console.log("Logged Out", res);
+				setIsOpen(true);
 				setUserName("");
+				setHeaderTextForModal("Logged Out Successfully ✅");
+				setBodyTextForModal(
+					`You can log in to the system again using the login page🙂`
+				);
 				setIsLoggedIn(false);
-				toast("Logged Out Successfull", {
-					type: "dark",
-					progressClassName: "fancy-progress-bar",
-					position: "top-right",
-					autoClose: 2000,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-				});
-
-				navigate("/login");
+				navigate("/");
 			});
 	};
 
-	return isLoggedIn ? (
+	return (
 		<>
-			<button
-				className={tailwindCommonClasses.smallButtonFocus}
-				style={{ marginLeft: "10px" }}
-				onClick={() => {
-					handleClick();
-				}}
-			>
-				LOG OUT
-			</button>
+			<Modal
+				isOpen={isOpen}
+				setIsOpen={setIsOpen}
+				headerText={headerTextForModal}
+				bodyText={bodyTextForModal}
+			/>
+			{isLoggedIn ? (
+				<>
+					<button
+						className={tailwindCommonClasses.smallButtonFocus}
+						style={{ marginLeft: "10px" }}
+						onClick={() => {
+							setIsOpen(true);
+							handleClick();
+						}}
+					>
+						LOG OUT
+					</button>
+				</>
+			) : (
+				<Link to="/login" className={tailwindCommonClasses.smallButtonFocus}>
+					LOG IN
+				</Link>
+			)}
 		</>
-	) : (
-		<Link to="/login" className={tailwindCommonClasses.smallButtonFocus }>
-			LOG IN
-		</Link>
 	);
 }
