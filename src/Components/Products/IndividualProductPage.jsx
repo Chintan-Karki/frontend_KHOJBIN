@@ -86,13 +86,13 @@ export default function IndividualProductPage() {
 					</li>
 				</ol>
 			</div>
-			<div className="mx-auto flex container rounded-xl mt-8  mb-10 px-4">
+			<div className="mx-auto flex container rounded-xl mt-8  mb-10 px-4  ">
 				<div className="flex flex-col lg:flex-row w-full  mx-auto bg-white rounded-xl justify-center items-center shadow-xl ">
-					<div className="flex-shrink-0 flex items-center justify-center  lg:max-w-[430px] h-[330px] lg:h-full lg:max-h-full overflow-hidden bg-white rounded-none rounded-t-xl lg:rounded-none lg:rounded-l-xl">
+					<div className="flex-shrink-0 flex items-start pt-10  top-96 justify-center  lg:max-w-[430px] h-[330px] lg:h-full lg:max-h-full overflow-hidden bg-white rounded-none rounded-t-xl lg:rounded-none lg:rounded-l-xl">
 						<img
 							src={currentProduct.image_url}
 							alt={currentProduct.name}
-							className="object-scale-down lg:w-96 lg:max-h-[400px]"
+							className="object-scale-down lg:w-96 lg:max-h-[400px] "
 						/>
 					</div>
 					<div className="flex flex-col p-5 md:p-10 w-full bg-white rounded-none rounded-b-xl lg:rounded-none lg:rounded-r-xl">
