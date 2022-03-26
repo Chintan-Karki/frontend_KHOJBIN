@@ -3,16 +3,18 @@ import { motion } from "framer-motion";
 // import { createBrowserHistory } from "react-router-dom";
 import ImageNotFound from "../../assets/images/ImageNotFound.png";
 import Like from "../../assets/icons/like.png";
-import { useAuthStore } from "../../utils/store";
+import { useAuthStore, useProductsStore } from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios";
 import Modal from "../atoms/Modal";
+import { Link } from "react-router-dom";
 
 export default function Product({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let [isOpen, setIsOpen] = useState(false);
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
+	let setCurrentProduct = useProductsStore((state) => state.setCurrentProduct);
 
 	const handleAddToWishlist = async () => {
 		let userId = localStorage.getItem("userId");
@@ -64,11 +66,14 @@ export default function Product({ product, altText, seller, price }) {
 					bodyText={bodyTextForModal}
 				/>
 				<div className="relative">
-					<img
-						src={product.image_url ? product.image_url : ImageNotFound}
-						alt={product.name}
-						className=" object-scale-down bg-white w-full h-72 object-center rounded-3xl shadow-lg"
-					></img>
+					<Link to={`/searchresults/${product.itemId}`}>
+						<img
+							src={product.image_url ? product.image_url : ImageNotFound}
+							alt={product.name}
+							className=" object-scale-down hover:border-2 hover:border-indigo-200 bg-white w-full h-72 object-center rounded-3xl shadow-lg hover:shadow-sm"
+							onClick={() => setCurrentProduct(product)}
+						></img>
+					</Link>
 
 					<div className="relative ">
 						<div className=" pt-6 ">
@@ -96,11 +101,16 @@ export default function Product({ product, altText, seller, price }) {
 								</a>
 								<ShopButton url={product.productUrl} />
 							</div>
-
-							<h4 className="mt-2 text-md font-medium uppercase leading-tight truncate">
-								{product.name}
-							</h4>
-
+							<Link to={`/searchresults/${product.itemId}`}>
+								<h4
+									className="mt-2 text-md font-medium uppercase leading-tight truncate"
+									onClick={() => {
+										setCurrentProduct(product);
+									}}
+								>
+									{product.name}
+								</h4>
+							</Link>
 							<div className="mt-1 text-xl font-extrabold">
 								NRs. {price}
 								<span className="text-gray-600 text-sm"> </span>

@@ -15,17 +15,6 @@ export const dummy_data = {
 					"font-size": 0,
 					coins: false,
 				},
-				{
-					domClass: "freeShipping",
-					text: "FreeShipping",
-					alias: "FsAlias",
-					type: "img",
-					group: "2",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
 			],
 			utLogMap: {
 				x_object_type: "item",
@@ -33,7 +22,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "959.00",
 				x_sku_ids: "1021476509",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "100938189",
 			},
@@ -71,7 +60,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3439],
 			clickTrace:
-				"query:sapiens;nid:100938189;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:100938189_NP;price:959.00;client:desktop;supplier_id:1001266;asc_category_id:3439;item_id:100938189;sku_id:1021476509;shop_id:11209",
+				"query:sapiens;nid:100938189;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:100938189_NP;price:959.00;client:desktop;supplier_id:1001266;asc_category_id:3439;item_id:100938189;sku_id:1021476509;shop_id:11209",
 			addToCartSkus: [
 				{
 					sku: "100938189_NP-1021476509",
@@ -100,17 +89,6 @@ export const dummy_data = {
 					"font-size": 0,
 					coins: false,
 				},
-				{
-					domClass: "freeShipping",
-					text: "FreeShipping",
-					alias: "FsAlias",
-					type: "img",
-					group: "2",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
 			],
 			utLogMap: {
 				x_object_type: "item",
@@ -118,7 +96,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "1758.00",
 				x_sku_ids: "1026740409",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "105110040",
 			},
@@ -163,7 +141,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3439],
 			clickTrace:
-				"query:sapiens;nid:105110040;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:105110040_NP;price:1758.00;client:desktop;supplier_id:1001266;asc_category_id:3439;item_id:105110040;sku_id:1026740409;shop_id:11209",
+				"query:sapiens;nid:105110040;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:105110040_NP;price:1758.00;client:desktop;supplier_id:1001266;asc_category_id:3439;item_id:105110040;sku_id:1026740409;shop_id:11209",
 			addToCartSkus: [
 				{
 					sku: "105110040_NP-1026740409",
@@ -173,6 +151,71 @@ export const dummy_data = {
 			],
 			itemId: "105110040",
 			skuId: "1026740409",
+			inStock: true,
+			isAD: 0,
+			addToCart: false,
+		},
+		{
+			name: "Sapiens: A Brief History of Humankind by Yuval Noah Harari",
+			nid: "112784463",
+			icons: [],
+			utLogMap: {
+				x_object_type: "item",
+				x_item_ids: "112784463",
+				scene_pre: "search",
+				current_price: "649.00",
+				x_sku_ids: "1030565816",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
+				x_ad: "1",
+				x_object_id: "112784463",
+			},
+			productUrl:
+				"//www.daraz.com.np/products/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-i112784463-s1030565816.html?search=1",
+			image:
+				"https://static-01.daraz.com.np/p/1a71b9816cb45b5809745f6026ac1d91.jpg",
+			originalPrice: "960.00",
+			originalPriceShow: "Rs. 960",
+			price: "649.00",
+			promotionId: "null",
+			priceShow: "Rs. 649",
+			discount: "-32%",
+			ratingScore: "0",
+			review: "0",
+			installment: "",
+			tItemType: "nt_product",
+			location: "Nepal",
+			cheapest_sku: "112784463_NP-1030565816",
+			sku: "112784463_NP",
+			skus: [],
+			description: [],
+			brandId: "39704",
+			brandName: "No Brand",
+			sellerId: "900152841030",
+			mainSellerId: "",
+			sellerName: "Unicom Portal",
+			thumbs: [
+				{
+					image:
+						"https://static-01.daraz.com.np/p/1a71b9816cb45b5809745f6026ac1d91.jpg",
+					productUrl:
+						"/products/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-i112784463-s1030565816.html",
+					sku: "112784463_NP",
+					skuId: "1030565816",
+				},
+			],
+			restrictedAge: 0,
+			categories: [3374, 3375, 3411, 3439],
+			clickTrace:
+				"query:sapiens;nid:112784463;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:112784463_NP;price:649.00;client:desktop;supplier_id:900152841030;asc_category_id:3439;item_id:112784463;sku_id:1030565816;shop_id:54861",
+			addToCartSkus: [
+				{
+					sku: "112784463_NP-1030565816",
+					skuId: "1030565816",
+					count: 0,
+				},
+			],
+			itemId: "112784463",
+			skuId: "1030565816",
 			inStock: true,
 			isAD: 0,
 			addToCart: false,
@@ -199,7 +242,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "690.00",
 				x_sku_ids: "1029744733",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "109838504",
 			},
@@ -249,7 +292,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3439],
 			clickTrace:
-				"query:sapiens;nid:109838504;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:109838504_NP;price:690.00;client:desktop;supplier_id:900152097004;asc_category_id:3439;item_id:109838504;sku_id:1029744733;shop_id:38221",
+				"query:sapiens;nid:109838504;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:109838504_NP;price:690.00;client:desktop;supplier_id:900152097004;asc_category_id:3439;item_id:109838504;sku_id:1029744733;shop_id:38221",
 			addToCartSkus: [
 				{
 					sku: "109838504_NP-1029744733",
@@ -285,7 +328,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "1760.00",
 				x_sku_ids: "1029625596",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "109552603",
 			},
@@ -323,7 +366,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3439],
 			clickTrace:
-				"query:sapiens;nid:109552603;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:109552603_NP;price:1760.00;client:desktop;supplier_id:900152880042;asc_category_id:3439;item_id:109552603;sku_id:1029625596;shop_id:55214",
+				"query:sapiens;nid:109552603;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:109552603_NP;price:1760.00;client:desktop;supplier_id:900152880042;asc_category_id:3439;item_id:109552603;sku_id:1029625596;shop_id:55214",
 			addToCartSkus: [
 				{
 					sku: "109552603_NP-1029625596",
@@ -338,6 +381,80 @@ export const dummy_data = {
 			addToCart: false,
 		},
 		{
+			name: "Sapiens: A Brief History of Humankind",
+			nid: "109883643",
+			icons: [
+				{
+					domClass: "freeShipping",
+					text: "FreeShipping",
+					alias: "FsAlias",
+					type: "img",
+					group: "2",
+					showType: "0",
+					order: 0,
+					"font-size": 0,
+					coins: false,
+				},
+			],
+			utLogMap: {
+				x_object_type: "item",
+				x_item_ids: "109883643",
+				scene_pre: "search",
+				current_price: "958.00",
+				x_sku_ids: "1029756666",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
+				x_ad: "1",
+				x_object_id: "109883643",
+			},
+			productUrl:
+				"//www.daraz.com.np/products/sapiens-a-brief-history-of-humankind-i109883643-s1029756666.html?search=1",
+			image:
+				"https://static-01.daraz.com.np/p/755206c02f0c7554631318601fa63fa1.jpg",
+			price: "958.00",
+			promotionId: "null",
+			priceShow: "Rs. 958",
+			ratingScore: "0",
+			review: "0",
+			installment: "",
+			tItemType: "nt_product",
+			location: "Nepal",
+			cheapest_sku: "109883643_NP-1029756666",
+			sku: "109883643_NP",
+			skus: [],
+			description: [],
+			brandId: "39704",
+			brandName: "No Brand",
+			sellerId: "900153108122",
+			mainSellerId: "",
+			sellerName: "Books Mandala",
+			thumbs: [
+				{
+					image:
+						"https://static-01.daraz.com.np/p/755206c02f0c7554631318601fa63fa1.jpg",
+					productUrl:
+						"/products/sapiens-a-brief-history-of-humankind-i109883643-s1029756666.html",
+					sku: "109883643_NP",
+					skuId: "1029756666",
+				},
+			],
+			restrictedAge: 0,
+			categories: [3374, 3375, 3411, 3439],
+			clickTrace:
+				"query:sapiens;nid:109883643;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:109883643_NP;price:958.00;client:desktop;supplier_id:900153108122;asc_category_id:3439;item_id:109883643;sku_id:1029756666;shop_id:57977",
+			addToCartSkus: [
+				{
+					sku: "109883643_NP-1029756666",
+					skuId: "1029756666",
+					count: 0,
+				},
+			],
+			itemId: "109883643",
+			skuId: "1029756666",
+			inStock: true,
+			isAD: 0,
+			addToCart: false,
+		},
+		{
 			name: "Sapiens: A Brief History of Humankind by Yuval Noah Harari",
 			nid: "111654267",
 			icons: [],
@@ -347,7 +464,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "850.00",
 				x_sku_ids: "1030226772",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "111654267",
 			},
@@ -385,7 +502,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3439],
 			clickTrace:
-				"query:sapiens;nid:111654267;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:111654267_NP;price:850.00;client:desktop;supplier_id:900153423083;asc_category_id:3439;item_id:111654267;sku_id:1030226772;shop_id:62384",
+				"query:sapiens;nid:111654267;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:111654267_NP;price:850.00;client:desktop;supplier_id:900153423083;asc_category_id:3439;item_id:111654267;sku_id:1030226772;shop_id:62384",
 			addToCartSkus: [
 				{
 					sku: "111654267_NP-1030226772",
@@ -421,7 +538,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "408.00",
 				x_sku_ids: "1027985383",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "106181209",
 			},
@@ -436,7 +553,7 @@ export const dummy_data = {
 			priceShow: "Rs. 408",
 			discount: "-15%",
 			ratingScore: "5",
-			review: "11",
+			review: "12",
 			installment: "",
 			tItemType: "nt_product",
 			location: "Nepal",
@@ -469,7 +586,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3441],
 			clickTrace:
-				"query:sapiens;nid:106181209;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:106181209_NP;price:408.00;client:desktop;supplier_id:900152373251;asc_category_id:3441;item_id:106181209;sku_id:1027985383;shop_id:45733",
+				"query:sapiens;nid:106181209;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:106181209_NP;price:408.00;client:desktop;supplier_id:900152373251;asc_category_id:3441;item_id:106181209;sku_id:1027985383;shop_id:45733",
 			addToCartSkus: [
 				{
 					sku: "106181209_NP-1027985383",
@@ -479,335 +596,6 @@ export const dummy_data = {
 			],
 			itemId: "106181209",
 			skuId: "1027985383",
-			inStock: true,
-			isAD: 0,
-			addToCart: false,
-		},
-		{
-			name: "Emotion & Relationships By Sadhgru",
-			nid: "100106407",
-			icons: [
-				{
-					domClass: "lazMall",
-					text: "LazMall",
-					alias: "LazMallAlias",
-					type: "img",
-					group: "1",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
-				{
-					domClass: "freeShipping",
-					text: "FreeShipping",
-					alias: "FsAlias",
-					type: "img",
-					group: "2",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
-			],
-			utLogMap: {
-				x_object_type: "item",
-				x_item_ids: "100106407",
-				scene_pre: "search",
-				current_price: "400.00",
-				x_sku_ids: "1020360627",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
-				x_ad: "1",
-				x_object_id: "100106407",
-			},
-			productUrl:
-				"//www.daraz.com.np/products/emotion-relationships-by-sadhguru-i100106407-s1020360627.html?search=1",
-			image:
-				"https://static-01.daraz.com.np/p/b095c3a06b87cf8843433f8d4b2da63c.jpg",
-			price: "400.00",
-			promotionId: "null",
-			priceShow: "Rs. 400",
-			ratingScore: "0",
-			review: "0",
-			installment: "",
-			tItemType: "nt_product",
-			location: "Nepal",
-			cheapest_sku: "100106407_NP-1020360627",
-			sku: "100106407_NP",
-			skus: [],
-			description: [],
-			brandId: "39704",
-			brandName: "No Brand",
-			sellerId: "1000412",
-			mainSellerId: "",
-			sellerName: "Phulchowki Books",
-			thumbs: [
-				{
-					image:
-						"https://static-01.daraz.com.np/p/b095c3a06b87cf8843433f8d4b2da63c.jpg",
-					productUrl:
-						"/products/emotion-relationships-by-sadhguru-i100106407-s1020360627.html",
-					sku: "100106407_NP",
-					skuId: "1020360627",
-				},
-			],
-			restrictedAge: 0,
-			categories: [3374, 3375, 3411, 3435],
-			clickTrace:
-				"query:sapiens;nid:100106407;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:100106407_NP;price:400.00;client:desktop;supplier_id:1000412;asc_category_id:3435;item_id:100106407;sku_id:1020360627;shop_id:10367",
-			addToCartSkus: [
-				{
-					sku: "100106407_NP-1020360627",
-					skuId: "1020360627",
-					count: 0,
-				},
-			],
-			itemId: "100106407",
-			skuId: "1020360627",
-			inStock: true,
-			isAD: 0,
-			addToCart: false,
-		},
-		{
-			name: "Karma + Death + Inner Enginnering (Set of 3 Books) By Sadhguru",
-			nid: "112880750",
-			icons: [
-				{
-					domClass: "freeShipping",
-					text: "FreeShipping",
-					alias: "FsAlias",
-					type: "img",
-					group: "2",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
-			],
-			utLogMap: {
-				x_object_type: "item",
-				x_item_ids: "112880750",
-				scene_pre: "search",
-				current_price: "1180.00",
-				x_sku_ids: "1030650864",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
-				x_ad: "1",
-				x_object_id: "112880750",
-			},
-			productUrl:
-				"//www.daraz.com.np/products/karma-death-inner-enginnering-set-of-3-books-by-sadhguru-i112880750-s1030650864.html?search=1",
-			image:
-				"https://static-01.daraz.com.np/p/d2a09dc76dc6ec93006a24d8aafee593.jpg",
-			originalPrice: "1430.00",
-			originalPriceShow: "Rs. 1,430",
-			price: "1180.00",
-			promotionId: "null",
-			priceShow: "Rs. 1,180",
-			discount: "-17%",
-			ratingScore: "0",
-			review: "0",
-			installment: "",
-			tItemType: "nt_product",
-			location: "Nepal",
-			cheapest_sku: "112880750_NP-1030650864",
-			sku: "112880750_NP",
-			skus: [],
-			description: [],
-			brandId: "39704",
-			brandName: "No Brand",
-			sellerId: "900152199043",
-			mainSellerId: "",
-			sellerName: "Sandesh Enterprises Pvt Ltd",
-			thumbs: [
-				{
-					image:
-						"https://static-01.daraz.com.np/p/d2a09dc76dc6ec93006a24d8aafee593.jpg",
-					productUrl:
-						"/products/karma-death-inner-enginnering-set-of-3-books-by-sadhguru-i112880750-s1030650864.html",
-					sku: "112880750_NP",
-					skuId: "1030650864",
-				},
-			],
-			restrictedAge: 0,
-			categories: [3374, 3375, 3411, 3441],
-			clickTrace:
-				"query:sapiens;nid:112880750;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:112880750_NP;price:1180.00;client:desktop;supplier_id:900152199043;asc_category_id:3441;item_id:112880750;sku_id:1030650864;shop_id:40311",
-			addToCartSkus: [
-				{
-					sku: "112880750_NP-1030650864",
-					skuId: "1030650864",
-					count: 0,
-				},
-			],
-			itemId: "112880750",
-			skuId: "1030650864",
-			inStock: true,
-			isAD: 0,
-			addToCart: false,
-		},
-		{
-			name: "Karma - Sadhguru (MKEP)",
-			nid: "105873609",
-			icons: [
-				{
-					domClass: "freeShipping",
-					text: "FreeShipping",
-					alias: "FsAlias",
-					type: "img",
-					group: "2",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
-			],
-			utLogMap: {
-				x_object_type: "item",
-				x_item_ids: "105873609",
-				scene_pre: "search",
-				current_price: "408.00",
-				x_sku_ids: "1027780840",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
-				x_ad: "1",
-				x_object_id: "105873609",
-			},
-			productUrl:
-				"//www.daraz.com.np/products/karma-sadhguru-mkep-i105873609-s1027780840.html?search=1",
-			image:
-				"https://static-01.daraz.com.np/p/2a0cd002f70b6871f6e674986a041bc9.png",
-			originalPrice: "480.00",
-			originalPriceShow: "Rs. 480",
-			price: "408.00",
-			promotionId: "null",
-			priceShow: "Rs. 408",
-			discount: "-15%",
-			ratingScore: "5",
-			review: "3",
-			installment: "",
-			tItemType: "nt_product",
-			location: "Nepal",
-			cheapest_sku: "105873609_NP-1027780840",
-			sku: "105873609_NP",
-			skus: [],
-			description: [
-				"Paperback",
-				"Langauge: English",
-				"Genre: Self-help",
-				"Publisher: Penguin",
-				"Pages: 253",
-			],
-			brandId: "39704",
-			brandName: "No Brand",
-			sellerId: "900152373251",
-			mainSellerId: "",
-			sellerName: "MK Educational Products Pvt. Ltd.",
-			thumbs: [
-				{
-					image:
-						"https://static-01.daraz.com.np/p/2a0cd002f70b6871f6e674986a041bc9.png",
-					productUrl:
-						"/products/karma-sadhguru-mkep-i105873609-s1027780840.html",
-					sku: "105873609_NP",
-					skuId: "1027780840",
-				},
-			],
-			restrictedAge: 0,
-			categories: [3374, 3375, 3411, 3441],
-			clickTrace:
-				"query:sapiens;nid:105873609;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:105873609_NP;price:408.00;client:desktop;supplier_id:900152373251;asc_category_id:3441;item_id:105873609;sku_id:1027780840;shop_id:45733",
-			addToCartSkus: [
-				{
-					sku: "105873609_NP-1027780840",
-					skuId: "1027780840",
-					count: 0,
-				},
-			],
-			itemId: "105873609",
-			skuId: "1027780840",
-			inStock: true,
-			isAD: 0,
-			addToCart: false,
-		},
-		{
-			name: "Death By Sadhguru",
-			nid: "104356250",
-			icons: [
-				{
-					domClass: "lazMall",
-					text: "LazMall",
-					alias: "LazMallAlias",
-					type: "img",
-					group: "1",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
-				{
-					domClass: "freeShipping",
-					text: "FreeShipping",
-					alias: "FsAlias",
-					type: "img",
-					group: "2",
-					showType: "0",
-					order: 0,
-					"font-size": 0,
-					coins: false,
-				},
-			],
-			utLogMap: {
-				x_object_type: "item",
-				x_item_ids: "104356250",
-				scene_pre: "search",
-				current_price: "480.00",
-				x_sku_ids: "1025326377",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
-				x_ad: "1",
-				x_object_id: "104356250",
-			},
-			productUrl:
-				"//www.daraz.com.np/products/death-by-sadhguru-i104356250-s1025326377.html?search=1",
-			image:
-				"https://static-01.daraz.com.np/p/cc933c7b26d18d7d08276de375f02157.jpg",
-			price: "480.00",
-			promotionId: "null",
-			priceShow: "Rs. 480",
-			ratingScore: "4.88462",
-			review: "26",
-			installment: "",
-			tItemType: "nt_product",
-			location: "Nepal",
-			cheapest_sku: "104356250_NP-1025326377",
-			sku: "104356250_NP",
-			skus: [],
-			description: [],
-			brandId: "39704",
-			brandName: "No Brand",
-			sellerId: "1000412",
-			mainSellerId: "",
-			sellerName: "Phulchowki Books",
-			thumbs: [
-				{
-					image:
-						"https://static-01.daraz.com.np/p/cc933c7b26d18d7d08276de375f02157.jpg",
-					productUrl: "/products/death-by-sadhguru-i104356250-s1025326377.html",
-					sku: "104356250_NP",
-					skuId: "1025326377",
-				},
-			],
-			restrictedAge: 0,
-			categories: [3374, 3375, 3411, 3441],
-			clickTrace:
-				"query:sapiens;nid:104356250;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:104356250_NP;price:480.00;client:desktop;supplier_id:1000412;asc_category_id:3441;item_id:104356250;sku_id:1025326377;shop_id:10367",
-			addToCartSkus: [
-				{
-					sku: "104356250_NP-1025326377",
-					skuId: "1025326377",
-					count: 0,
-				},
-			],
-			itemId: "104356250",
-			skuId: "1025326377",
 			inStock: true,
 			isAD: 0,
 			addToCart: false,
@@ -834,7 +622,7 @@ export const dummy_data = {
 				scene_pre: "search",
 				current_price: "408.00",
 				x_sku_ids: "1027781600",
-				SN: "5098aa438827aefa6c3ef6bacf5d1eed",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
 				x_ad: "1",
 				x_object_id: "105889040",
 			},
@@ -881,7 +669,7 @@ export const dummy_data = {
 			restrictedAge: 0,
 			categories: [3374, 3375, 3411, 3441],
 			clickTrace:
-				"query:sapiens;nid:105889040;src:LazadaMainSrp;rn:5098aa438827aefa6c3ef6bacf5d1eed;region:np;sku:105889040_NP;price:408.00;client:desktop;supplier_id:900152373251;asc_category_id:3441;item_id:105889040;sku_id:1027781600;shop_id:45733",
+				"query:sapiens;nid:105889040;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:105889040_NP;price:408.00;client:desktop;supplier_id:900152373251;asc_category_id:3441;item_id:105889040;sku_id:1027781600;shop_id:45733",
 			addToCartSkus: [
 				{
 					sku: "105889040_NP-1027781600",
@@ -895,8 +683,211 @@ export const dummy_data = {
 			isAD: 0,
 			addToCart: false,
 		},
+		{
+			name: "Inner Engineering (Hindi) Bysadhguru",
+			nid: "100708057",
+			icons: [
+				{
+					domClass: "lazMall",
+					text: "LazMall",
+					alias: "LazMallAlias",
+					type: "img",
+					group: "1",
+					showType: "0",
+					order: 0,
+					"font-size": 0,
+					coins: false,
+				},
+				{
+					domClass: "freeShipping",
+					text: "FreeShipping",
+					alias: "FsAlias",
+					type: "img",
+					group: "2",
+					showType: "0",
+					order: 0,
+					"font-size": 0,
+					coins: false,
+				},
+			],
+			utLogMap: {
+				x_object_type: "item",
+				x_item_ids: "100708057",
+				scene_pre: "search",
+				current_price: "400.00",
+				x_sku_ids: "1021150067",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
+				x_ad: "1",
+				x_object_id: "100708057",
+			},
+			productUrl:
+				"//www.daraz.com.np/products/inner-engineering-hindi-by-sadhguru-i100708057-s1021150067.html?search=1",
+			image:
+				"https://static-01.daraz.com.np/p/d3387ed74162b53c0b01b1637e32f21e.jpg",
+			price: "400.00",
+			promotionId: "null",
+			priceShow: "Rs. 400",
+			ratingScore: "5",
+			review: "2",
+			installment: "",
+			tItemType: "nt_product",
+			location: "Nepal",
+			cheapest_sku: "100708057_NP-1021150067",
+			sku: "100708057_NP",
+			skus: [],
+			description: [],
+			brandId: "202360",
+			brandName: "Phulchowki Books",
+			sellerId: "1000412",
+			mainSellerId: "",
+			sellerName: "Phulchowki Books",
+			thumbs: [
+				{
+					image:
+						"https://static-01.daraz.com.np/p/d3387ed74162b53c0b01b1637e32f21e.jpg",
+					productUrl:
+						"/products/inner-engineering-hindi-by-sadhguru-i100708057-s1021150067.html",
+					sku: "100708057_NP",
+					skuId: "1021150067",
+				},
+			],
+			restrictedAge: 0,
+			categories: [3374, 3375, 3376, 3407],
+			clickTrace:
+				"query:sapiens;nid:100708057;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:100708057_NP;price:400.00;client:desktop;supplier_id:1000412;asc_category_id:3407;item_id:100708057;sku_id:1021150067;shop_id:10367",
+			addToCartSkus: [
+				{
+					sku: "100708057_NP-1021150067",
+					skuId: "1021150067",
+					count: 0,
+				},
+			],
+			itemId: "100708057",
+			skuId: "1021150067",
+			inStock: true,
+			isAD: 0,
+			addToCart: false,
+		},
+		{
+			name: "Karma + Death + Inner Enginnering (Set of 3 Books) By Sadhguru",
+			nid: "112880750",
+			icons: [
+				{
+					domClass: "freeShipping",
+					text: "FreeShipping",
+					alias: "FsAlias",
+					type: "img",
+					group: "2",
+					showType: "0",
+					order: 0,
+					"font-size": 0,
+					coins: false,
+				},
+			],
+			utLogMap: {
+				x_object_type: "item",
+				x_item_ids: "112880750",
+				scene_pre: "search",
+				current_price: "1180.00",
+				x_sku_ids: "1030650864",
+				SN: "9c7b218cdbe3fdb899e5b6a5532df07a",
+				x_ad: "1",
+				x_object_id: "112880750",
+			},
+			productUrl:
+				"//www.daraz.com.np/products/karma-death-inner-enginnering-set-of-3-books-by-sadhguru-i112880750-s1030650864.html?search=1",
+			image:
+				"https://static-01.daraz.com.np/p/d2a09dc76dc6ec93006a24d8aafee593.jpg",
+			originalPrice: "1430.00",
+			originalPriceShow: "Rs. 1,430",
+			price: "1180.00",
+			promotionId: "null",
+			priceShow: "Rs. 1,180",
+			discount: "-17%",
+			ratingScore: "5",
+			review: "1",
+			installment: "",
+			tItemType: "nt_product",
+			location: "Nepal",
+			cheapest_sku: "112880750_NP-1030650864",
+			sku: "112880750_NP",
+			skus: [],
+			description: [],
+			brandId: "39704",
+			brandName: "No Brand",
+			sellerId: "900152199043",
+			mainSellerId: "",
+			sellerName: "Sandesh Enterprises Pvt Ltd",
+			thumbs: [
+				{
+					image:
+						"https://static-01.daraz.com.np/p/d2a09dc76dc6ec93006a24d8aafee593.jpg",
+					productUrl:
+						"/products/karma-death-inner-enginnering-set-of-3-books-by-sadhguru-i112880750-s1030650864.html",
+					sku: "112880750_NP",
+					skuId: "1030650864",
+				},
+			],
+			restrictedAge: 0,
+			categories: [3374, 3375, 3411, 3441],
+			clickTrace:
+				"query:sapiens;nid:112880750;src:LazadaMainSrp;rn:9c7b218cdbe3fdb899e5b6a5532df07a;region:np;sku:112880750_NP;price:1180.00;client:desktop;supplier_id:900152199043;asc_category_id:3441;item_id:112880750;sku_id:1030650864;shop_id:40311",
+			addToCartSkus: [
+				{
+					sku: "112880750_NP-1030650864",
+					skuId: "1030650864",
+					count: 0,
+				},
+			],
+			itemId: "112880750",
+			skuId: "1030650864",
+			inStock: true,
+			isAD: 0,
+			addToCart: false,
+		},
 	],
 	gyapuResponses: [
+		{
+			_id: "623050c018128207ed0c245d",
+			min_sales_price: 792,
+			max_sales_price: 792,
+			redeem_amount: 0,
+			image: [
+				{
+					document: {
+						_id: "6230509518128207ed0c245c",
+						destination: "public/files/",
+						filename: "FE2658658AB1647-d9f02aaab88bdb2fdced534b9f7028f7.jpg",
+						path: "public/files/FE2658658AB1647-d9f02aaab88bdb2fdced534b9f7028f7.jpg",
+					},
+				},
+			],
+			variant: [
+				{
+					is_available: true,
+					inventory: null,
+					max_order: 5,
+					min_order: 1,
+					min_stock_warning: null,
+					price: 792,
+					sales_price: 792,
+					actual_price: 792,
+					actual_sales_price: 792,
+					is_active: false,
+					_id: "623050c018128207ed0c2460",
+					stock_status: "5e1c089a9762c8616d27c07a",
+					variant_type: [],
+					sku_of_seller: "105645084_NP-1027463088",
+				},
+			],
+			category: {
+				_id: "5e61f2598cb5a66909487339",
+				title: "Books",
+			},
+			name: "<b>Sapiens</b> Manav Jati ka Sankshipt Itihas In Hindi Language",
+			url_key: "sapiens-manav-jati-ka-sankshipt-itihas-in-hindi-language",
+			confidenceScore: 2.94375,
+		},
 		{
 			_id: "5eac065e29838d56541e0bf9",
 			min_sales_price: 960,
@@ -1005,7 +996,7 @@ export const dummy_data = {
 			createdById: "96872fb9-3250-46e7-9dfd-e31d923aa508",
 			expiryDate: "2022-04-24T00:00:00",
 			createdOn: "2021-12-25T00:00:00",
-			createdTime: "2 months ago",
+			createdTime: "3 months ago",
 			modifiedOn: "0001-01-01T00:00:00",
 			displayOrder: 0,
 			isSaved: false,
@@ -1069,7 +1060,7 @@ export const dummy_data = {
 			createdById: "96872fb9-3250-46e7-9dfd-e31d923aa508",
 			expiryDate: "2022-04-24T00:00:00",
 			createdOn: "2021-12-25T00:00:00",
-			createdTime: "2 months ago",
+			createdTime: "3 months ago",
 			modifiedOn: "0001-01-01T00:00:00",
 			displayOrder: 0,
 			isSaved: false,
@@ -1132,7 +1123,7 @@ export const dummy_data = {
 			createdById: "96872fb9-3250-46e7-9dfd-e31d923aa508",
 			expiryDate: "2022-04-24T00:00:00",
 			createdOn: "2021-12-25T00:00:00",
-			createdTime: "2 months ago",
+			createdTime: "3 months ago",
 			modifiedOn: "0001-01-01T00:00:00",
 			displayOrder: 0,
 			isSaved: false,
@@ -1239,1362 +1230,6 @@ export const dummy_data = {
 		},
 	],
 	sastodealResponses: [
-		{
-			id: 33839,
-			sku: "MARCH25-79",
-			name: "Sapiens A Brief History of Humankind by Yuval Noah Harari -",
-			attribute_set_id: 67,
-			price: 960,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:29:58",
-			updated_at: "2022-02-09 06:06:51",
-			weight: 0.5,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 0,
-						category_id: "295",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/2687/MARCH25-79/78.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 64865,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/2687/MARCH25-79/78.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "authors",
-					value: "27766",
-				},
-				{
-					attribute_code: "description",
-					value:
-						"<p>From a renowned historian comes a groundbreaking narrative of humanity\u0092s creation and evolution\u0097a #1 international bestseller\u0097that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be \u0093human.\u0094 One hundred thousand years ago, at least six different species of humans inhabited Earth. Yet today there is only one\u0097homo sapiens. What happened to the others? And what may happen to us? Most books about the history of humanity pursue either a historical or a biological approach, but Dr. Yuval Noah Harari breaks the mold with this highly original book that begins about 70,000 years ago with the appearance of modern cognition. From examining the role evolving humans have played in the global ecosystem to charting the rise of empires, Sapiens integrates history and science to reconsider accepted narratives, connect past developments with contemporary concerns, and examine specific events within the context of larger ideas. Dr. Harari also compels us to look ahead, because over the last few decades humans have begun to bend laws of natural selection that have governed life for the past four billion years. We are acquiring the ability to design not only the world around us, but also ourselves. Where is this leading us, and what do we want to become? Featuring 27 photographs, 6 maps, and 25 illustrations/diagrams, this provocative and insightful work is sure to spark debate and is essential reading for aficionados of Jared Diamond, James Gleick, Matt Ridley, Robert Wright, and Sharon Moalem.</p>",
-				},
-				{
-					attribute_code: "image",
-					value: "/2687/MARCH25-79/78.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-march25-79",
-				},
-				{
-					attribute_code: "special_price",
-					value: "864.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "publisher",
-					value: "Harper",
-				},
-				{
-					attribute_code: "small_image",
-					value: "/2687/MARCH25-79/78.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Sapiens A Brief History of Humankind by Yuval Noah Harari - | History | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/2687/MARCH25-79/78.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Sapiens A Brief History of Humankind by Yuval Noah Harari - | History | Sastodeal | Online Shopping in Nepal | Buy Products in Nepal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Looking for Sapiens A Brief History of Humankind by Yuval Noah Harari -? Sastodeal, a local online store has come up with a wide range of History products with best price in the market with extra deals. Buy now.",
-				},
-				{
-					attribute_code: "cost",
-					value: "0.000000",
-				},
-				{
-					attribute_code: "isbn",
-					value: "978-0062316097",
-				},
-				{
-					attribute_code: "genre",
-					value: "25687",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25701",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["295"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 61061,
-			sku: "BR-0522-NB3",
-			name: "Buy 3 Get 1 FREE Sapiens, The 7 Habits of Highly Effective People, The Subtle Art of Not Giving a Fuck, The Monk Who Sold His Ferrari",
-			attribute_set_id: 67,
-			price: 3080,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:39:51",
-			updated_at: "2022-02-09 06:13:28",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1067,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/4475/BR-0522-NB3/pack 3.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 131750,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/4475/BR-0522-NB3/pack 3.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value: "Buy 3 bestseller book and get 1 free",
-				},
-				{
-					attribute_code: "image",
-					value: "/4475/BR-0522-NB3/pack 3.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-sapiens-the-7-habits-of-highly-effective-people-the-subtle-br-0522-nb3",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2772.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'<p><strong>Book Includes:</strong></p>\r\n<ul>\r\n<li>Sapiens</li>\r\n<li>The 7 Habits Of Highly Effective People</li>\r\n<li>The Subtle Art of Not Giving a Fuck</li>\r\n<li>The Monk Who Sold His Ferrari</li>\r\n</ul> <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/4475/BR-0522-NB3/pack 3.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 FREE Sapiens, The 7 Habits of Highly Effective People, The Subtle Art of Not Giving a Fuck, The Monk Who Sold His Ferrari | Sastodeal ",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/4475/BR-0522-NB3/pack 3.jpg",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "cost",
-					value: "0.000000",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 67252,
-			sku: "BR-06-01-NB8",
-			name: "Buy 3 Get 1 Free (Sapiens, Everything Is Fucked, The Subtle Art Of Not Giving A Fuck, How To Win Friends And Influence People)",
-			attribute_set_id: 67,
-			price: 2910,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:40:40",
-			updated_at: "2022-02-09 06:15:03",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1062,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/4939/BR-06-01-NB8/4.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 143785,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/4939/BR-06-01-NB8/4.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value:
-						'<p><a href="https://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari.html">https://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari.html</a></p>\r\n<p><a href="https://www.sastodeal.com/everything-is-fucked-a-book-about-hope-by-mark-manson.html">https://www.sastodeal.com/everything-is-fucked-a-book-about-hope-by-mark-manson.html</a></p>\r\n<p><a href="https://www.sastodeal.com/the-subtle-art-of-not-giving-a-f-ck-paperback-by-mark-manson.html">https://www.sastodeal.com/the-subtle-art-of-not-giving-a-f-ck-paperback-by-mark-manson.html</a></p>\r\n<p><a href="https://www.sastodeal.com/how-to-win-friends-and-influence-people-by-dale-carnegie.html">https://www.sastodeal.com/how-to-win-friends-and-influence-people-by-dale-carnegie.html</a></p>',
-				},
-				{
-					attribute_code: "image",
-					value: "/4939/BR-06-01-NB8/4.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-sapiens-everything-is-fucked-the-subtle-art-of-not-giving-br-06-01-nb8",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2619.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'<p>Book Includes:</p>\r\n<ul>\r\n<li>Sapiens</li>\r\n<li>Everything is Fucked</li>\r\n<li>The Subtle Art of Not Giving a Fuck</li>\r\n<li>How to Win Friends and Influence People(Free)</li>\r\n</ul> <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/4939/BR-06-01-NB8/4.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 Free (Sapiens, Everything Is Fucked, The Subtle Art Of Not Giving A Fuck, How To Win Friends And Influence People) | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/4939/BR-06-01-NB8/4.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Buy 3 Get 1 Free (Sapiens, Everything Is Fucked, The Subtle Art Of Not Giving A Fuck, How To Win Friends And Influence People), Sastodeal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Buy 3 Get 1 Free (Sapiens, Everything Is Fucked, The Subtle Art Of Not Giving A Fuck, How To Win Friends And Influence People), Sastodeal",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 70987,
-			sku: "BR-06-01-NB22",
-			name: "Buy 3 Get 1 FREE, Rich Dad Poor Dad, Sapiens, You Can Win, How To Develop Self Confidence & Influence People by Public Speaking",
-			attribute_set_id: 67,
-			price: 2590,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:41:56",
-			updated_at: "2022-02-09 06:16:08",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1035,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/5470/BR-06-01-NB22/p2.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 148549,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/5470/BR-06-01-NB22/p2.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value:
-						"https://www.sastodeal.com/rich-dad-poor-dad-march25-76.html\r\nhttps://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-march25-79.html\r\nhttps://www.sastodeal.com/you-can-win-lotthree-96.html\r\nhttps://www.sastodeal.com/how-to-develop-self-confidence-and-influence-people-by-public-speaking-nibc-isbn-9936.html\r\n\r\n",
-				},
-				{
-					attribute_code: "image",
-					value: "/5470/BR-06-01-NB22/p2.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-rich-dad-poor-dad-sapiens-you-can-win-how-to-develop-self-br-06-01-nb22",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2331.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'Books includes: \r\nRich Dad Poor Dad\r\nSapiens\r\nYou Can Win\r\nHow To Develop Self Confidence & Influence People by Public Speaking (FREE) <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/5470/BR-06-01-NB22/p2.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 FREE, Rich Dad Poor Dad, Sapiens, You Can Win, How To Develop Self Confidence & Influence People by Public Speaking | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/5470/BR-06-01-NB22/p2.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Buy 3 Get 1 FREE, Rich Dad Poor Dad, Sapiens, You Can Win, How To Develop Self Confidence & Influence People by Public Speaking, Sastodeal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Buy 3 Get 1 FREE, Rich Dad Poor Dad, Sapiens, You Can Win, How To Develop Self Confidence & Influence People by Public Speaking | Sastodeal",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 70990,
-			sku: "BR-06-01-NB23",
-			name: "Buy 3 Get 1 FREE, To Kill A Mocking Bird, Sapiens, A Thousand Splendid Suns, The Autobiography of Benjamin Franklin",
-			attribute_set_id: 67,
-			price: 2750,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:41:56",
-			updated_at: "2022-02-09 06:16:10",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1034,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/5470/BR-06-01-NB23/p3.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 148552,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/5470/BR-06-01-NB23/p3.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value:
-						"https://www.sastodeal.com/to-kill-a-mocking-bird-lotthree-76.html\r\nhttps://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-march25-79.html\r\nhttps://www.sastodeal.com/a-thousand-splendid-suns-by-rhonda-byrne.html\r\nhttps://www.sastodeal.com/autobiography-of-benjamin-franklin-new-int-29.html",
-				},
-				{
-					attribute_code: "image",
-					value: "/5470/BR-06-01-NB23/p3.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-to-kill-a-mocking-bird-sapiens-a-thousand-splendid-suns-th-br-06-01-nb23",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2475.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'Books includes: \r\nTo Kill A Mocking Bird\r\nSapiens\r\nA Thousand Splendid Suns\r\nThe Autobiography of Benjamin Franklin (FREE) <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/5470/BR-06-01-NB23/p3.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 FREE, To Kill A Mocking Bird, Sapiens, A Thousand Splendid Suns, The Autobiography of Benjamin Franklin | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/5470/BR-06-01-NB23/p3.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Buy 3 Get 1 FREE, To Kill A Mocking Bird, Sapiens, A Thousand Splendid Suns, The Autobiography of Benjamin Franklin, Sastodeal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Buy 3 Get 1 FREE, To Kill A Mocking Bird, Sapiens, A Thousand Splendid Suns, The Autobiography of Benjamin Franklin | Sastodeal",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 70993,
-			sku: "BR-06-01-NB24",
-			name: "Buy 3 Get 1 FREE, The Alchemist, Sapiens, You Can Win, Think and Grow Rich",
-			attribute_set_id: 67,
-			price: 2600,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:41:56",
-			updated_at: "2022-02-09 06:19:56",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1033,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/5470/BR-06-01-NB24/p4.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 148555,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/5470/BR-06-01-NB24/p4.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value:
-						"https://www.sastodeal.com/alchemist-new-int-14.html\r\nhttps://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-march25-79.html\r\nhttps://www.sastodeal.com/you-can-win-lotthree-96.html\r\nhttps://www.sastodeal.com/think-and-grow-rich-by-napoleon-hill-nibc-br-tgr.html",
-				},
-				{
-					attribute_code: "image",
-					value: "/5470/BR-06-01-NB24/p4.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-the-alchemist-sapiens-you-can-win-think-and-grow-rich-br-06-01-nb24",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2340.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'Books includes: \r\nThe Alchemist\r\nSapiens\r\nYou Can Win\r\nThink and Grow Rich (FREE) <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/5470/BR-06-01-NB24/p4.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 FREE, The Alchemist, Sapiens, You Can Win, Think and Grow Rich | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/5470/BR-06-01-NB24/p4.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Buy 3 Get 1 FREE, The Alchemist, Sapiens, You Can Win, Think and Grow Rich, Sastodeal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Buy 3 Get 1 FREE, The Alchemist, Sapiens, You Can Win, Think and Grow Rich | Sastodeal",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 70996,
-			sku: "BR-06-01-NB25",
-			name: "Buy 3 Get 1 FREE, Sapiens, The Alchemist, Hippie, The Art of War",
-			attribute_set_id: 67,
-			price: 2270,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:41:56",
-			updated_at: "2022-02-09 06:19:58",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1032,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/5470/BR-06-01-NB25/p5.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 148558,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/5470/BR-06-01-NB25/p5.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value:
-						"https://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-march25-79.html\r\nhttps://www.sastodeal.com/alchemist-new-int-14.html\r\nhttps://www.sastodeal.com/hippie-by-paulo-coelho-nibc-hippie.html\r\nhttps://www.sastodeal.com/the-art-of-war-sdthe%20art%209552.html",
-				},
-				{
-					attribute_code: "image",
-					value: "/5470/BR-06-01-NB25/p5.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-sapiens-the-alchemist-hippie-the-art-of-war-br-06-01-nb25",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2043.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'Books includes: \r\nSapiens\r\nThe Alchemist\r\nHippie\r\nThe Art of War (FREE) <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/5470/BR-06-01-NB25/p5.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 FREE, Sapiens, The Alchemist, Hippie, The Art of War | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/5470/BR-06-01-NB25/p5.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Buy 3 Get 1 FREE, Sapiens, The Alchemist, Hippie, The Art of War, Sastodeal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Buy 3 Get 1 FREE, Sapiens, The Alchemist, Hippie, The Art of War | Sastodeal",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
-		{
-			id: 71029,
-			sku: "BR-06-01-NB36",
-			name: "Buy 3 Get 1 FREE, Sapiens, To Kill A Mocking Bird, Rich Dad Poor Dad, How To Win Friends and Influence People",
-			attribute_set_id: 67,
-			price: 2590,
-			status: 1,
-			visibility: 4,
-			type_id: "simple",
-			created_at: "2021-09-15 11:41:57",
-			updated_at: "2022-02-09 06:20:17",
-			weight: 0.8,
-			extension_attributes: {
-				website_ids: [1],
-				category_links: [
-					{
-						position: 1024,
-						category_id: "301",
-					},
-				],
-				full_image_url:
-					"https://www.sastodeal.com/media/catalog/product/5470/BR-06-01-NB36/p16.jpg",
-				vendor_id: "625",
-				brand_name: "Generic",
-			},
-			product_links: [],
-			options: [],
-			media_gallery_entries: [
-				{
-					id: 148591,
-					media_type: "image",
-					label: null,
-					position: 1,
-					disabled: false,
-					types: ["image", "small_image", "thumbnail"],
-					file: "/5470/BR-06-01-NB36/p16.jpg",
-				},
-			],
-			tier_prices: [],
-			custom_attributes: [
-				{
-					attribute_code: "brand_name",
-					value: "16357",
-				},
-				{
-					attribute_code: "description",
-					value:
-						"https://www.sastodeal.com/sapiens-a-brief-history-of-humankind-by-yuval-noah-harari-march25-79.html\r\nhttps://www.sastodeal.com/to-kill-a-mocking-bird-lotthree-76.html\r\nhttps://www.sastodeal.com/rich-dad-poor-dad-march25-76.html\r\nhttps://www.sastodeal.com/how-to-win-friends-and-influence-people-by-dale-carnegie-march25-02.html",
-				},
-				{
-					attribute_code: "image",
-					value: "/5470/BR-06-01-NB36/p16.jpg",
-				},
-				{
-					attribute_code: "url_key",
-					value:
-						"buy-3-get-1-free-sapiens-to-kill-a-mocking-bird-rich-dad-poor-dad-how-to-wi-br-06-01-nb36",
-				},
-				{
-					attribute_code: "special_price",
-					value: "2331.000000",
-				},
-				{
-					attribute_code: "warranty",
-					value: "24031",
-				},
-				{
-					attribute_code: "gift_message_available",
-					value: "0",
-				},
-				{
-					attribute_code: "locations",
-					value: "27112",
-				},
-				{
-					attribute_code: "short_description",
-					value:
-						'Books includes: \r\nSapiens\r\nTo Kill A Mocking Bird\r\nRich Dad Poor Dad\r\nHow To Win Friends and Influence People (FREE) <table border="1">\r\n<tbody>\r\n<tr>\r\n\r\n</tr>\r\n</tbody>\r\n</table>',
-				},
-				{
-					attribute_code: "small_image",
-					value: "/5470/BR-06-01-NB36/p16.jpg",
-				},
-				{
-					attribute_code: "meta_title",
-					value:
-						"Buy 3 Get 1 FREE, Sapiens, To Kill A Mocking Bird, Rich Dad Poor Dad, How To Win Friends and Influence People | Sastodeal",
-				},
-				{
-					attribute_code: "special_from_date",
-					value: "2020-02-02 00:00:00",
-				},
-				{
-					attribute_code: "options_container",
-					value: "container2",
-				},
-				{
-					attribute_code: "gift_wrapping_available",
-					value: "0",
-				},
-				{
-					attribute_code: "thumbnail",
-					value: "/5470/BR-06-01-NB36/p16.jpg",
-				},
-				{
-					attribute_code: "meta_keyword",
-					value:
-						"Buy 3 Get 1 FREE, Sapiens, To Kill A Mocking Bird, Rich Dad Poor Dad, How To Win Friends and Influence People, Sastodeal",
-				},
-				{
-					attribute_code: "special_to_date",
-					value: "2025-01-01 00:00:00",
-				},
-				{
-					attribute_code: "return_exchange",
-					value:
-						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
-				},
-				{
-					attribute_code: "language",
-					value: "16447",
-				},
-				{
-					attribute_code: "meta_description",
-					value:
-						"Buy 3 Get 1 FREE, Sapiens, To Kill A Mocking Bird, Rich Dad Poor Dad, How To Win Friends and Influence People | Sastodeal",
-				},
-				{
-					attribute_code: "genre",
-					value: "25689",
-				},
-				{
-					attribute_code: "msrp_display_actual_price_type",
-					value: "0",
-				},
-				{
-					attribute_code: "binding",
-					value: "25703",
-				},
-				{
-					attribute_code: "tax_class_id",
-					value: "2",
-				},
-				{
-					attribute_code: "required_options",
-					value: "0",
-				},
-				{
-					attribute_code: "has_options",
-					value: "0",
-				},
-				{
-					attribute_code: "category_ids",
-					value: ["301"],
-				},
-				{
-					attribute_code: "warrenty",
-					value: "No Warranty",
-				},
-				{
-					attribute_code: "is_returnable",
-					value: "2",
-				},
-				{
-					attribute_code: "ratings_summary",
-					value: "0.000000",
-				},
-			],
-		},
 		{
 			id: 266971,
 			sku: "R4657",
@@ -2900,6 +1535,1197 @@ export const dummy_data = {
 				{
 					attribute_code: "category_ids",
 					value: ["295"],
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 352765,
+			sku: "R5736",
+			name: "Sapiens: Manav-Jaati Ka Sankchipta Itihas - Yuval Noah Harari (Hindi) (Bestseller)",
+			attribute_set_id: 4,
+			price: 960,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-10-06 12:26:30",
+			updated_at: "2022-02-14 07:09:40",
+			weight: 0.3,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "298",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/16242/R5736/Sheet1_Picture 309.jpg",
+				vendor_id: "631",
+				brand_name: "Ratna Book Distributors",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 904959,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/16242/R5736/Sheet1_Picture 309.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28383",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"Sapiens: Manav-Jaati Ka Sankchipta Itihas - Yuval Noah Harari (Hindi) (Bestseller)",
+				},
+				{
+					attribute_code: "image",
+					value: "/16242/R5736/Sheet1_Picture 309.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value:
+						"sapiens-manav-jaati-ka-sankchipta-itihas-yuval-noah-harari-hindi-bestseller-r5736",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "No",
+				},
+				{
+					attribute_code: "short_description",
+					value:
+						"<ul>\n <li>Paperback</li>\n <li>Popular Science</li>\n <li>Hindi</li>\n <li>Pages: 454</li>\n</ul>",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/16242/R5736/Sheet1_Picture 309.jpg",
+				},
+				{
+					attribute_code: "meta_title",
+					value:
+						"Sapiens: Manav-Jaati Ka Sankchipta Itihas - Yuval Noah Harari (Hindi) (Bestseller) | Non Fiction | Sastodeal",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "options_container",
+					value: "container2",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/16242/R5736/Sheet1_Picture 309.jpg",
+				},
+				{
+					attribute_code: "meta_keyword",
+					value:
+						"Sapiens: Manav-Jaati Ka Sankchipta Itihas - Yuval Noah Harari (Hindi) (Bestseller) | Non Fiction | Sastodeal | Online Shopping in Nepal | Buy Products in Nepal",
+				},
+				{
+					attribute_code: "meta_description",
+					value:
+						"Looking for Sapiens: Manav-Jaati Ka Sankchipta Itihas - Yuval Noah Harari (Hindi) (Bestseller)? Sastodeal, a local online store has come up with a wide range of Non Fiction products with best price in the market with extra deals. Buy now.",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "0",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["298"],
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 352842,
+			sku: "R5813",
+			name: "21 Lessons For The 21st Century (Paperback)/Homo Deus (PB)/Sapiens: A Brief History Of Humankind ` Bundle Pack - Yuval Noah Harari",
+			attribute_set_id: 4,
+			price: 2880,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-09-15 13:09:18",
+			updated_at: "2022-02-09 06:34:35",
+			weight: 0.3,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "295",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/16242/R5813/Sheet1_Picture 386.jpg",
+				vendor_id: "631",
+				brand_name: "Ratna Book Distributors",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 905036,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/16242/R5813/Sheet1_Picture 386.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28383",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"21 Lessons For The 21st Century (Paperback)/Homo Deus (PB)/Sapiens: A Brief History Of Humankind ` Bundle Pack - Yuval Noah Harari",
+				},
+				{
+					attribute_code: "image",
+					value: "/16242/R5813/Sheet1_Picture 386.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value:
+						"21-lessons-for-the-21st-century-paperback-homo-deus-pb-sapiens-a-brief-hist-r5813",
+				},
+				{
+					attribute_code: "special_price",
+					value: "2736.000000",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "No",
+				},
+				{
+					attribute_code: "color",
+					value: "29974",
+				},
+				{
+					attribute_code: "short_description",
+					value:
+						"<ul><li>21 Lessons For The 21st Century (Paperback)</li><li>Homo Deus (PB)</li><li>Sapiens: A Brief History of Humankind `</li><li>Yuval Noah Harari</li></ul>",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/16242/R5813/Sheet1_Picture 386.jpg",
+				},
+				{
+					attribute_code: "meta_title",
+					value:
+						"21 Lessons For The 21st Century (Paperback)/Homo Deus (PB)/Sapiens: A Brief History Of Humankind ` Bundle Pack - Yuval Noah Harari | History | Sastodeal",
+				},
+				{
+					attribute_code: "special_from_date",
+					value: "2020-01-01 00:00:00",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "options_container",
+					value: "container2",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/16242/R5813/Sheet1_Picture 386.jpg",
+				},
+				{
+					attribute_code: "meta_keyword",
+					value:
+						"21 Lessons For The 21st Century (Paperback)/Homo Deus (PB)/Sapiens: A Brief History Of Humankind ` Bundle Pack - Yuval Noah Harari | History | Sastodeal | Online Shopping in Nepal | Buy Products in Nepal",
+				},
+				{
+					attribute_code: "special_to_date",
+					value: "2025-11-11 00:00:00",
+				},
+				{
+					attribute_code: "meta_description",
+					value:
+						"Looking for 21 Lessons For The 21st Century (Paperback)/Homo Deus (PB)/Sapiens: A Brief History Of Humankind ` Bundle Pack - Yuval Noah Harari? Sastodeal, a local online store has come up with a wide range of History products with best price in the market",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "0",
+				},
+				{
+					attribute_code: "locations",
+					value: "0",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["295"],
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 352907,
+			sku: "R5878",
+			name: "Simon Vs. The Homo Sapiens - Becky Albertalli",
+			attribute_set_id: 4,
+			price: 640,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-09-15 13:09:21",
+			updated_at: "2022-03-24 11:57:25",
+			weight: 0.3,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "289",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/16242/R5878/Sheet1_Picture 451.jpg",
+				vendor_id: "631",
+				brand_name: "Ratna Book Distributors",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 905101,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/16242/R5878/Sheet1_Picture 451.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28383",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"<p>Sixteen-year-old and not-so-openly gay Simon Spier prefers to save his drama for the school musical. But when an email falls into the wrong hands, his secret is at risk of being thrust into the spotlight. Now Simon is actually being blackmailed: If he doesn’t play wingman for class clown Martin, his sexual identity will become everyone’s business. Worse, the privacy of Blue, the pen name of the boy he’s been emailing with, will be jeopardized.\n\nWith some messy dynamics emerging in his once tight-knit group of friends and his email correspondence with Blue growing more flirtatious every day, Simon’s junior year has suddenly gotten all kinds of complicated.\n\nNow change-averse Simon has to find a way to step out of his comfort zone before he’s pushed out-without alienating his friends, compromising himself, or fumbling a shot at happiness with the most confusing, adorable guy he’s never met.<p>",
+				},
+				{
+					attribute_code: "image",
+					value: "/16242/R5878/Sheet1_Picture 451.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value: "simon-vs-the-homo-sapiens-becky-albertalli-r5878",
+				},
+				{
+					attribute_code: "special_price",
+					value: "608.000000",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "0",
+				},
+				{
+					attribute_code: "color",
+					value: "29974",
+				},
+				{
+					attribute_code: "short_description",
+					value:
+						"<ul><li>Paperback: 352 pages</li><li>Publisher: Balzer + Bray; Media Tie In edition (January 30, 2018)</li><li>Language: English</li><li>ISBN-10: 9780062792167</li><li>ISBN-13: 978-0062792167</li><li>ASIN: 0062792164</li><li>Product Dimensions: 5.3 x 0.8 x 8 inches</li><li>Shipping Weight: 7.8 ounces</li></ul>",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/16242/R5878/Sheet1_Picture 451.jpg",
+				},
+				{
+					attribute_code: "meta_title",
+					value: "Simon vs. the Homo Sapiens - Becky Albertalli",
+				},
+				{
+					attribute_code: "special_from_date",
+					value: "2020-01-01 00:00:00",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "options_container",
+					value: "container2",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/16242/R5878/Sheet1_Picture 451.jpg",
+				},
+				{
+					attribute_code: "meta_keyword",
+					value: "Simon vs. the Homo Sapiens,Becky Albertalli",
+				},
+				{
+					attribute_code: "special_to_date",
+					value: "2025-11-11 00:00:00",
+				},
+				{
+					attribute_code: "meta_description",
+					value:
+						"Sixteen-year-old and not-so-openly gay Simon Spier prefers to save his drama for the school musical. But when an email falls into the wrong hands, his secret is at risk of being thrust into the spotlight. Now Simon is actually being blackmailed: If he doe",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "0",
+				},
+				{
+					attribute_code: "locations",
+					value: "27112",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["289"],
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 363209,
+			sku: "Sapiens-12-Test",
+			name: "Homo sapiens mankind",
+			attribute_set_id: 4,
+			price: 10,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-09-30 09:04:46",
+			updated_at: "2022-01-18 09:33:16",
+			weight: 0.01,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "289",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/t/s/tshirt_5.jpg",
+				vendor_id: "242007",
+				brand_name: "Generic",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 926534,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/t/s/tshirt_5.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "16357",
+				},
+				{
+					attribute_code: "description",
+					value: "<ul>\r\n<li>test123</li>\r\n<li>test1234</li>\r\n</ul>",
+				},
+				{
+					attribute_code: "image",
+					value: "/t/s/tshirt_5.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value: "homo-sapiens-mankind-sapiens-12-test",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "0",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/t/s/tshirt_5.jpg",
+				},
+				{
+					attribute_code: "meta_title",
+					value: "Homo sapiens mankind | Fiction & Literature | Sastodeal",
+				},
+				{
+					attribute_code: "return_exchange",
+					value: "Refer to Return and Refund Policy",
+				},
+				{
+					attribute_code: "options_container",
+					value: "container2",
+				},
+				{
+					attribute_code: "gift_wrapping_available",
+					value: "0",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/t/s/tshirt_5.jpg",
+				},
+				{
+					attribute_code: "meta_keyword",
+					value:
+						"Homo sapiens mankind | Fiction & Literature | Sastodeal | Online Shopping in Nepal | Buy Products in Nepal",
+				},
+				{
+					attribute_code: "meta_description",
+					value:
+						"Looking for Homo sapiens mankind? Sastodeal, a local online store has come up with a wide range of Fiction & Literature products with best price in the market with extra deals. Buy now.",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "0",
+				},
+				{
+					attribute_code: "locations",
+					value: "27112",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["289"],
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No warranty",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 397253,
+			sku: "ANUJ-B-GGSD-064",
+			name: "SAPIENS by YUVAL NOAH HARARI",
+			attribute_set_id: 67,
+			price: 960,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-11-26 06:23:46",
+			updated_at: "2022-02-09 06:25:25",
+			weight: 0.4,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "295",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/17699/ANUJ-B-GGSD-064/sapiens_sd.jpg",
+				vendor_id: "430",
+				brand_name: "Anuj Books Enterprise",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 991637,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/17699/ANUJ-B-GGSD-064/sapiens_sd.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28381",
+				},
+				{
+					attribute_code: "authors",
+					value: "31065",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"<p><strong>About Book :</strong></p>\n<p>From a renowned historian comes a groundbreaking narrative of humanity&rsquo;s creation and evolution&mdash;a #1 international bestseller&mdash;that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be &ldquo;human.&rdquo;</p>\n<p>One hundred thousand years ago, at least six different species of humans inhabited Earth. Yet today there is only one&mdash;homo sapiens. What happened to the others? And what may happen to us?</p>\n<p>Most books about the history of humanity pursue either a historical or a biological approach, but Dr. Yuval Noah Harari breaks the mold with this highly original book that begins about 70,000 years ago with the appearance of modern cognition. From examining the role evolving humans have played in the global ecosystem to charting the rise of empires,&nbsp;<em>Sapiens</em>&nbsp;integrates history and science to reconsider accepted narratives, connect past developments with contemporary concerns, and examine specific events within the context of larger ideas.</p>\n<p>Dr. Harari also compels us to look ahead, because over the last few decades humans have begun to bend laws of natural selection that have governed life for the past four billion years. We are acquiring the ability to design not only the world around us, but also ourselves. Where is this leading us, and what do we want to become?</p>\n<p>Featuring 27 photographs, 6 maps, and 25 illustrations/diagrams, this provocative and insightful work is sure to spark debate and is essential reading for aficionados of Jared Diamond, James Gleick, Matt Ridley, Robert Wright, and Sharon Moalem.</p>\n<p><strong>About the Author :</strong></p>\n<div>\n<p>Prof. Yuval Noah Harari is a historian, philosopher, and the bestselling author of&nbsp;<em>Sapiens: A Brief History of Humankind</em>,&nbsp;<em>Homo Deus: A Brief History of Tomorrow</em>,&nbsp;<em>21 Lessons for the 21st Century,&nbsp;</em>and<em>&nbsp;Sapiens: A Graphic History</em>. His books have sold&nbsp;over&nbsp;35&nbsp;million copies in 65 languages, and he is considered one of the world&rsquo;s most influential public intellectuals today. The Guardian has&nbsp;credited&nbsp;<em>Sapiens</em>&nbsp;with revolutionizing the non-fiction market and popularizing &ldquo;brainy books&rdquo;.</p>\n<p>In 2020 Harari joined forces with renowned comics artists David Vandermeulen and Daniel Casanave, to create&nbsp;<em>Sapiens: A Graphic History</em>: a radical adaptation of the original<em>&nbsp;Sapiens</em>&nbsp;into a graphic novel series. This illustrated&nbsp;collection casts Yuval Noah Harari in the role of guide, who takes the reader through the entire history of the human species, accompanied by a range of fictional characters and traveling through time, space and popular culture references.</p>\n<p>Born in Haifa, Israel, in 1976, Harari received his PhD from the University of Oxford in 2002, and is currently a lecturer at the Department of History, the Hebrew University of Jerusalem.&nbsp;He originally specialized in world history, medieval history and military history, and his current research focuses on macro-historical questions such as: What is the relationship between history and biology? What is the essential difference between Homo sapiens and other animals? Is there justice in history? Does history have a direction? Did people become happier as history unfolded? What ethical questions do science and technology raise in the 21st century?</p>\n</div>",
+				},
+				{
+					attribute_code: "image",
+					value: "/17699/ANUJ-B-GGSD-064/sapiens_sd.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value: "sapiens-by-yuval-noah-harari-anuj-b-ggsd-064",
+				},
+				{
+					attribute_code: "special_price",
+					value: "864.000000",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "No",
+				},
+				{
+					attribute_code: "locations",
+					value: "27112",
+				},
+				{
+					attribute_code: "publisher",
+					value: "Harper",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/17699/ANUJ-B-GGSD-064/sapiens_sd.jpg",
+				},
+				{
+					attribute_code: "special_from_date",
+					value: "2022-01-01 00:00:00",
+				},
+				{
+					attribute_code: "number_of_pages",
+					value: "464",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/17699/ANUJ-B-GGSD-064/sapiens_sd.jpg",
+				},
+				{
+					attribute_code: "special_to_date",
+					value: "2025-11-11 00:00:00",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "isbn",
+					value: "978-0099590088",
+				},
+				{
+					attribute_code: "genre",
+					value: "25687",
+				},
+				{
+					attribute_code: "edition",
+					value: " Illustrated edition (February 10, 2015)",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "Use config",
+				},
+				{
+					attribute_code: "binding",
+					value: "25701",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "0",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["295"],
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 401921,
+			sku: "PILGRMS-SD-GG-043",
+			name: "Sapiens Graphic Novel Volume 1  HARARI YUVAL NOAH",
+			attribute_set_id: 67,
+			price: 1758,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-12-08 08:52:28",
+			updated_at: "2021-12-18 15:54:23",
+			weight: 0.4,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "313",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/17879/PILGRMS-SD-GG-043/B43.jpg",
+				vendor_id: "207365",
+				brand_name: "Pilgrims Book House",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 1000720,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/17879/PILGRMS-SD-GG-043/B43.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28387",
+				},
+				{
+					attribute_code: "authors",
+					value: "31772",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"<p>Featuring 256 pages of full-color illustrations and easy-to-understand text covering the first part of the full-length original edition, this adaptation of the mind-expanding book furthers the ongoing conversation as it introduces Harari&rsquo;s ideas to a wide new readership.</p>",
+				},
+				{
+					attribute_code: "image",
+					value: "/17879/PILGRMS-SD-GG-043/B43.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value:
+						"sapiens-graphic-novel-volume-1-harari-yuval-noah-pilgrms-sd-gg-043",
+				},
+				{
+					attribute_code: "special_price",
+					value: "1582.000000",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "No",
+				},
+				{
+					attribute_code: "locations",
+					value: "27112",
+				},
+				{
+					attribute_code: "publisher",
+					value: "Harper Perennial; (October 27, 2020)",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/17879/PILGRMS-SD-GG-043/B43.jpg",
+				},
+				{
+					attribute_code: "special_from_date",
+					value: "2020-01-01 00:00:00",
+				},
+				{
+					attribute_code: "options_container",
+					value: "Block after Info Column",
+				},
+				{
+					attribute_code: "number_of_pages",
+					value: "248",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/17879/PILGRMS-SD-GG-043/B43.jpg",
+				},
+				{
+					attribute_code: "special_to_date",
+					value: "2025-11-11 00:00:00",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "language",
+					value: "16447",
+				},
+				{
+					attribute_code: "isbn",
+					value: "978-1787332812",
+				},
+				{
+					attribute_code: "edition",
+					value: "Illustrated edition ",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "Use config",
+				},
+				{
+					attribute_code: "binding",
+					value: "25701",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["313"],
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 401929,
+			sku: "PILGRMS-SD-GG-051",
+			name: "Yuval Noah Harari Box Set Sapiens Homo Deus 21 Lessons for 21st Century  YUVAL NOAH HARARI",
+			attribute_set_id: 67,
+			price: 2718,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-12-08 08:53:09",
+			updated_at: "2021-12-18 15:54:35",
+			weight: 0.4,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "313",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/17879/PILGRMS-SD-GG-051/B51.jpg",
+				vendor_id: "207365",
+				brand_name: "Pilgrims Book House",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 1000728,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/17879/PILGRMS-SD-GG-051/B51.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28387",
+				},
+				{
+					attribute_code: "authors",
+					value: "31065",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"<p>Discover humanity&rsquo;s past and its future in this in this special box set featuring the bestselling&nbsp;<em>Sapiens</em>&mdash;a reading pick of President Barack Obama, Bill Gates, and Mark Zuckerberg&mdash;and its acclaimed companion&nbsp;<em>Homo Deus.</em></p>",
+				},
+				{
+					attribute_code: "image",
+					value: "/17879/PILGRMS-SD-GG-051/B51.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value:
+						"yuval-noah-harari-box-set-sapiens-homo-deus-21-lessons-for-21st-century-yuv-pilgrms-sd-gg-051",
+				},
+				{
+					attribute_code: "special_price",
+					value: "2446.000000",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "No",
+				},
+				{
+					attribute_code: "locations",
+					value: "27112",
+				},
+				{
+					attribute_code: "publisher",
+					value: "Harper;  (October 24, 2017)",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/17879/PILGRMS-SD-GG-051/B51.jpg",
+				},
+				{
+					attribute_code: "special_from_date",
+					value: "2020-01-01 00:00:00",
+				},
+				{
+					attribute_code: "options_container",
+					value: "Block after Info Column",
+				},
+				{
+					attribute_code: "number_of_pages",
+					value: "456,448",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/17879/PILGRMS-SD-GG-051/B51.jpg",
+				},
+				{
+					attribute_code: "special_to_date",
+					value: "2025-11-11 00:00:00",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "language",
+					value: "16447",
+				},
+				{
+					attribute_code: "isbn",
+					value: "978-1529115666",
+				},
+				{
+					attribute_code: "edition",
+					value: "Deluxe edition",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "Use config",
+				},
+				{
+					attribute_code: "binding",
+					value: "25701",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["313"],
+				},
+				{
+					attribute_code: "warrenty",
+					value: "No Warranty",
+				},
+				{
+					attribute_code: "is_returnable",
+					value: "2",
+				},
+				{
+					attribute_code: "ratings_summary",
+					value: "0.000000",
+				},
+			],
+		},
+		{
+			id: 401930,
+			sku: "PILGRMS-SD-GG-052",
+			name: "Sapiens Special Collectors Editions in Full Colour  HARARI YUVAL NOAH ",
+			attribute_set_id: 67,
+			price: 959,
+			status: 1,
+			visibility: 4,
+			type_id: "simple",
+			created_at: "2021-12-08 08:53:14",
+			updated_at: "2021-12-27 07:19:59",
+			weight: 0.4,
+			extension_attributes: {
+				website_ids: [1],
+				category_links: [
+					{
+						position: 0,
+						category_id: "313",
+					},
+				],
+				full_image_url:
+					"https://www.sastodeal.com/media/catalog/product/17879/PILGRMS-SD-GG-052/B52.jpg",
+				vendor_id: "207365",
+				brand_name: "Pilgrims Book House",
+			},
+			product_links: [],
+			options: [],
+			media_gallery_entries: [
+				{
+					id: 1000729,
+					media_type: "image",
+					label: null,
+					position: 1,
+					disabled: false,
+					types: ["image", "small_image", "thumbnail"],
+					file: "/17879/PILGRMS-SD-GG-052/B52.jpg",
+				},
+			],
+			tier_prices: [],
+			custom_attributes: [
+				{
+					attribute_code: "brand_name",
+					value: "28387",
+				},
+				{
+					attribute_code: "authors",
+					value: "31772",
+				},
+				{
+					attribute_code: "description",
+					value:
+						"<p>00,000 years ago, at least six human species inhabited the earth. Today there is just one. Us. Homo sapiens. How did our species succeed in the battle for dominance? Why did our foraging ancestors come together to create cities and kingdoms? How did we come to believe in gods, nations and human rights; to trust money, books and laws; and to be enslaved by bureaucracy, timetables and consumerism? And what will our world be like in the millennia to come? In Sapiens, Dr Yuval Noah Harari spans the whole of human history, from the very first humans to walk the earth to the radical ? and sometimes devastating ? breakthroughs of the Cognitive, Agricultural and Scientific Revolutions.</p>",
+				},
+				{
+					attribute_code: "image",
+					value: "/17879/PILGRMS-SD-GG-052/B52.jpg",
+				},
+				{
+					attribute_code: "url_key",
+					value:
+						"sapiens-special-collectors-editions-in-full-colour-harari-yuval-noah-pilgrms-sd-gg-052",
+				},
+				{
+					attribute_code: "special_price",
+					value: "863.000000",
+				},
+				{
+					attribute_code: "gift_message_available",
+					value: "No",
+				},
+				{
+					attribute_code: "locations",
+					value: "27112",
+				},
+				{
+					attribute_code: "publisher",
+					value: "Harvill Secker",
+				},
+				{
+					attribute_code: "small_image",
+					value: "/17879/PILGRMS-SD-GG-052/B52.jpg",
+				},
+				{
+					attribute_code: "special_from_date",
+					value: "2020-01-01 00:00:00",
+				},
+				{
+					attribute_code: "options_container",
+					value: "container1",
+				},
+				{
+					attribute_code: "gift_wrapping_available",
+					value: "0",
+				},
+				{
+					attribute_code: "number_of_pages",
+					value: "456",
+				},
+				{
+					attribute_code: "thumbnail",
+					value: "/17879/PILGRMS-SD-GG-052/B52.jpg",
+				},
+				{
+					attribute_code: "special_to_date",
+					value: "2025-11-11 00:00:00",
+				},
+				{
+					attribute_code: "return_exchange",
+					value:
+						'<a href="https://www.sastodeal.com/returns-refund-policy" target="_blank" title="Retun Refund Policy - Sastodeal">Refer to Return and Refund Policy</a>',
+				},
+				{
+					attribute_code: "language",
+					value: "16447",
+				},
+				{
+					attribute_code: "isbn",
+					value: "978-1846558245",
+				},
+				{
+					attribute_code: "edition",
+					value: "Deluxe edition",
+				},
+				{
+					attribute_code: "msrp_display_actual_price_type",
+					value: "Use config",
+				},
+				{
+					attribute_code: "binding",
+					value: "25701",
+				},
+				{
+					attribute_code: "tax_class_id",
+					value: "2",
+				},
+				{
+					attribute_code: "required_options",
+					value: "0",
+				},
+				{
+					attribute_code: "has_options",
+					value: "0",
+				},
+				{
+					attribute_code: "category_ids",
+					value: ["313"],
 				},
 				{
 					attribute_code: "warrenty",

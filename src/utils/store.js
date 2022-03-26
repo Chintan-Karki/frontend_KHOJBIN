@@ -15,10 +15,19 @@ let userStore = (set) => ({
 
 let productsStore = (set) => ({
 	products: [],
+	currentProduct: {},
 	productsFiltered: [],
 	productsFilteredSorted: [],
 	setProducts: (products) =>
 		set((state) => ({ products: products }), false, "SetProducts"),
+		
+	setCurrentProduct: (currentProduct) =>
+		set(
+			(state) => ({ currentProduct: currentProduct }),
+			false,
+			"SetCurrentProduct"
+		),
+
 	setProductsFiltered: (productsFiltered) =>
 		set(
 			(state) => ({ productsFiltered: productsFiltered }),

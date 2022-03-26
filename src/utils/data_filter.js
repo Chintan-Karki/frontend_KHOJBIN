@@ -79,7 +79,8 @@ export function sastodeal_filter(sastodeal_data) {
 		newObj.description = item.custom_attributes
 			.filter((item) => item.attribute_code === "description")
 			.map((item) => item.value)
-			.toString();
+			.toString()
+			.replace(/(<([^>]+)>)/gi, "");
 		// let sastodealProductUrl =
 		// 	item.name.toString().substring(0, 75).toLowerCase().replaceAll(" ", "-") +
 		// 	"-" +
@@ -121,7 +122,7 @@ export function hamrobazaar_filter(hamrobazaar_data) {
 		newObj.ratingScore = "0";
 		newObj.reviewCount = item.totalViews;
 		newObj.sellerName = "Hamrobazaar";
-		newObj.sellerImageUrl = "https://hamrobazaar.com/layout_images/logo.gif";
+		newObj.sellerImageUrl = "https://beta.hamrobazaar.com/icon-192x192.png";
 		filteredHamrobazaarData.push(newObj);
 	});
 	return filteredHamrobazaarData;

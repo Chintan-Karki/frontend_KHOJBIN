@@ -18,8 +18,6 @@ import WarningMessage from "../atoms/WarningMessage";
 export default function LogIn() {
 	const setUserName = useAuthStore((state) => state.setUserName);
 	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
-	let navigate = useNavigate();
-
 	const {
 		register,
 		handleSubmit,
@@ -42,21 +40,15 @@ export default function LogIn() {
 				localStorage.setItem("userId", res.data.id.toString());
 				axiosInstance.defaults.headers["Authorization"] =
 					"JWT " + localStorage.getItem("access_token");
-				console.log(res.data);
-
 				setUserName(res.data.name);
-
 				setIsLoggedIn(true);
-
-				// console.log((window.history.go(0))
-				navigate("/");
-				// window.history.go(2);
+				window.history.go(-1);
 			});
 	};
 
 	return (
 		<>
-			<div className="flex items-center min-h-screen bg-indigo-50">
+			<div className="flex items-center min-h-[85vh] ">
 				<div className="relative flex-1 h-full max-w-4xl mx-auto rounded-xl shadow-xl transition bg-white">
 					<img
 						src={smile}

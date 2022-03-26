@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios";
 import WishedItem from "./WishedItem";
+// import MainLoader from "../../assets/icons/MainLoader.gif";
 
 export default function WishedItems() {
 	let [wishList, setWishList] = useState([]);
@@ -11,7 +12,12 @@ export default function WishedItems() {
 		axiosInstance.get("/wishlist").then((res) => {
 			setWishList(res.data);
 			console.log(res.data);
-			setLoading(false);
+			// sleep for a second
+			setTimeout(() => {
+				setLoading(false);
+			}, 500);
+
+			// setLoading(false);
 		});
 	}, []);
 
@@ -30,7 +36,7 @@ export default function WishedItems() {
 	return (
 		<div className="transition">
 			{loading ? (
-				<div>Loading...</div>
+				<div className="loader">Loading</div>
 			) : (
 				<section>
 					<hr className="mt-6 border-b-1 border-blueGray-300" />

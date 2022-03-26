@@ -12,7 +12,7 @@ export default function WishedItem({ item, onDelete }) {
 			className=" bg-white border border-white shadow-lg rounded-3xl w-full p-4 xl:w-[600px]"
 		>
 			<div className="flex-none sm:flex">
-				<div className=" relative rounded-xl  sm:w-36   bg-white">
+				<div className=" relative rounded-xl flex items-center sm:w-36bg-white">
 					<img
 						src={item.image_url ? item.image_url : "ImageNotFound"}
 						alt={item.name}
@@ -38,15 +38,15 @@ export default function WishedItem({ item, onDelete }) {
 						</svg>
 					</button>
 				</div>
-				<div className="flex-auto sm:ml-5 justify-evenly">
-					<div className="flex items-center justify-between sm:mt-2">
+				<div className="flex flex-col sm:ml-5 justify-between w-full">
+					<div className="flex items-center justify-between mt-2">
 						<div className="flex items-center l">
 							<div className="flex flex-col">
 								<span
 									alt={item.name}
-									className="mt-2 text-md font-medium uppercase leading-tight truncate"
+									className="text-md font-medium uppercase leading-tight"
 								>
-									{item.name.substring(0, 32) + "..."}
+									{item.name}
 								</span>
 								<div className="flex-auto text-gray-500 my-1">
 									<span className="mr-3 ">Rs. {item.price}</span>

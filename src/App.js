@@ -1,14 +1,56 @@
 import React from "react";
-import Search from "./Components/atoms/Search";
 import NavBar from "./Components/atoms/NavBar";
+import SearchPage from "./Components/SearchPage/SearchPage";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import LogIn from "./Components/LogIn/index";
+import SearchResults from "./Components/SearchResults/index";
+import SignUp from "./Components/SignUp/Index";
+import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
+import Profile from "./Components/Profile/Profile";
+import IndividualProductPage from "./Components/Products/IndividualProductPage";
+import { useProductsStore } from "./utils/store";
 
 function App() {
+	let currentProduct = useProductsStore((state) => state.currentProduct);
 	return (
 		<>
-			<NavBar />
-			<div className="SearchBar bg-image bg-center bg-no-repeat bg-90% md:bg-80% lg:bg-50% xl:bg-40%">
-				<Search />
-			</div>
+			<BrowserRouter>
+				<NavBar />
+				<Routes>
+					<Route path="/" element={<SearchPage />} />
+					{!currentProduct ? (
+						<Navigate to="/" />
+					) : (
+						<Route
+							path="/searchresults/:id"
+							element={<IndividualProductPage />}
+						/>
+					)}
+
+					<Route path="searchresults" element={<SearchResults />}>
+						<Route
+							index
+							element={
+								<main style={{ padding: "1rem" }}>
+									<p>Select an invoice</p>
+								</main>
+							}
+						/>
+					</Route>
+					<Route path="signup" element={<SignUp />} />
+					<Route path="login" element={<LogIn />} />
+					<Route path="profile" element={<Profile />} />
+					<Route
+						path="*"
+						element={
+							<main className="p-4">
+								<p>There's nothing here!</p>
+							</main>
+						}
+					/>
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 }

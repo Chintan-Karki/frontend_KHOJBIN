@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { useProductsStore, useSearchStore } from "../../utils/store";
-import Navbar from "../atoms/NavBar";
 import Product from "../Products/Product";
 
 import Filters from "../Filters/Filters";
 import SortMenu from "../Filters/SortMenu";
+// import MainLoader from "../atoms/MainLoader";
 
 export default function SearchResults() {
 	// toast("hello");
@@ -34,10 +34,9 @@ export default function SearchResults() {
 
 	return (
 		<>
-			<Navbar />
 			{loading ? (
-				<div className="flex items-center justify-center bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent ">
-					Loading...
+				<div className="main-loader">
+					<div className="loader">loading</div>
 				</div>
 			) : (
 				<div className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
