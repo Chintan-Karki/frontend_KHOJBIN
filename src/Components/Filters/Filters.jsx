@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useProductsStore, useSortStore } from "../../utils/store";
 import _ from "lodash";
+import PriceRange from "./PriceRange";
 
 export default function Filters() {
 	let productsFiltered = useProductsStore((state) => state.productsFiltered);
@@ -17,6 +18,7 @@ export default function Filters() {
 	let [selectedSellerSite, setSelectedSellerSite] = useState("All");
 	// let sortOption = useSortStore((state) => state.sortOrder);
 	let setSortOption = useSortStore((state) => state.setSortOrder);
+	let setPriceRange = useSortStore((state) => state.setPriceRange);
 
 	useEffect(() => {
 		if (selectedSellerSite === "All") {
@@ -77,7 +79,17 @@ export default function Filters() {
 					className={
 						selectedSellerSite === "Daraz" ? activePillBtnClass : pillBtnClass
 					}
-					onClick={() => setSelectedSellerSite("Daraz")}
+					onClick={() => {
+						setSelectedSellerSite("Daraz");
+						let tempArray = dataProductsTempStored.current.filter(
+							(product) =>
+								product.sellerName.toString().toLowerCase() === "daraz"
+						);
+						setPriceRange([
+							Math.min(...tempArray.map((item) => item.price)),
+							Math.max(...tempArray.map((item) => item.price)),
+						]);
+					}}
 				>
 					Daraz{" "}
 					{
@@ -113,6 +125,28 @@ export default function Filters() {
 										(product) =>
 											product.sellerName.toString().toLowerCase() ===
 											"sastodeal"
+									).length
+								}
+							</span>
+							)
+						</span>
+					}
+				</button>
+				<button
+					className={
+						selectedSellerSite === "ryzen" ? activePillBtnClass : pillBtnClass
+					}
+					onClick={() => setSelectedSellerSite("ryzen")}
+				>
+					Ryzen{" "}
+					{
+						<span className="text-xs ">
+							(
+							<span>
+								{
+									dataProductsTempStored.current.filter(
+										(product) =>
+											product.sellerName.toString().toLowerCase() === "ryzen"
 									).length
 								}
 							</span>
@@ -168,6 +202,7 @@ export default function Filters() {
 					}
 				</button>
 			</motion.section>
+			<PriceRange />
 		</aside>
 	);
 }

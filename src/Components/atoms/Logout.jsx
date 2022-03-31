@@ -13,14 +13,12 @@ export default function Logout() {
 	const handleClick = async () => {
 		// getting from the store
 
-		const response = axiosInstance.post("user/logout/blacklist", {
-			refresh_token: localStorage.getItem("refresh_token"),
-		});
+		// const response = axiosInstance.post("user/logout/blacklist", {
+		// 	refresh_token: localStorage.getItem("refresh_token"),
+		// });
 		localStorage.removeItem("access_token");
 		localStorage.removeItem("refresh_token");
-		localStorage.removeItem("userName");
 		axiosInstance.defaults.headers["Authorization"] = null;
-		console.log("Logged Out", response);
 		await setUserName("");
 		await setIsLoggedIn(false);
 		navigate("/login");

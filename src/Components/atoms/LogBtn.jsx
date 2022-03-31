@@ -21,26 +21,24 @@ export default function LogBtn() {
 
 	const handleClick = () => {
 		// getting from the store
-		axiosInstance
-			.post("user/logout/blacklist", {
-				refresh_token: localStorage.getItem("refresh_token"),
-			})
-			.then((res) => {
-				localStorage.removeItem("access_token");
-				localStorage.removeItem("refresh_token");
-				localStorage.removeItem("userName");
-				localStorage.removeItem("userId");
-				axiosInstance.defaults.headers["Authorization"] = null;
-				console.log("Logged Out", res);
-				setIsOpen(true);
-				setUserName("");
-				setHeaderTextForModal("Logged Out Successfully ✅");
-				setBodyTextForModal(
-					`You can log in to the system again using the login page🙂`
-				);
-				setIsLoggedIn(false);
-				navigate("/");
-			});
+		// axiosInstance
+		// 	.post("user/logout/blacklist", {
+		// 		refresh_token: localStorage.getItem("refresh_token"),
+		// 	})
+		// 	.then((res) => {
+		localStorage.removeItem("access_token");
+		localStorage.removeItem("refresh_token");
+		axiosInstance.defaults.headers["Authorization"] = null;
+		console.log("Logged Out");
+		setIsOpen(true);
+		setUserName("");
+		setHeaderTextForModal("Logged Out Successfully ✅");
+		setBodyTextForModal(
+			`You can log in to the system again using the login page🙂`
+		);
+		setIsLoggedIn(false);
+		navigate("/");
+		// });
 	};
 
 	return (

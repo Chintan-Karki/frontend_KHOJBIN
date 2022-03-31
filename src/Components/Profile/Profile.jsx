@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../utils/axios";
 import WishedItems from "../WishList/WishedItems";
+import loaderGif from "../../assets/images/loaderGif2.gif";
 // import MainLoader from "../atoms/MainLoader.jsx";
 
 export default function Profile() {
@@ -36,7 +37,9 @@ export default function Profile() {
 						</div>
 						<div className="flex-auto px-4 lg:px-10 py-10 pt-0">
 							{loading ? (
-								<div>loading</div>
+								<div className="flex h-20 items-center justify-center">
+									<img src={loaderGif} alt="loading..." className="h-48" />
+								</div>
 							) : (
 								<form>
 									<h6 className="text-blueGray-400 text-sm mt-6 mb-6 font-bold uppercase">

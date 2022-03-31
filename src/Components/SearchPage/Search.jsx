@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
+import loaderLogo from "../../assets/images/loaderLogo.gif";
 import {
 	daraz_filter,
 	gyapu_filter,
 	hamrobazaar_filter,
+	ryzen_filter,
 	sastodeal_filter,
 } from "../../utils/data_filter";
 import { dummy_data } from "../../utils/dummy_data";
@@ -47,6 +49,7 @@ export default function Search() {
 			await axiosInstance.post(`search/`, postData).then((res) => {
 				// console.log(res.data);
 				setProducts(res.data);
+				let filtered_ryzen_data = ryzen_filter(res.data.ryzenResponses);
 				let filtered_daraz_data = daraz_filter(res.data.darazResponses);
 				let filtered_hamrobazaar_data = hamrobazaar_filter(
 					res.data.hamrobazaarResponses
@@ -58,6 +61,7 @@ export default function Search() {
 				setProductsFiltered([
 					...filtered_daraz_data,
 					...filtered_gyapu_data,
+					...filtered_ryzen_data,
 					...filtered_hamrobazaar_data,
 					...filtered_sastodeal_data,
 				]);
@@ -65,6 +69,7 @@ export default function Search() {
 			await setLoading(false);
 			await navigate("/searchresults", { state: data });
 		} catch (error) {
+			setLoading(false);
 			console.log(error);
 		}
 	};
@@ -79,6 +84,7 @@ export default function Search() {
 
 			// console.log(res.data);
 			setProducts(dummy_data);
+			let filtered_ryzen_data = ryzen_filter(dummy_data.ryzenResponses);
 			let filtered_daraz_data = daraz_filter(dummy_data.darazResponses);
 			let filtered_hamrobazaar_data = hamrobazaar_filter(
 				dummy_data.hamrobazaarResponses
@@ -90,30 +96,37 @@ export default function Search() {
 			setProductsFiltered([
 				...filtered_daraz_data,
 				...filtered_gyapu_data,
+				...filtered_ryzen_data,
 				...filtered_hamrobazaar_data,
 				...filtered_sastodeal_data,
 			]);
 			await setLoading(false);
 			await navigate("/searchresults", { state: data });
 		} catch (error) {
+			setLoading(false);
 			console.log(error);
 		}
 	};
 
 	const onSubmit = async (data) => {
-		let searchTime = new Date();
-		let userId = localStorage.getItem("userId")
-			? localStorage.getItem("userId")
-			: "";
+		let search_time_ = new Date();
+		let searchTime =
+			search_time_.toLocaleTimeString() +
+			", " +
+			search_time_.toLocaleDateString();
 
 		if (data.searchQuery === "") {
 			alert("Please fill the input box");
 		} else {
+			let userId = localStorage.getItem("userId");
+			console.log(userId);
+
 			data = { ...data, searchTime, userId };
+			console.log(data);
 			//! FOR REAL-TIME DATA ::
-			// getData(data, searchTime, userId);
+			getData(data, searchTime, userId);
 			//* FOR DUMMY DATA ::
-			getDummyData(data, searchTime, userId);
+			// getDummyData(data, searchTime, userId);
 		}
 	};
 
@@ -128,23 +141,25 @@ export default function Search() {
 							message: "Minimum 1 character required.",
 						},
 					})}
+					enterKeyHint="search"
 					className={twClasses.searchInputDiv}
 					placeholder="eg. Iphone 13 pro 🙂"
 				/>
 				<button
 					type="submit"
 					onClick={handleSubmit(onSubmit)}
-					className={twClasses.searchButton}
+					className={
+						loading
+							? "py-2 m-2 border-none active:scale-90 transition ease-in-out duration-200 rounded-lg h-12 md:w-36 w-11/12 bg-white  font-bold px-9 uppercase text-gray-50 border-t border-b border-r shadow-none  max-w-md  cursor-wait"
+							: "py-2 m-2 border-none active:scale-90 transition ease-in-out duration-200 rounded-lg h-12 md:w-36 w-11/12 bg-indigo-500  font-bold px-9 uppercase text-gray-50 border-t border-b border-r shadow-lg hover:shadow-indigo-500/50 hover:bg-indigo-600 max-w-md"
+					}
 				>
 					{/* Search */}
 					{!loading ? (
 						"SEARCH"
 					) : (
-						<div className="flex justify-center items-center">
-							<div
-								className="spinner-border animate-spin inline-block w-2 h-8 border-4 rounded-md text-gray-50"
-								role="status"
-							></div>
+						<div className="flex justify-center items-center  w-full h-full">
+							<img src={loaderLogo} alt="loader" className="h-8" />
 						</div>
 					)}
 				</button>

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore, useProductsStore } from "../../utils/store";
 import likeBtn from "../../assets/icons/like.png";
+import ImageNotFound from "../../assets/images/ImgNotFound.png";
+
 import axiosInstance from "../../utils/axios";
 import Modal from "../atoms/Modal";
 import GoToWeb from "../../assets/icons/GoToWeb";
+import BreadCrumb from "./BreadCrumb";
 
 export default function IndividualProductPage() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
@@ -16,10 +19,13 @@ export default function IndividualProductPage() {
 	console.log(currentProduct);
 	console.log(typeof currentProduct.description);
 	let navigate = useNavigate();
-
-	const goBack = () => {
-		window.history.go(-1);
-	};
+	// let [userId, setUserId] = useState();
+	// axiosInstance.get("user/").then((res) => {
+	// 	console.log(res.data);
+	// 	setUserId(res.data.id);
+	// 	localStorage.setItem("userId", res.data.id);
+	// 	localStorage.setItem("userName", res.data.email);
+	// });
 
 	const handleAddToWishlist = async () => {
 		let userId = localStorage.getItem("userId");
@@ -50,7 +56,7 @@ export default function IndividualProductPage() {
 				setIsOpen(true);
 			})
 			.catch((err) => {
-				alert(err.response.data.product_id[0]);
+				console.log(err);
 			});
 	};
 
@@ -69,28 +75,16 @@ export default function IndividualProductPage() {
 				headerText={headerTextForModal}
 				bodyText={bodyTextForModal}
 			/>
-			<div className="flex items-center container mx-auto px-4 text-gray-500">
-				<ol className="flex items-center ">
-					<li className="text-sm text-body px-2.5 transition duration-200 ease-in first:ps-0 last:pe-0 hover:text-heading hover:text-indigo-400">
-						<a href="/">Home</a>
-					</li>
-					<li className="text-base text-body mt-0.5">/</li>
-					<li className="text-sm text-body px-2.5 transition duration-200 ease-in first:ps-0 last:pe-0 hover:text-heading hover:text-indigo-400">
-						<p className="capitalize cursor-pointer" onClick={goBack}>
-							search results
-						</p>
-					</li>
-					<li className="text-base text-body mt-0.5">/</li>
-					<li className="text-sm text-body px-2.5 transition capitalize duration-200 ease-in first:ps-0 last:pe-0 hover:text-heading">
-						product ({currentProduct.itemId})
-					</li>
-				</ol>
-			</div>
+			<BreadCrumb />
 			<div className="mx-auto flex container rounded-xl mt-8  mb-10 px-4  ">
 				<div className="flex flex-col lg:flex-row w-full  mx-auto bg-white rounded-xl justify-center items-center shadow-xl ">
 					<div className="flex-shrink-0 flex items-start pt-10  top-96 justify-center  lg:max-w-[430px] h-[330px] lg:h-full lg:max-h-full overflow-hidden bg-white rounded-none rounded-t-xl lg:rounded-none lg:rounded-l-xl">
 						<img
-							src={currentProduct.image_url}
+							src={
+								currentProduct.image_url
+									? currentProduct.image_url
+									: ImageNotFound
+							}
 							alt={currentProduct.name}
 							className="object-scale-down lg:w-96 lg:max-h-[400px] "
 						/>
@@ -141,12 +135,13 @@ export default function IndividualProductPage() {
 											.replace(/&mdash;/g, "-")
 											.replace(/&quot;/g, '"')
 											.replace(/&amp;/g, "&")
+											.replace(/&#039;/g, "'")
 											.replace(/&lrm;/g, ")")}
 									</p>
 								) : (
 									<div className="text-md text-gray-600">
 										{currentProduct.description.map((desc) => (
-											<p className="text-md text-gray-600">
+											<p className="text-md text-gray-600" key={desc}>
 												{desc
 													.toString()
 													.replace(/&rlm;/g, "")

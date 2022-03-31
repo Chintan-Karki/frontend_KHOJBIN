@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Profile from "./Components/Profile/Profile";
 import IndividualProductPage from "./Components/Products/IndividualProductPage";
 import { useProductsStore } from "./utils/store";
+import WishListPage from "./Components/WishList/WishListPage";
 
 function App() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
@@ -41,6 +42,7 @@ function App() {
 					<Route path="signup" element={<SignUp />} />
 					<Route path="login" element={<LogIn />} />
 					<Route path="profile" element={<Profile />} />
+					<Route path="wishlist" element={<WishListPage />} />
 					<Route
 						path="*"
 						element={

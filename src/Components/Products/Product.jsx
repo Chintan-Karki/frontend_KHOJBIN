@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 // import { createBrowserHistory } from "react-router-dom";
-import ImageNotFound from "../../assets/images/ImageNotFound.png";
+import ImageNotFound from "../../assets/images/ImgNotFound.png";
 import Like from "../../assets/icons/like.png";
 import { useAuthStore, useProductsStore } from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
@@ -11,14 +11,14 @@ import { Link } from "react-router-dom";
 
 export default function Product({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+	let userId = localStorage.getItem("userId");
+
 	let [isOpen, setIsOpen] = useState(false);
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 	let setCurrentProduct = useProductsStore((state) => state.setCurrentProduct);
 
 	const handleAddToWishlist = async () => {
-		let userId = localStorage.getItem("userId");
-
 		let data = {
 			name: product.name,
 			price: product.price,
@@ -70,6 +70,7 @@ export default function Product({ product, altText, seller, price }) {
 						<img
 							src={product.image_url ? product.image_url : ImageNotFound}
 							alt={product.name}
+							loading="lazy"
 							className=" object-scale-down hover:border-2 hover:border-indigo-200 bg-white w-full h-72 object-center rounded-3xl shadow-lg hover:shadow-sm"
 							onClick={() => setCurrentProduct(product)}
 						></img>
@@ -83,6 +84,8 @@ export default function Product({ product, altText, seller, price }) {
 									href={
 										product.sellerName === "Daraz"
 											? "https://www." + product.sellerName + ".com.np/"
+											: product.sellerName === "ryzen"
+											? "https://ecommerce.thexpresstimes.com/"
 											: "https://www." + product.sellerName + ".com/"
 									}
 									rel="noreferrer"

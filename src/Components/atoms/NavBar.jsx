@@ -7,7 +7,8 @@ import LogBtn from "./LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
-	let userName = useAuthStore((state) => state.userName);
+	let userName = localStorage.getItem("userName");
+
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
 	let twNavBarClasses = {
@@ -94,6 +95,29 @@ export default function Navbar() {
 										>
 											{userName.trim()}
 										</p>
+									</Link>
+									<Link to="/wishlist">
+										<div
+											className="transition h-10 px-3 py-2 mr-2 border-2 hover:text-orange-50 hover:border-white hover:bg-white
+										 border-indigo-300 font-bold font-mono 
+										 hover:shadow-lg hover:shadow-indigo-400/60 focus:shadow-none
+										 flex items-center text-xs uppercase  text-indigo-900 rounded-md"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												className="h-6 w-6 "
+												fill="none"
+												viewBox="0 0 24 24"
+												stroke="#f77170"
+												strokeWidth={2}
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+												/>
+											</svg>
+										</div>
 									</Link>
 								</>
 							)}

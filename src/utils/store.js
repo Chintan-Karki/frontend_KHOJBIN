@@ -1,5 +1,5 @@
 import create from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
 
 let nameFromStorage = localStorage.getItem("userName");
 let access_token = localStorage.getItem("access_token");
@@ -20,7 +20,7 @@ let productsStore = (set) => ({
 	productsFilteredSorted: [],
 	setProducts: (products) =>
 		set((state) => ({ products: products }), false, "SetProducts"),
-		
+
 	setCurrentProduct: (currentProduct) =>
 		set(
 			(state) => ({ currentProduct: currentProduct }),
@@ -44,23 +44,34 @@ let productsStore = (set) => ({
 
 let sortStore = (set) => ({
 	sortOrder: 4,
+	priceRange: [],
+	currentPriceRange: [],
 	setSortOrder: (order) =>
 		set((state) => ({ sortOrder: order }), false, "SetSortOrder"),
+	setPriceRange: (priceRange) =>
+		set((state) => ({ priceRange: priceRange }), false, "SetPriceRange"),
+	setCurrentPriceRange: (currentPriceRange) =>
+		set(
+			(state) => ({ currentPriceRange: currentPriceRange }),
+			false,
+			"SetCurrentPriceRange"
+		),
 });
 
 let searchStore = (set) => ({
 	search: {},
-	searchTime: "",
 	setSearch: (search) =>
 		set((state) => ({ search: search }), false, "Set Search"),
-	setSearchTime: (searchTime) =>
-		set((state) => ({ searchTime: searchTime }), false, "setSearchTime"),
 });
 
 userStore = devtools(userStore);
+userStore = persist(userStore, { name: "user details" });
 productsStore = devtools(productsStore);
+productsStore = persist(productsStore, { name: "products" });
 searchStore = devtools(searchStore);
+searchStore = persist(searchStore, { name: "search" });
 sortStore = devtools(sortStore);
+sortStore = persist(sortStore, { name: "sort" });
 
 export const useAuthStore = create(userStore);
 export const useProductsStore = create(productsStore);

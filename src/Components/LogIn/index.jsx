@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/login";
+import axiosInstanceOther from "../../utils/axios";
 import { useForm } from "react-hook-form";
 
 // Local Variables
@@ -16,7 +16,6 @@ import { useAuthStore } from "../../utils/store";
 import WarningMessage from "../atoms/WarningMessage";
 
 export default function LogIn() {
-	const setUserName = useAuthStore((state) => state.setUserName);
 	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 	const {
 		register,
@@ -27,22 +26,42 @@ export default function LogIn() {
 	const [showPassword, setShowPassword] = useState(false);
 
 	console.log(errors);
+
+	const handleAuthentication = async (data) => {
+		console.log(data);
+		await localStorage.setItem("access_token", data.access_token);
+		await localStorage.setItem("refresh_token", data.refresh_token);
+
+		axiosInstance.defaults.headers["Authorization"] =
+			"Bearer " + localStorage.getItem("access_token");
+
+		setIsLoggedIn(true);
+		window.history.go(-1);
+	};
+
 	const onSubmit = (data) => {
 		axiosInstance
-			.post(`token/`, {
-				email: data.email,
+			.post(`auth/token/`, {
+				username: data.email,
 				password: data.password,
+				grant_type: "password",
+				client_secret:
+					"FzQ2PCdnJ2g5aSMry8LGJo0kB8yuyvjzQKeU2xpiEQ8jdteIMLaPKCBcNjmoIwPmRjjwXmJ9bhoK3Aik1TGD61NBgCNq6ZstNQwXr4hLPFEiwhMKwQ6N3GoiwDIeyEDP",
+				client_id: "Csdpa97mV0t0O35uRLBxc12OqGNViT6HfXkT5npD",
 			})
 			.then((res) => {
-				localStorage.setItem("access_token", res.data.access);
-				localStorage.setItem("refresh_token", res.data.refresh);
-				localStorage.setItem("userName", res.data.name);
-				localStorage.setItem("userId", res.data.id.toString());
 				axiosInstance.defaults.headers["Authorization"] =
-					"JWT " + localStorage.getItem("access_token");
-				setUserName(res.data.name);
-				setIsLoggedIn(true);
-				window.history.go(-1);
+					"Bearer " + res.data.access_token;
+				axiosInstanceOther.defaults.headers["Authorization"] =
+					"Bearer " + res.data.access_token;
+				axiosInstanceOther.get("user/").then((res) => {
+					console.log(res.data);
+					
+					localStorage.setItem("userId", res.data.id);
+					localStorage.setItem("userName", res.data.name);
+				});
+				console.log(res.data);
+				handleAuthentication(res.data);
 			});
 	};
 
@@ -104,15 +123,15 @@ export default function LogIn() {
 										<label className="block text-sm mb-1">Password</label>
 										<input
 											{...register(
-												"password",
+												"password"
 												// Setting up the rules for password **in production
-												{
-													required: "Password is required",
-													minLength: {
-														value: 8,
-														message: "Minimum 8 Characters required.",
-													},
-												}
+												// {
+												// 	required: "Password is required",
+												// 	minLength: {
+												// 		value: 8,
+												// 		message: "Minimum 8 Characters required.",
+												// 	},
+												// }
 											)}
 											type={showPassword ? "text" : "password"}
 											className="w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
