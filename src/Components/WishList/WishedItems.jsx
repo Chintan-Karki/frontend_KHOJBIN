@@ -3,20 +3,39 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios";
 import WishedItem from "./WishedItem";
 import loaderGif from "../../assets/images/loaderGif2.gif";
+import { useAuthStore } from "../../utils/store";
+import { useNavigate } from "react-router-dom";
 
 export default function WishedItems() {
 	let [wishList, setWishList] = useState([]);
 	let [loading, setLoading] = useState(true);
+	let navigate = useNavigate();
+	let setUserName = useAuthStore((state) => state.setUserName);
+	let set_user_name = useAuthStore((state) => state.set_user_name);
+	let setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 
 	useEffect(() => {
-		axiosInstance.get("/wishlist").then((res) => {
-			setWishList(res.data);
-			console.log(res.data);
-			// sleep for a second
-			setTimeout(() => {
+		axiosInstance
+			.get("/wishlist")
+			.then((res) => {
+				setWishList(res.data);
+				console.log(res.data);
+				// sleep for a second
 				setLoading(false);
-			}, 1000);
-		});
+			})
+			.catch((err) => {
+				console.log(err);
+				localStorage.removeItem("access_token");
+				localStorage.removeItem("refresh_token");
+				localStorage.removeItem("userName");
+				localStorage.removeItem("userId");
+				axiosInstance.defaults.headers["Authorization"] = null;
+				alert("Session expired. Logged Out");
+				setUserName("");
+				set_user_name("");
+				setIsLoggedIn(false);
+				navigate("/");
+			});
 	}, []);
 
 	const handleDeleteFromWishlist = async (e, item) => {

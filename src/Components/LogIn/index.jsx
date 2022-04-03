@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/login";
 import axiosInstanceOther from "../../utils/axios";
 import { useForm } from "react-hook-form";
@@ -14,8 +14,13 @@ import EyeClosed from "../../assets/icons/EyeClosed";
 import Eye from "../../assets/icons/Eye";
 import { useAuthStore } from "../../utils/store";
 import WarningMessage from "../atoms/WarningMessage";
+// import FacebookLogin from "react-facebook-login";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import facebookLoginAxios from "../../utils/facebookLoginAxios";
 
 export default function LogIn() {
+	let navigate = useNavigate();
+	let set_user_name = useAuthStore((state) => state.set_user_name);
 	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 	const {
 		register,
@@ -31,7 +36,6 @@ export default function LogIn() {
 		console.log(data);
 		await localStorage.setItem("access_token", data.access_token);
 		await localStorage.setItem("refresh_token", data.refresh_token);
-
 		axiosInstance.defaults.headers["Authorization"] =
 			"Bearer " + localStorage.getItem("access_token");
 
@@ -46,8 +50,8 @@ export default function LogIn() {
 				password: data.password,
 				grant_type: "password",
 				client_secret:
-					"FzQ2PCdnJ2g5aSMry8LGJo0kB8yuyvjzQKeU2xpiEQ8jdteIMLaPKCBcNjmoIwPmRjjwXmJ9bhoK3Aik1TGD61NBgCNq6ZstNQwXr4hLPFEiwhMKwQ6N3GoiwDIeyEDP",
-				client_id: "Csdpa97mV0t0O35uRLBxc12OqGNViT6HfXkT5npD",
+					"96gKNpuK3rIkv3pMRGGo1zvsMcz1yHGQdWHvYwHJKJ5CUoDBL2q2nZ5F9gdcZOqzkxeGtfONpbogbfzNCNvriAvUacnvBKmuy3cFcY23ij8ugIW7PoKub1xKOe4a8GAf",
+				client_id: "vlQJ3U0zTvlvdh42gLRs2DIl8VhIul5JGhWV46rK",
 			})
 			.then((res) => {
 				axiosInstance.defaults.headers["Authorization"] =
@@ -56,13 +60,23 @@ export default function LogIn() {
 					"Bearer " + res.data.access_token;
 				axiosInstanceOther.get("user/").then((res) => {
 					console.log(res.data);
-					
 					localStorage.setItem("userId", res.data.id);
-					localStorage.setItem("userName", res.data.name);
+					localStorage.setItem("userName", res.data.username);
+					set_user_name(res.data.username);
 				});
 				console.log(res.data);
 				handleAuthentication(res.data);
 			});
+	};
+
+	let responseFacebook = (response) => {
+		console.log(response);
+		facebookLoginAxios(response.accessToken);
+		// localStorage.setItem("userId", response.id);
+		// localStorage.setItem("userName", response.name);
+		setIsLoggedIn(true);
+		navigate("/");
+		// window.history.go(-1);
 	};
 
 	return (
@@ -112,6 +126,7 @@ export default function LogIn() {
 											className="peer w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600  disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600"
 											placeholder="Email Address"
+											autocomplete="email"
 										/>
 										{errors.email && (
 											<ErrorMessage message={errors.email.message} />
@@ -154,12 +169,35 @@ export default function LogIn() {
 									</div>
 									<button
 										type="submit"
-										className="block w-full px-4 py-2 mt-8 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
+										className="block w-full px-4 py-2 mb-4 mt-8 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
 										onClick={onSubmit}
 									>
 										Log In
 									</button>
+									{/* <FacebookLogin
+										appId="5100792743311105"
+										autoLoad={false}
+										fields="name,email,picture"
+										callback={responseFacebook}
+									/> */}
 								</form>
+								<FacebookLogin
+								appId="5100792743311105"
+								autoLoad={false}
+								callback={responseFacebook}
+								fields="name,email,picture"
+								render={(renderProps) => (
+									<div className="mt-4">
+										Or, you can also login through &nbsp;
+										<button
+											onClick={renderProps.onClick}
+											className="transition-all w-full text-indigo-900 mt-1 hover:text-indigo-50 hover:bg-indigo-800 hover:border-indigo-800 p-2 border-2 rounded px-4"
+										>
+											Facebook
+										</button>
+									</div>
+								)}
+							/>
 
 								<div className="mt-4 text-left">
 									<p className="text-sm">

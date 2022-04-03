@@ -6,7 +6,10 @@ let access_token = localStorage.getItem("access_token");
 
 let userStore = (set) => ({
 	isLoggedIn: access_token ? true : false,
+	user_name: "",
 	userName: nameFromStorage === "" ? "" : nameFromStorage,
+	set_user_name: (user_name) =>
+		set((state) => ({ user_name: user_name }), false, "Set_User_Name"),
 	setIsLoggedIn: (isLoggedIn) =>
 		set((state) => ({ isLoggedIn: isLoggedIn }), false, "Login"),
 	setUserName: (newUserName) =>

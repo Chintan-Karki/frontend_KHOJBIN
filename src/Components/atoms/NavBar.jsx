@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
 import logo from "../../assets/images/logoPrimary.svg";
@@ -7,7 +7,7 @@ import LogBtn from "./LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
-	let userName = localStorage.getItem("userName");
+	let [userName, setUserName] = useState(localStorage.getItem("userName"));
 
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
@@ -93,7 +93,7 @@ export default function Navbar() {
 										 hover:shadow-lg hover:shadow-orange-400/60 focus:shadow-none
 										 flex items-center text-xs uppercase  text-indigo-900 rounded-md"
 										>
-											{userName.trim()}
+											{userName ? userName : "Profile"}
 										</p>
 									</Link>
 									<Link to="/wishlist">

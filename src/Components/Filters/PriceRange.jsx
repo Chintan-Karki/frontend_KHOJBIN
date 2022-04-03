@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useSortStore } from "../../utils/store";
+import { useProductsStore, useSortStore } from "../../utils/store";
+import _ from "lodash";
 
 export default function PriceRange() {
 	return (
 		<>
 			<hr />
-			<div className="my-2">Price Range</div>
+			<div className="my-2 text-gray-500 mb-4">Price Range</div>
 			<PriceRangeForm />
 		</>
 	);
@@ -13,6 +14,11 @@ export default function PriceRange() {
 
 const PriceRangeForm = () => {
 	let priceRange = useSortStore((state) => state.priceRange);
+	let productsFiltered = useProductsStore((state) => state.productsFiltered);
+	let setProductsFiltered = useProductsStore(
+		(state) => state.setProductsFiltered
+	);
+
 	const [minValue, setMinValue] = useState(priceRange[0]);
 	const [maxValue, setMaxValue] = useState(priceRange[1]);
 
@@ -29,7 +35,11 @@ const PriceRangeForm = () => {
 			Number(isNaN(minValue) ? 0 : minValue),
 			Number(isNaN(maxValue) ? 0 : maxValue),
 		];
-		console.log([min, max]);
+
+		let filteredProductsByPrice = _.filter(productsFiltered, function (o) {
+			return o.price > min && o.price < max;
+		});
+		setProductsFiltered(filteredProductsByPrice);
 	};
 
 	return (

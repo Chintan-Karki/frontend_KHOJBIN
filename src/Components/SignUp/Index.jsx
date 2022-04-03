@@ -5,15 +5,21 @@ import logo from "../../assets/images/logoPrimary.svg";
 import smile from "../../assets/images/smile.png";
 import smile2 from "../../assets/images/smile2.png";
 import { useForm } from "react-hook-form";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 import ErrorMessage from "../atoms/ErrorMessage";
 import { useRef, useState } from "react";
 import Eye from "../../assets/icons/Eye";
 import EyeClosed from "../../assets/icons/EyeClosed";
 import axiosInstance from "../../utils/axios";
+import facebookLoginAxios from "../../utils/facebookLoginAxios";
+import { useAuthStore } from "../../utils/store";
 
 export default function SignUp() {
 	let navigate = useNavigate();
+	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
+	let [isLoading, setIsLoading] = useState(false);
+
 	const {
 		register,
 		watch,
@@ -26,12 +32,24 @@ export default function SignUp() {
 	const password = useRef({});
 	password.current = watch("password", "");
 
+	let responseFacebook = (response) => {
+		setIsLoading(true);
+		console.log(response);
+		facebookLoginAxios(response.accessToken);
+		// localStorage.setItem("userId", response.id);
+		// localStorage.setItem("userName", response.name);
+		setIsLoggedIn(true);
+		setIsLoading(false);
+		navigate("/");
+		// window.history.go(-1);
+	};
+
 	const onSubmit = (data) => {
 		console.log(data);
 		axiosInstance
 			.post(`user/register/`, {
 				email: data.email,
-				name: data.name,
+				username: data.name,
 				password: data.password,
 			})
 			.then((res) => {
@@ -178,7 +196,23 @@ export default function SignUp() {
 									Sign up
 								</button>
 							</form>
-
+							<FacebookLogin
+								appId="5100792743311105"
+								autoLoad={false}
+								callback={responseFacebook}
+								fields="name,email,picture"
+								render={(renderProps) => (
+									<div className="mt-4">
+										Or, you can also login through &nbsp;
+										<button
+											onClick={renderProps.onClick}
+											className="transition-all w-full text-indigo-900 mt-1 hover:text-indigo-50 hover:bg-indigo-800 hover:border-indigo-800 p-2 border-2 rounded px-4"
+										>
+											{isLoading ? "wait.." : "Facebook"}
+										</button>
+									</div>
+								)}
+							/>
 							<div className="mt-4 text-left">
 								<p className="text-sm">
 									Already have an account?{" "}

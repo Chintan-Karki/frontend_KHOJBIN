@@ -50,7 +50,7 @@ export default function SortMenu() {
 	}, [sortOption]);
 
 	return (
-		<div className="w-56 text-right z-10">
+		<div className="text-right z-10">
 			<Menu as="div" className="relative inline-block text-left">
 				<div>
 					<Menu.Button className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-indigo-600  rounded-md bg-opacity-100 shadow-sm focus:shadow-none hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 bg-white focus-visible:ring-white focus-visible:ring-opacity-75">

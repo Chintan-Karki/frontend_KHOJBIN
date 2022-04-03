@@ -143,7 +143,7 @@ export function hamrobazaar_filter(hamrobazaar_data) {
 		newObj.ratingScore = "0";
 		newObj.reviewCount = item.totalViews;
 		newObj.sellerName = "Hamrobazaar";
-		newObj.sellerImageUrl = "https://beta.hamrobazaar.com/icon-192x192.png";
+		newObj.sellerImageUrl = "https://hamrobazaar.com/icon-192x192.png";
 		filteredHamrobazaarData.push(newObj);
 	});
 	return filteredHamrobazaarData;

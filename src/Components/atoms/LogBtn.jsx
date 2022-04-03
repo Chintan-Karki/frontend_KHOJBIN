@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
 
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
 import axiosInstance from "../../utils/axios";
@@ -12,6 +11,7 @@ export default function LogBtn() {
 	// For Modal
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let setUserName = useAuthStore((state) => state.setUserName);
+	let set_user_name = useAuthStore((state) => state.set_user_name);
 	let setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 
 	// For Modal
@@ -28,10 +28,13 @@ export default function LogBtn() {
 		// 	.then((res) => {
 		localStorage.removeItem("access_token");
 		localStorage.removeItem("refresh_token");
+		localStorage.removeItem("userName");
+		localStorage.removeItem("userId");
 		axiosInstance.defaults.headers["Authorization"] = null;
 		console.log("Logged Out");
 		setIsOpen(true);
 		setUserName("");
+		set_user_name("");
 		setHeaderTextForModal("Logged Out Successfully ✅");
 		setBodyTextForModal(
 			`You can log in to the system again using the login page🙂`

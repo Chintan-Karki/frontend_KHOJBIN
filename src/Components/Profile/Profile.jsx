@@ -2,20 +2,41 @@ import React, { useState, useEffect } from "react";
 import axiosInstance from "../../utils/axios";
 import WishedItems from "../WishList/WishedItems";
 import loaderGif from "../../assets/images/loaderGif2.gif";
+import { useAuthStore } from "../../utils/store";
+import { useNavigate } from "react-router-dom";
 // import MainLoader from "../atoms/MainLoader.jsx";
 
 export default function Profile() {
 	let [userDetails, setUserDetails] = useState({});
 	let [loading, setLoading] = useState(true);
 
+	let navigate = useNavigate();
+	let setUserName = useAuthStore((state) => state.setUserName);
+	let set_user_name = useAuthStore((state) => state.set_user_name);
+	let setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
+
 	useEffect(() => {
-		axiosInstance.get("/user").then((res) => {
-			console.log(res.data);
-			setUserDetails(res.data);
-			setTimeout(() => {
+		axiosInstance
+			.get("/user")
+			.then((res) => {
+				console.log(res.data);
+				setUserDetails(res.data);
 				setLoading(false);
-			}, 600);
-		});
+			})
+			.catch((err) => {
+				console.log(err);
+				console.log(err);
+				localStorage.removeItem("access_token");
+				localStorage.removeItem("refresh_token");
+				localStorage.removeItem("userName");
+				localStorage.removeItem("userId");
+				axiosInstance.defaults.headers["Authorization"] = null;
+				alert("Session expired. Logged Out");
+				setUserName("");
+				set_user_name("");
+				setIsLoggedIn(false);
+				navigate("/");
+			});
 	}, []);
 
 	return (
@@ -57,7 +78,7 @@ export default function Profile() {
 												<input
 													type="text"
 													className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-													defaultValue={userDetails.name}
+													defaultValue={userDetails.username}
 												/>
 											</div>
 										</div>

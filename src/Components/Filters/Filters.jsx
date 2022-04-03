@@ -40,8 +40,8 @@ export default function Filters() {
 
 	return (
 		<aside className="flex-shrink-0 hidden lg:block w-1/5 my-2 bg-white mr-10 p-6 pb-2 rounded-lg shadow-lg h-[500px]">
-			<section className="border-b border-gray-300 pb-2 mb-4 flex items-center justify-between">
-				<h2 className="font-semibold text-heading text-xl md:text-2xl">
+			<section className="border-b border-gray-300 pb-2 mb-2 flex items-center justify-between">
+				<h2 className="font-semibold text-heading text-xl md:text-2xl text-gray-700">
 					Filters
 				</h2>
 				<button
@@ -55,6 +55,7 @@ export default function Filters() {
 					Clear All
 				</button>
 			</section>
+			<div className="my-2 mb-4 text-gray-500">Shops</div>
 			<motion.section
 				layout
 				initial={{ scale: 0 }}

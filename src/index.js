@@ -6,7 +6,6 @@ import App from "./App";
 // import SearchResults from "./Components/SearchResults/index";
 // import SignUp from "./Components/SignUp/Index";
 import "./index.css";
-import "react-toastify/dist/ReactToastify.css";
 // import Profile from "./Components/Profile/Profile";
 // import IndividualProductPage from "./Components/Products/IndividualProductPage";
 

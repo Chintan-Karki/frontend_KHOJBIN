@@ -12,7 +12,7 @@ export default function WishedItem({ item, onDelete }) {
 			className=" bg-white border border-white shadow-lg rounded-3xl w-full p-4 xl:w-[600px]"
 		>
 			<div className="flex-none sm:flex">
-				<div className=" relative rounded-xl flex items-center sm:w-36bg-white">
+				<div className=" relative rounded-xl flex items-start sm:w-36bg-white">
 					<img
 						src={item.image_url ? item.image_url : "ImageNotFound"}
 						alt={item.name}

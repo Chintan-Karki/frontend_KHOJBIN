@@ -11,6 +11,9 @@ import Product from "../Products/Product";
 
 import Filters from "../Filters/Filters";
 import SortMenu from "../Filters/SortMenu";
+import ListView from "../../assets/icons/ListView";
+import GridView from "../../assets/icons/GridView";
+import ProductListView from "../Products/ProductListView";
 // import MainLoader from "../atoms/MainLoader";
 
 export default function SearchResults() {
@@ -18,6 +21,7 @@ export default function SearchResults() {
 	let searchTime = useSearchStore((state) => state.search.searchTime) || 0;
 	let searchQuery = useSearchStore((state) => state.search.search_query);
 	let [loading, setLoading] = useState(true);
+	let [gridView, setGridView] = useState(true);
 
 	//* From Stores
 	let setPriceRange = useSortStore((state) => state.setPriceRange);
@@ -71,26 +75,66 @@ export default function SearchResults() {
 						<div className="flex pt-8 pb-16 lg:pb-20">
 							<Filters />
 							<div className="flex flex-col">
-								<div className="flex flex-row-reverse mb-2">
+								<div className="flex flex-row-reverse mb-2 ">
 									<SortMenu />
+									<button
+										className={`${
+											gridView
+												? "mr-2 p-2 bg-white rounded border border-indigo-100"
+												: "mr-2 p-2"
+										}`}
+										onClick={() => {
+											setGridView(true);
+										}}
+									>
+										<GridView />
+									</button>
+									<button
+										className={`${
+											!gridView
+												? "mr-2 p-2 bg-white rounded border border-indigo-100"
+												: "mr-2 p-2"
+										}`}
+										onClick={() => {
+											setGridView(false);
+										}}
+									>
+										<ListView />
+									</button>
 								</div>
 								<section>
 									<motion.div
 										layout
-										className="w-full grid grid-cols-1  xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-x-5  xl:gap-x-7 gap-y-3 xl:gap-y-5 2xl:gap-y-8 "
+										className={`${
+											gridView
+												? "grid grid-cols-1  xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-x-5  xl:gap-x-7 gap-y-3 xl:gap-y-5 2xl:gap-y-8 "
+												: "w-full grid grid-cols-1 "
+										}`}
 									>
 										<AnimatePresence>
-											{productsFiltered.map((product) => (
-												<Product
-													key={product.itemId}
-													product={product}
-													altText={product.name}
-													seller={product.sellerName}
-													ratingPer5="3"
-													price={product.price}
-													searchQuery={searchQuery}
-												/>
-											))}
+											{gridView
+												? productsFiltered.map((product) => (
+														<Product
+															key={product.itemId}
+															product={product}
+															altText={product.name}
+															seller={product.sellerName}
+															ratingPer5="3"
+															price={product.price}
+															searchQuery={searchQuery}
+														/>
+												  ))
+												: productsFiltered.map((product) => (
+														<ProductListView
+															key={product.itemId}
+															product={product}
+															altText={product.name}
+															seller={product.sellerName}
+															ratingPer5="3"
+															price={product.price}
+															searchQuery={searchQuery}
+														/>
+												  ))}
 										</AnimatePresence>
 									</motion.div>
 								</section>

@@ -56,7 +56,8 @@ export default function IndividualProductPage() {
 				setIsOpen(true);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err.response.data.product_id[0]);
+				alert(err.response.data.product_id[0]);
 			});
 	};
 
