@@ -21,6 +21,7 @@ let productsStore = (set) => ({
 	currentProduct: {},
 	productsFiltered: [],
 	productsFilteredSorted: [],
+	gridView: true,
 	setProducts: (products) =>
 		set((state) => ({ products: products }), false, "SetProducts"),
 
@@ -43,6 +44,8 @@ let productsStore = (set) => ({
 			false,
 			"SetproductsFilteredSorted"
 		),
+	setGridView: (gridView) =>
+		set((state) => ({ gridView: gridView }), false, "SetGridView"),
 });
 
 let sortStore = (set) => ({

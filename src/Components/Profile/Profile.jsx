@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import WishedItems from "../WishList/WishedItems";
 import loaderGif from "../../assets/images/loaderGif2.gif";
 import { useAuthStore } from "../../utils/store";
@@ -37,7 +37,7 @@ export default function Profile() {
 				setIsLoggedIn(false);
 				navigate("/");
 			});
-	}, []);
+	}, [navigate, setIsLoggedIn, setUserName, set_user_name]);
 
 	return (
 		<>

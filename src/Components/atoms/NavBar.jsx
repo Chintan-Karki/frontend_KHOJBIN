@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
 import logo from "../../assets/images/logoPrimary.svg";
@@ -7,7 +7,8 @@ import LogBtn from "./LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
-	let [userName, setUserName] = useState(localStorage.getItem("userName"));
+
+	let userName = localStorage.getItem("userName");
 
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
@@ -15,6 +16,11 @@ export default function Navbar() {
 		navDivClasses:
 			"relative flex flex-wrap items-center justify-between px-2 py-3 mb-3",
 	};
+
+	useEffect(() => {
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		userName = localStorage.getItem("userName");
+	}, [isLoggedIn]);
 
 	return (
 		<>

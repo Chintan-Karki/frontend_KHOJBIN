@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import { useAuthStore } from "../../utils/store";
 import Modal from "./Modal";
 

@@ -42,6 +42,14 @@ const PriceRangeForm = () => {
 		setProductsFiltered(filteredProductsByPrice);
 	};
 
+	const handleReset = async (e) => {
+		e.preventDefault();
+		setMinValue(priceRange[0]);
+		setMaxValue(priceRange[1]);
+		console.log(priceRange);
+		setProductsFiltered(productsFiltered);
+	};
+
 	return (
 		<>
 			<form
@@ -110,6 +118,15 @@ const PriceRangeForm = () => {
 					🔍
 				</button>
 			</form>
+			<span
+				className="text-xs text-gray-400 hover:text-gray-500 cursor-pointer "
+				onClick={(e) => {
+					handleReset(e);
+					console.log("reset");
+				}}
+			>
+				Reset
+			</span>
 		</>
 	);
 };

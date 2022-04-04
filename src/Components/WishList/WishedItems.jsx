@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import WishedItem from "./WishedItem";
 import loaderGif from "../../assets/images/loaderGif2.gif";
 import { useAuthStore } from "../../utils/store";
@@ -36,7 +36,7 @@ export default function WishedItems() {
 				setIsLoggedIn(false);
 				navigate("/");
 			});
-	}, []);
+	}, [navigate, setIsLoggedIn, setUserName, set_user_name]);
 
 	const handleDeleteFromWishlist = async (e, item) => {
 		e.preventDefault();

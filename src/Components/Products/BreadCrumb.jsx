@@ -1,11 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useProductsStore } from "../../utils/store";
 
 export default function BreaCrumb() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
+	let navigate = useNavigate();
 
 	const goBack = () => {
-		window.history.go(-1);
+		navigate("/searchresults");
 	};
 	return (
 		<div className="flex items-center container mx-auto px-4 text-gray-500">

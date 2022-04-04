@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import loaderLogo from "../../assets/images/loaderLogo.gif";
-import {
-	daraz_filter,
-	gyapu_filter,
-	hamrobazaar_filter,
-	ryzen_filter,
-	sastodeal_filter,
-} from "../../utils/data_filter";
+
+// Filters for the search data
+import { ryzen_filter } from "../../utils/DataFilters/ryzenFilter";
+import { daraz_filter } from "../../utils/DataFilters/darazFilter";
+import { gyapu_filter } from "../../utils/DataFilters/gyapuFilter";
+import { hamrobazaar_filter } from "../../utils/DataFilters/hamrobazaarFilter";
+import { sastodeal_filter } from "../../utils/DataFilters/sastodealFilter";
+
+// For dummy data
 import { dummy_data } from "../../utils/dummy_data";
 import { useProductsStore, useSearchStore } from "../../utils/store";
 

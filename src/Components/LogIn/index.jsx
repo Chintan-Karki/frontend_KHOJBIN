@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axiosInstance from "../../utils/login";
-import axiosInstanceOther from "../../utils/axios";
+import axiosInstance from "../../utils/axios/login";
+import axiosInstanceOther from "../../utils/axios/axios";
 import { useForm } from "react-hook-form";
 
 // Local Variables
@@ -16,11 +16,12 @@ import { useAuthStore } from "../../utils/store";
 import WarningMessage from "../atoms/WarningMessage";
 // import FacebookLogin from "react-facebook-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-import facebookLoginAxios from "../../utils/facebookLoginAxios";
+import facebookLoginAxios from "../../utils/axios/facebookLoginAxios";
 
 export default function LogIn() {
 	let navigate = useNavigate();
 	let set_user_name = useAuthStore((state) => state.set_user_name);
+	let user_name = useAuthStore((state) => state.user_name);
 	const setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 	const {
 		register,
@@ -54,6 +55,7 @@ export default function LogIn() {
 				client_id: "vlQJ3U0zTvlvdh42gLRs2DIl8VhIul5JGhWV46rK",
 			})
 			.then((res) => {
+				
 				axiosInstance.defaults.headers["Authorization"] =
 					"Bearer " + res.data.access_token;
 				axiosInstanceOther.defaults.headers["Authorization"] =
@@ -64,17 +66,19 @@ export default function LogIn() {
 					localStorage.setItem("userName", res.data.username);
 					set_user_name(res.data.username);
 				});
-				console.log(res.data);
+
+				
 				handleAuthentication(res.data);
 			});
 	};
 
 	let responseFacebook = (response) => {
 		console.log(response);
-		facebookLoginAxios(response.accessToken);
+		facebookLoginAxios(response.accessToken, set_user_name);
 		// localStorage.setItem("userId", response.id);
 		// localStorage.setItem("userName", response.name);
 		setIsLoggedIn(true);
+		console.log(user_name);
 		navigate("/");
 		// window.history.go(-1);
 	};
@@ -182,22 +186,22 @@ export default function LogIn() {
 									/> */}
 								</form>
 								<FacebookLogin
-								appId="5100792743311105"
-								autoLoad={false}
-								callback={responseFacebook}
-								fields="name,email,picture"
-								render={(renderProps) => (
-									<div className="mt-4">
-										Or, you can also login through &nbsp;
-										<button
-											onClick={renderProps.onClick}
-											className="transition-all w-full text-indigo-900 mt-1 hover:text-indigo-50 hover:bg-indigo-800 hover:border-indigo-800 p-2 border-2 rounded px-4"
-										>
-											Facebook
-										</button>
-									</div>
-								)}
-							/>
+									appId="5100792743311105"
+									autoLoad={false}
+									callback={responseFacebook}
+									fields="name,email,picture"
+									render={(renderProps) => (
+										<div className="mt-4">
+											Or, you can also login through &nbsp;
+											<button
+												onClick={renderProps.onClick}
+												className="transition-all w-full text-indigo-900 mt-1 hover:text-indigo-50 hover:bg-indigo-800 hover:border-indigo-800 p-2 border-2 rounded px-4"
+											>
+												Facebook
+											</button>
+										</div>
+									)}
+								/>
 
 								<div className="mt-4 text-left">
 									<p className="text-sm">

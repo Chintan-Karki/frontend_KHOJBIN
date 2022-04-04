@@ -5,7 +5,7 @@ import ImageNotFound from "../../assets/images/ImgNotFound.png";
 import Like from "../../assets/icons/like.png";
 import { useAuthStore, useProductsStore } from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import { Link } from "react-router-dom";
 
@@ -115,7 +115,7 @@ export default function Product({ product, altText, seller, price }) {
 								</h4>
 							</Link>
 							<div className="mt-1 text-xl font-extrabold">
-								NRs. {price}
+								NRs. {product.price}
 								<span className="text-gray-600 text-sm"> </span>
 							</div>
 							<div className="mt-4 flex wrap justify-between items-center">

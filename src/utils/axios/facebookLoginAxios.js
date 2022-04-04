@@ -2,7 +2,7 @@ import axios from "axios";
 import axiosInstance from "./axios";
 // import { useHistory } from 'react-router-dom';
 
-const facebookLoginAxios = (accesstoken) => {
+const facebookLoginAxios = (accesstoken, set_user_name) => {
 	console.log(accesstoken);
 	axios
 		.post("http://127.0.0.1:8000/auth/convert-token", {
@@ -22,7 +22,6 @@ const facebookLoginAxios = (accesstoken) => {
 				console.log(res.data);
 				localStorage.setItem("userId", res.data.id);
 				localStorage.setItem("userName", res.data.username);
-                
 			});
 		});
 };

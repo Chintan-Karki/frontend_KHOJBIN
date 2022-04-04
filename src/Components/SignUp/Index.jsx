@@ -11,8 +11,8 @@ import ErrorMessage from "../atoms/ErrorMessage";
 import { useRef, useState } from "react";
 import Eye from "../../assets/icons/Eye";
 import EyeClosed from "../../assets/icons/EyeClosed";
-import axiosInstance from "../../utils/axios";
-import facebookLoginAxios from "../../utils/facebookLoginAxios";
+import axiosInstance from "../../utils/axios/axios";
+import facebookLoginAxios from "../../utils/axios/facebookLoginAxios";
 import { useAuthStore } from "../../utils/store";
 
 export default function SignUp() {

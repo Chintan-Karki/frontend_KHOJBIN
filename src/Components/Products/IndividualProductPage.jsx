@@ -4,20 +4,20 @@ import { useAuthStore, useProductsStore } from "../../utils/store";
 import likeBtn from "../../assets/icons/like.png";
 import ImageNotFound from "../../assets/images/ImgNotFound.png";
 
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import GoToWeb from "../../assets/icons/GoToWeb";
 import BreadCrumb from "./BreadCrumb";
+import RecommendedProducts from "./Recommendation/RecommendedProducts";
 
 export default function IndividualProductPage() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
+	let productsFiltered = useProductsStore((state) => state.productsFiltered);
 	let [isOpen, setIsOpen] = useState(false);
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-	console.log(currentProduct);
-	console.log(typeof currentProduct.description);
 	let navigate = useNavigate();
 	// let [userId, setUserId] = useState();
 	// axiosInstance.get("user/").then((res) => {
@@ -200,6 +200,14 @@ export default function IndividualProductPage() {
 					</div>
 				</div>
 			</div>
+			{isLoggedIn && (
+				<div className="mx-auto flex container rounded-xl mt-8  mb-10 px-4  ">
+					<RecommendedProducts
+						currentProduct={currentProduct}
+						productsFiltered={productsFiltered}
+					/>
+				</div>
+			)}
 		</>
 	);
 }

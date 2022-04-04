@@ -5,7 +5,7 @@ import ImageNotFound from "../../assets/images/ImgNotFound.png";
 import Like from "../../assets/icons/like.png";
 import { useAuthStore, useProductsStore } from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
-import axiosInstance from "../../utils/axios";
+import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import { Link } from "react-router-dom";
 
@@ -71,7 +71,7 @@ export default function ProductListView({ product, altText, seller, price }) {
 							src={product.image_url ? product.image_url : ImageNotFound}
 							alt={product.name}
 							loading="lazy"
-							className=" object-scale-down hover:border-2 h-64 w-72 hover:border-indigo-200 border-2 border-indigo-100 bg-white object-center rounded-xl  hover:shadow-sm "
+							className="  h-64 w-72 object-scale-down hover:border-2 hover:border-indigo-200 border-2 border-indigo-100 bg-white object-center rounded-xl  hover:shadow-sm "
 							onClick={() => setCurrentProduct(product)}
 						></img>
 					</Link>
@@ -91,28 +91,30 @@ export default function ProductListView({ product, altText, seller, price }) {
 										}
 										rel="noreferrer"
 									>
-										<span className=" mt-0 mb-1  bg-white text-indigo-500 text-xs p-2 inline-block rounded-full hover:shadow-md focus:shadow-none cursor-pointer  tracking-wide truncate">
+										<span className=" mt-0 mb-1  border border-indigo-100 text-indigo-500 text-xs p-2 inline-block rounded-full hover:shadow-md focus:shadow-none cursor-pointer  ">
 											<img
 												src={
 													product.sellerImageUrl
 														? product.sellerImageUrl
 														: ImageNotFound
 												}
-												alt={product.name}
+												alt={product.name.replace(/(<([^>]+)>)/gi, "")}
 												className=" object-scale-down bg-white w-full h-4 object-center  "
 											></img>
 										</span>
 									</a>
-									<ShopButton url={product.productUrl} />
+									<div className="pr-2">
+										<ShopButton url={product.productUrl} />
+									</div>
 								</div>
 								<Link to={`/searchresults/${product.itemId}`}>
 									<h4
-										className="mt-2 text-md font-medium uppercase leading-tight truncate "
+										className="mt-2 text-md font-medium uppercase leading-tight mb-2 "
 										onClick={() => {
 											setCurrentProduct(product);
 										}}
 									>
-										{product.name}
+										{product.name.replace(/(<([^>]+)>)/gi, "")}
 									</h4>
 								</Link>
 								<div className="mt-1 text-xl font-extrabold">
@@ -137,7 +139,7 @@ export default function ProductListView({ product, altText, seller, price }) {
 										<img
 											src={Like}
 											alt="Like button for adding product to the wishlist"
-											className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer"
+											className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer pr-4"
 											onClick={handleAddToWishlist}
 										/>
 									</div>
