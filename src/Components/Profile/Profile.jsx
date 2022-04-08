@@ -4,11 +4,13 @@ import WishedItems from "../WishList/WishedItems";
 import loaderGif from "../../assets/images/loaderGif2.gif";
 import { useAuthStore } from "../../utils/store";
 import { useNavigate } from "react-router-dom";
+import SessionExpired from "../Modals/SessionExpired";
 // import MainLoader from "../atoms/MainLoader.jsx";
 
 export default function Profile() {
 	let [userDetails, setUserDetails] = useState({});
 	let [loading, setLoading] = useState(true);
+	let [isErrorOpen, setIsErrorOpen] = useState(false);
 
 	let navigate = useNavigate();
 	let setUserName = useAuthStore((state) => state.setUserName);
@@ -24,23 +26,22 @@ export default function Profile() {
 				setLoading(false);
 			})
 			.catch((err) => {
-				console.log(err);
-				console.log(err);
 				localStorage.removeItem("access_token");
 				localStorage.removeItem("refresh_token");
 				localStorage.removeItem("userName");
 				localStorage.removeItem("userId");
 				axiosInstance.defaults.headers["Authorization"] = null;
-				alert("Session expired. Logged Out");
 				setUserName("");
 				set_user_name("");
 				setIsLoggedIn(false);
-				navigate("/");
+				setIsErrorOpen(true);
 			});
 	}, [navigate, setIsLoggedIn, setUserName, set_user_name]);
 
 	return (
 		<>
+			<SessionExpired isOpen={isErrorOpen} setIsOpen={setIsErrorOpen} />
+
 			<section className=" py-1 ">
 				<div className="w-full container px-4 mx-auto mt-6">
 					<div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-xl bg-blueGray-100 border-0">

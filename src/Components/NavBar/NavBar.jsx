@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
-import logo from "../../assets/images/logoPrimary.svg";
+import logo from "../../assets/images/newLogo.png";
 import { useAuthStore } from "../../utils/store.js";
-import LogBtn from "./LogBtn.jsx";
+import LogBtn from "../atoms/LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -32,7 +32,7 @@ export default function Navbar() {
 							className="text-sm font-bold leading-relaxed inline-block py-2
 							whitespace-nowrap uppercase text-gray"
 						>
-							<img src={logo} className="h-10 min-h-fit" alt="logo" />
+							<img src={logo} className="h-10 " alt="logo" />
 						</Link>
 
 						<button

@@ -1,5 +1,5 @@
-// import similarity from "compute-cosine-similarity";
-import native_similarity_calculator from "./CosineSim";
+import similarity from "compute-cosine-similarity";
+// import native_similarity_calculator from "./CosineSim";
 
 function Recommender(mainObj, remainingArray, numberOfRecommendations = 5) {
 	var result = [];
@@ -15,7 +15,7 @@ function Recommender(mainObj, remainingArray, numberOfRecommendations = 5) {
 			// result.push(similarity)
 
 			result.push(
-				native_similarity_calculator(
+				similarity(
 					[
 						Number(mainObj.ratingScore ? 1 : mainObj.ratingScore),
 						Number(isNaN(mainObj.price) ? 1 : mainObj.price),

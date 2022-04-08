@@ -9,23 +9,23 @@ import Modal from "../atoms/Modal";
 import GoToWeb from "../../assets/icons/GoToWeb";
 import BreadCrumb from "./BreadCrumb";
 import RecommendedProducts from "./Recommendation/RecommendedProducts";
+import SessionExpired from "../Modals/SessionExpired";
+import AlreadyExists from "../Modals/AlreadyExists";
 
 export default function IndividualProductPage() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
 	let productsFiltered = useProductsStore((state) => state.productsFiltered);
+
+	// For modals
 	let [isOpen, setIsOpen] = useState(false);
+	let [isErrorOpen, setIsErrorOpen] = useState(false);
+	let [isAlreadyExistErrorOpen, setIsAlreadyExistErrorOpen] = useState(false);
+
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let navigate = useNavigate();
-	// let [userId, setUserId] = useState();
-	// axiosInstance.get("user/").then((res) => {
-	// 	console.log(res.data);
-	// 	setUserId(res.data.id);
-	// 	localStorage.setItem("userId", res.data.id);
-	// 	localStorage.setItem("userName", res.data.email);
-	// });
 
 	const handleAddToWishlist = async () => {
 		let userId = localStorage.getItem("userId");
@@ -56,8 +56,10 @@ export default function IndividualProductPage() {
 				setIsOpen(true);
 			})
 			.catch((err) => {
-				console.log(err.response.data.product_id[0]);
-				alert(err.response.data.product_id[0]);
+				err.response.data.product_id[0] !==
+				"wish list with this product id already exists."
+					? setIsErrorOpen(true)
+					: setIsAlreadyExistErrorOpen(true);
 			});
 	};
 
@@ -75,6 +77,11 @@ export default function IndividualProductPage() {
 				setIsOpen={setIsOpen}
 				headerText={headerTextForModal}
 				bodyText={bodyTextForModal}
+			/>
+			<SessionExpired isOpen={isErrorOpen} setIsOpen={setIsErrorOpen} />
+			<AlreadyExists
+				isOpen={isAlreadyExistErrorOpen}
+				setIsOpen={setIsAlreadyExistErrorOpen}
 			/>
 			<BreadCrumb />
 			<div className="mx-auto flex container rounded-xl mt-8  mb-10 px-4  ">

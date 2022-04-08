@@ -8,12 +8,17 @@ import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import { Link } from "react-router-dom";
+import SessionExpired from "../Modals/SessionExpired";
+import AlreadyExists from "../Modals/AlreadyExists";
 
 export default function ProductListView({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let userId = localStorage.getItem("userId");
 
 	let [isOpen, setIsOpen] = useState(false);
+	let [isErrorOpen, setIsErrorOpen] = useState(false);
+	let [isAlreadyExistErrorOpen, setIsAlreadyExistErrorOpen] = useState(false);
+
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 	let setCurrentProduct = useProductsStore((state) => state.setCurrentProduct);
@@ -45,7 +50,10 @@ export default function ProductListView({ product, altText, seller, price }) {
 				setIsOpen(true);
 			})
 			.catch((err) => {
-				alert(err.response.data.product_id[0]);
+				err.response.data.product_id[0] !==
+				"wish list with this product id already exists."
+					? setIsErrorOpen(true)
+					: setIsAlreadyExistErrorOpen(true);
 			});
 	};
 
@@ -56,16 +64,21 @@ export default function ProductListView({ product, altText, seller, price }) {
 			initial={{ opacity: 0 }}
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.5 }}
-			className=""
+			className="w-full"
 		>
-			<motion.div className="my-2  antialiased text-gray-900  ">
+			<motion.div className="my-2  antialiased text-gray-900 w-full ">
 				<Modal
 					isOpen={isOpen}
 					setIsOpen={setIsOpen}
 					headerText={headerTextForModal}
 					bodyText={bodyTextForModal}
 				/>
-				<div className="relative flex flex-row mb-4 bg-white rounded-xl shadow-sm h-auto">
+				<SessionExpired isOpen={isErrorOpen} setIsOpen={setIsErrorOpen} />
+				<AlreadyExists
+					isOpen={isAlreadyExistErrorOpen}
+					setIsOpen={setIsAlreadyExistErrorOpen}
+				/>
+				<div className="relative flex w-full flex-row mb-4 bg-white rounded-xl shadow-sm h-auto">
 					<Link to={`/searchresults/${product.itemId}`} className="p-4">
 						<img
 							src={product.image_url ? product.image_url : ImageNotFound}

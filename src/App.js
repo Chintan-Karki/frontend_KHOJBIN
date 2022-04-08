@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "./Components/atoms/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import SearchPage from "./Components/SearchPage/SearchPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LogIn from "./Components/LogIn/index";
@@ -10,6 +10,7 @@ import Profile from "./Components/Profile/Profile";
 import IndividualProductPage from "./Components/Products/IndividualProductPage";
 import { useProductsStore } from "./utils/store";
 import WishListPage from "./Components/WishList/WishListPage";
+import NotFound from "./Components/404/NotFound";
 
 function App() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
@@ -19,6 +20,7 @@ function App() {
 				<NavBar />
 				<Routes>
 					<Route path="/" element={<SearchPage />} />
+
 					{!currentProduct ? (
 						<Navigate to="/" />
 					) : (
@@ -28,28 +30,12 @@ function App() {
 						/>
 					)}
 
-					<Route path="searchresults" element={<SearchResults />}>
-						<Route
-							index
-							element={
-								<main style={{ padding: "1rem" }}>
-									<p>Select an invoice</p>
-								</main>
-							}
-						/>
-					</Route>
+					<Route path="searchresults" element={<SearchResults />}></Route>
 					<Route path="signup" element={<SignUp />} />
 					<Route path="login" element={<LogIn />} />
 					<Route path="profile" element={<Profile />} />
 					<Route path="wishlist" element={<WishListPage />} />
-					<Route
-						path="*"
-						element={
-							<main className="p-4">
-								<p>There's nothing here!</p>
-							</main>
-						}
-					/>
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
 		</>

@@ -1,3 +1,4 @@
+import { string_to_slug } from "..//..//Services//slugify";
 export function hamrobazaar_filter(hamrobazaar_data) {
 	let filteredHamrobazaarData = [];
 	hamrobazaar_data.forEach((item) => {
@@ -8,10 +9,12 @@ export function hamrobazaar_filter(hamrobazaar_data) {
 		newObj.image_url = item.imageUrl;
 		newObj.description = item.description;
 		newObj.productUrl =
-			"https://beta.hamrobazaar.com/product/" +
-			item.name.replaceAll(" ", "-") +
+			"https://www.hamrobazaar.com/" +
+			string_to_slug(item.categoryName) +
 			"/" +
-			item.id +
+			string_to_slug(item.name) +
+			"/" +
+			string_to_slug(item.id) +
 			"/";
 		newObj.ratingScore = "0";
 		newObj.reviewCount = item.totalViews;

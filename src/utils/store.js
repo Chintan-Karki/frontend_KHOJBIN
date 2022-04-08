@@ -49,9 +49,12 @@ let productsStore = (set) => ({
 });
 
 let sortStore = (set) => ({
+	currentPage:1,
 	sortOrder: 4,
 	priceRange: [],
 	currentPriceRange: [],
+	setCurrentPage: (currentPage) =>
+		set((state) => ({ currentPage: currentPage }), false, "Set Current Page"),
 	setSortOrder: (order) =>
 		set((state) => ({ sortOrder: order }), false, "SetSortOrder"),
 	setPriceRange: (priceRange) =>

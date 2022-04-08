@@ -8,12 +8,17 @@ import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import { Link } from "react-router-dom";
+import SessionExpired from "../Modals/SessionExpired";
+import AlreadyExists from "../Modals/AlreadyExists";
 
 export default function Product({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let userId = localStorage.getItem("userId");
 
 	let [isOpen, setIsOpen] = useState(false);
+	let [isErrorOpen, setIsErrorOpen] = useState(false);
+	let [isAlreadyExistErrorOpen, setIsAlreadyExistErrorOpen] = useState(false);
+
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 	let setCurrentProduct = useProductsStore((state) => state.setCurrentProduct);
@@ -45,7 +50,10 @@ export default function Product({ product, altText, seller, price }) {
 				setIsOpen(true);
 			})
 			.catch((err) => {
-				alert(err.response.data.product_id[0]);
+				err.response.data.product_id[0] !==
+				"wish list with this product id already exists."
+					? setIsErrorOpen(true)
+					: setIsAlreadyExistErrorOpen(true);
 			});
 	};
 
@@ -55,7 +63,7 @@ export default function Product({ product, altText, seller, price }) {
 			animate={{ opacity: 1 }}
 			initial={{ opacity: 0 }}
 			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5 }}
+			transition={{ duration: 0.15 }}
 			className=""
 		>
 			<motion.div className="my-2  antialiased text-gray-900 w-auto ">
@@ -65,13 +73,18 @@ export default function Product({ product, altText, seller, price }) {
 					headerText={headerTextForModal}
 					bodyText={bodyTextForModal}
 				/>
+				<SessionExpired isOpen={isErrorOpen} setIsOpen={setIsErrorOpen} />
+				<AlreadyExists
+					isOpen={isAlreadyExistErrorOpen}
+					setIsOpen={setIsAlreadyExistErrorOpen}
+				/>
 				<div className="relative">
 					<Link to={`/searchresults/${product.itemId}`}>
 						<img
 							src={product.image_url ? product.image_url : ImageNotFound}
 							alt={product.name}
 							loading="lazy"
-							className=" object-scale-down hover:border-2 hover:border-indigo-200 bg-white w-full h-72 object-center rounded-3xl shadow-lg hover:shadow-sm"
+							className=" object-scale-down hover:border-2 hover:border-indigo-200 bg-white w-full h-72 object-center rounded-3xl shadow-md hover:shadow-sm"
 							onClick={() => setCurrentProduct(product)}
 						></img>
 					</Link>

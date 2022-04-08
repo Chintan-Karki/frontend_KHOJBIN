@@ -5,6 +5,7 @@ import WishedItem from "./WishedItem";
 import loaderGif from "../../assets/images/loaderGif2.gif";
 import { useAuthStore } from "../../utils/store";
 import { useNavigate } from "react-router-dom";
+import SessionExpired from "../Modals/SessionExpired";
 
 export default function WishedItems() {
 	let [wishList, setWishList] = useState([]);
@@ -13,6 +14,8 @@ export default function WishedItems() {
 	let setUserName = useAuthStore((state) => state.setUserName);
 	let set_user_name = useAuthStore((state) => state.set_user_name);
 	let setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
+	let [isErrorOpen, setIsErrorOpen] = useState(false);
+
 
 	useEffect(() => {
 		axiosInstance
@@ -30,11 +33,10 @@ export default function WishedItems() {
 				localStorage.removeItem("userName");
 				localStorage.removeItem("userId");
 				axiosInstance.defaults.headers["Authorization"] = null;
-				alert("Session expired. Logged Out");
 				setUserName("");
 				set_user_name("");
 				setIsLoggedIn(false);
-				navigate("/");
+				setIsErrorOpen(true);
 			});
 	}, [navigate, setIsLoggedIn, setUserName, set_user_name]);
 
@@ -51,7 +53,10 @@ export default function WishedItems() {
 	};
 
 	return (
+		
 		<div className="transition">
+			<SessionExpired isOpen={isErrorOpen} setIsOpen={setIsErrorOpen} />
+
 			{loading ? (
 				<div className="flex h-20 items-center justify-center">
 					<img src={loaderGif} alt="loading..." className="h-48" />

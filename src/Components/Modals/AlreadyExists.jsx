@@ -1,16 +1,14 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+import illustration from "..//..//assets//images//illustration2.png";
 
-export default function Modal({
-	isOpen,
-	setIsOpen,
-	headerText,
-	bodyText,
-	onClickModel,
-}) {
+export default function AlreadyExists({ isOpen, setIsOpen, onClickModel }) {
 	function closeModal() {
 		setIsOpen(false);
 	}
+
+	let navigate = useNavigate();
 
 	return (
 		<>
@@ -30,7 +28,7 @@ export default function Modal({
 							leaveFrom="opacity-100"
 							leaveTo="opacity-0"
 						>
-							<Dialog.Overlay className="fixed inset-0 bg-black/50" />
+							<Dialog.Overlay className="fixed inset-0 bg-black/50 " />
 						</Transition.Child>
 
 						{/* This element is to trick the browser into centering the modal contents. */}
@@ -50,12 +48,13 @@ export default function Modal({
 							leaveTo="opacity-0 scale-95"
 						>
 							<div className="inline-block relative w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-								<Dialog.Title
-									as="h3"
-									className="text-lg font-medium leading-6 text-gray-900"
-								>
-									{headerText ? headerText : "Success ✅"}
-								</Dialog.Title>
+								<div className="flex items-center justify-start ">
+									<img
+										src={illustration}
+										alt="Illustration"
+										className="h-52 w-auto"
+									/>
+								</div>
 								<span
 									className="cursor-pointer absolute top-2 right-4 text-xl font-light "
 									onClick={() => {
@@ -65,19 +64,29 @@ export default function Modal({
 								>
 									X
 								</span>
-								{bodyText ? (
-									<div className="mt-2">
-										<p className="text-sm text-gray-500">{bodyText}</p>
-									</div>
-								) : (
-									" "
-								)}
+								<Dialog.Title
+									as="h3"
+									className="text-xl text-yellow-600/90 font-bold  leading-6 "
+								>
+									Hmm, it seems like item is{" "}
+									<span className="text-orange-600">already added </span>to your
+									list.
+								</Dialog.Title>
+
+								<div className="mt-2">
+									<p className="text-sm text-gray-500">
+										You can add other items to your list by 'like' button
+										clicking on the button below.
+									</p>
+								</div>
 
 								<div className="mt-4">
 									<button
 										type="button"
 										className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-										onClick={closeModal}
+										onClick={() => {
+											closeModal();
+										}}
 									>
 										Got it, thanks!
 									</button>

@@ -39,7 +39,7 @@ export default function Filters() {
 	}, [selectedSellerSite]);
 
 	return (
-		<aside className="flex-shrink-0 hidden lg:block w-1/5 my-2 bg-white mr-10 p-6 pb-2 rounded-lg shadow-lg h-[500px]">
+		<aside className="flex-shrink-0 hidden lg:block w-1/5 my-2 bg-white mr-10 p-6  rounded-lg shadow-lg h-min sticky top-5">
 			<section className="border-b border-gray-300 pb-2 mb-2 flex items-center justify-between">
 				<h2 className="font-semibold text-heading text-xl md:text-2xl text-gray-700">
 					Filters
