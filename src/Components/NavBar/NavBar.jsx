@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind.js";
+import Compare from "../../assets/icons/Compare.jsx";
 import logo from "../../assets/images/newLogo.png";
-import { useAuthStore } from "../../utils/store.js";
+import { useAuthStore, useCompareStore } from "../../utils/store.js";
 import LogBtn from "../atoms/LogBtn.jsx";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
+	let compareProducts = useCompareStore((state) => state.compareProducts);
 
 	let userName = localStorage.getItem("userName");
 
@@ -100,6 +102,19 @@ export default function Navbar() {
 										 flex items-center text-xs uppercase  text-indigo-900 rounded-md"
 										>
 											{userName ? userName : "Profile"}
+										</p>
+									</Link>
+									<Link to="/compare">
+										<p
+											className="group transition h-10 px-3 py-2 mr-2 border-2 hover:text-orange-50 hover:border-orange-500 hover:bg-orange-500
+										 border-indigo-300 font-bold font-mono 
+										 hover:shadow-lg hover:shadow-orange-400/60 focus:shadow-none
+										 flex items-center text-xs uppercase  text-indigo-900 rounded-md "
+										>
+											View Comparison{" "}
+											<span className="group-hover:bg-yellow-700 group-hover:text-orange-50 text-md ml-3 bg-green-600 p-2 text-white rounded -mr-[0.65rem]">
+												{compareProducts.length}
+											</span>
 										</p>
 									</Link>
 									<Link to="/wishlist">

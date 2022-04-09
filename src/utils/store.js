@@ -48,8 +48,18 @@ let productsStore = (set) => ({
 		set((state) => ({ gridView: gridView }), false, "SetGridView"),
 });
 
+let compareStore = (set) => ({
+	compareProducts: [],
+	setCompareProducts: (compareProducts) =>
+		set(
+			(state) => ({ compareProducts: compareProducts }),
+			false,
+			"SetCompareProducts"
+		),
+});
+
 let sortStore = (set) => ({
-	currentPage:1,
+	currentPage: 1,
 	sortOrder: 4,
 	priceRange: [],
 	currentPriceRange: [],
@@ -74,15 +84,17 @@ let searchStore = (set) => ({
 });
 
 userStore = devtools(userStore);
+compareStore = devtools(compareStore);
 userStore = persist(userStore, { name: "user details" });
 productsStore = devtools(productsStore);
 productsStore = persist(productsStore, { name: "products" });
 searchStore = devtools(searchStore);
-searchStore = persist(searchStore, { name: "search" });
+// searchStore = persist(searchStore, { name: "search" });
 sortStore = devtools(sortStore);
-sortStore = persist(sortStore, { name: "sort" });
+// sortStore = persist(sortStore, { name: "sort" });
 
 export const useAuthStore = create(userStore);
+export const useCompareStore = create(compareStore);
 export const useProductsStore = create(productsStore);
 export const useSearchStore = create(searchStore);
 export const useSortStore = create(sortStore);

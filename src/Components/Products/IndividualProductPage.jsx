@@ -11,6 +11,7 @@ import BreadCrumb from "./BreadCrumb";
 import RecommendedProducts from "./Recommendation/RecommendedProducts";
 import SessionExpired from "../Modals/SessionExpired";
 import AlreadyExists from "../Modals/AlreadyExists";
+import SearchDetailHeader from "../SearchResults/SearchDetailHeader";
 
 export default function IndividualProductPage() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);

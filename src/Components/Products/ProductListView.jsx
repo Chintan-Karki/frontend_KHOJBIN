@@ -3,17 +3,25 @@ import { motion } from "framer-motion";
 // import { createBrowserHistory } from "react-router-dom";
 import ImageNotFound from "../../assets/images/ImgNotFound.png";
 import Like from "../../assets/icons/like.png";
-import { useAuthStore, useProductsStore } from "../../utils/store";
+import {
+	useAuthStore,
+	useCompareStore,
+	useProductsStore,
+} from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import { Link } from "react-router-dom";
 import SessionExpired from "../Modals/SessionExpired";
 import AlreadyExists from "../Modals/AlreadyExists";
+import Compare from "../../assets/icons/Compare";
 
 export default function ProductListView({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let userId = localStorage.getItem("userId");
+
+	let compareProduct = useCompareStore((state) => state.compareProducts);
+	let setCompareProducts = useCompareStore((state) => state.setCompareProducts);
 
 	let [isOpen, setIsOpen] = useState(false);
 	let [isErrorOpen, setIsErrorOpen] = useState(false);
@@ -22,6 +30,30 @@ export default function ProductListView({ product, altText, seller, price }) {
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 	let setCurrentProduct = useProductsStore((state) => state.setCurrentProduct);
+
+	const handleAddToCompare = async () => {
+		if (
+			compareProduct.filter((item) => item.itemId === product.itemId).length ===
+			0
+		) {
+			if (compareProduct.length > 3) {
+				setHeaderTextForModal("Compare Limit Reached");
+				setBodyTextForModal(
+					"You can compare upto 4 products at a time. Please remove an item from the compare list to add another."
+				);
+				setIsOpen(true);
+				return;
+			}
+			setCompareProducts([...compareProduct, product]);
+			return;
+		}
+
+		setHeaderTextForModal("Item already exists in the comparison list  🙂");
+		setBodyTextForModal(
+			"You can also add other items to the comparison list by clicking the 'Compare-icon' button "
+		);
+		setIsOpen(true);
+	};
 
 	const handleAddToWishlist = async () => {
 		let data = {
@@ -64,7 +96,7 @@ export default function ProductListView({ product, altText, seller, price }) {
 			initial={{ opacity: 0 }}
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.5 }}
-			className="w-full"
+			className="w-full "
 		>
 			<motion.div className="my-2  antialiased text-gray-900 w-full ">
 				<Modal
@@ -78,13 +110,13 @@ export default function ProductListView({ product, altText, seller, price }) {
 					isOpen={isAlreadyExistErrorOpen}
 					setIsOpen={setIsAlreadyExistErrorOpen}
 				/>
-				<div className="relative flex w-full flex-row mb-4 bg-white rounded-xl shadow-sm h-auto">
+				<div className="relative flex w-full flex-col sm:flex-row mb-4  bg-white rounded-xl shadow-sm h-auto">
 					<Link to={`/searchresults/${product.itemId}`} className="p-4">
 						<img
 							src={product.image_url ? product.image_url : ImageNotFound}
 							alt={product.name}
 							loading="lazy"
-							className="  h-64 w-72 object-scale-down hover:border-2 hover:border-indigo-200 border-2 border-indigo-100 bg-white object-center rounded-xl  hover:shadow-sm "
+							className="  h-64 w-full sm:w-72 object-scale-down hover:border-2 hover:border-indigo-200 border-2 border-indigo-100 bg-white object-center rounded-xl  hover:shadow-sm "
 							onClick={() => setCurrentProduct(product)}
 						></img>
 					</Link>
@@ -148,13 +180,21 @@ export default function ProductListView({ product, altText, seller, price }) {
 									</span>
 								</div>
 								{isLoggedIn && (
-									<div>
+									<div className="relative">
+										<div
+											className="absolute hover:text-indigo-600 text-red-700/80 cursor-pointer bottom-10 hover:scale-105 active:scale-95"
+											onClick={handleAddToCompare}
+										>
+											<Compare className="cursor-pointer" />
+										</div>
+										<div>
 										<img
-											src={Like}
-											alt="Like button for adding product to the wishlist"
-											className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer pr-4"
-											onClick={handleAddToWishlist}
-										/>
+												src={Like}
+												alt="Like button for adding product to the wishlist"
+												className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer"
+												onClick={handleAddToWishlist}
+											/>
+										</div>
 									</div>
 								)}
 							</div>

@@ -9,7 +9,7 @@ export default function Pagination({
 }) {
 	return (
 		<>
-			<div className="w-full flex justify-start mt-10 gap-1 ">
+			<div className="w-full flex justify-start mt-10 gap-1 flex-wrap">
 				{pageNumbers.map((pageNum, index) => (
 					<span
 						key={index}
@@ -30,7 +30,7 @@ export default function Pagination({
 			<div className="text-sm mt-2 text-gray-700">
 				Showing{" "}
 				<b>
-					{currentPosts.length * currentPage - currentPosts.length + 1} -{" "}
+					{currentPosts.length * currentPage - currentPosts.length + 1} to{" "}
 					{currentPosts.length * currentPage} of {productsFiltered.length}
 				</b>{" "}
 				products.

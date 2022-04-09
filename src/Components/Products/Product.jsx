@@ -3,16 +3,23 @@ import { motion } from "framer-motion";
 // import { createBrowserHistory } from "react-router-dom";
 import ImageNotFound from "../../assets/images/ImgNotFound.png";
 import Like from "../../assets/icons/like.png";
-import { useAuthStore, useProductsStore } from "../../utils/store";
+import {
+	useAuthStore,
+	useCompareStore,
+	useProductsStore,
+} from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios/axios";
 import Modal from "../atoms/Modal";
 import { Link } from "react-router-dom";
 import SessionExpired from "../Modals/SessionExpired";
 import AlreadyExists from "../Modals/AlreadyExists";
+import Compare from "../../assets/icons/Compare";
 
 export default function Product({ product, altText, seller, price }) {
 	const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+	let compareProduct = useCompareStore((state) => state.compareProducts);
+	let setCompareProducts = useCompareStore((state) => state.setCompareProducts);
 	let userId = localStorage.getItem("userId");
 
 	let [isOpen, setIsOpen] = useState(false);
@@ -22,6 +29,30 @@ export default function Product({ product, altText, seller, price }) {
 	let [headerTextForModal, setHeaderTextForModal] = useState("");
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 	let setCurrentProduct = useProductsStore((state) => state.setCurrentProduct);
+
+	const handleAddToCompare = async () => {
+		if (
+			compareProduct.filter((item) => item.itemId === product.itemId).length ===
+			0
+		) {
+			if (compareProduct.length > 3) {
+				setHeaderTextForModal("Compare Limit Reached");
+				setBodyTextForModal(
+					"You can compare upto 4 products at a time. Please remove an item from the compare list to add another."
+				);
+				setIsOpen(true);
+				return;
+			}
+			setCompareProducts([...compareProduct, product]);
+			return;
+		}
+
+		setHeaderTextForModal("Item already exists in the comparison list  🙂");
+		setBodyTextForModal(
+			"You can also add other items to the comparison list by clicking the 'Compare-icon' button "
+		);
+		setIsOpen(true);
+	};
 
 	const handleAddToWishlist = async () => {
 		let data = {
@@ -38,7 +69,6 @@ export default function Product({ product, altText, seller, price }) {
 			product_id: product.itemId + "" + userId,
 			rating_score: product.ratingScore,
 		};
-		console.log(data);
 		await axiosInstance
 			.post(`wishlist/`, data)
 			.then((res) => {
@@ -66,7 +96,7 @@ export default function Product({ product, altText, seller, price }) {
 			transition={{ duration: 0.15 }}
 			className=""
 		>
-			<motion.div className="my-2  antialiased text-gray-900 w-auto ">
+			<motion.div className="my-2  antialiased text-gray-900 w-auto">
 				<Modal
 					isOpen={isOpen}
 					setIsOpen={setIsOpen}
@@ -131,7 +161,7 @@ export default function Product({ product, altText, seller, price }) {
 								NRs. {product.price}
 								<span className="text-gray-600 text-sm"> </span>
 							</div>
-							<div className="mt-4 flex wrap justify-between items-center">
+							<div className="mt-8 flex wrap justify-between items-center">
 								<div>
 									<span className="text-indigo-600 text-md font-semibold">
 										{product.ratingScore === "0"
@@ -144,13 +174,21 @@ export default function Product({ product, altText, seller, price }) {
 									</span>
 								</div>
 								{isLoggedIn && (
-									<div>
-										<img
-											src={Like}
-											alt="Like button for adding product to the wishlist"
-											className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer"
-											onClick={handleAddToWishlist}
-										/>
+									<div className="relative">
+										<div
+											className="absolute hover:text-indigo-600 text-red-700/80 cursor-pointer bottom-10 hover:scale-105 active:scale-95"
+											onClick={handleAddToCompare}
+										>
+											<Compare className="cursor-pointer" />
+										</div>
+										<div>
+											<img
+												src={Like}
+												alt="Like button for adding product to the wishlist"
+												className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer"
+												onClick={handleAddToWishlist}
+											/>
+										</div>
 									</div>
 								)}
 							</div>

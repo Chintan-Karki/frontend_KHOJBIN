@@ -84,16 +84,17 @@ export default function SearchResults() {
 				</div>
 			) : (
 				<>
-					<div className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
-						<div className="container px-4 mx-auto items-center justify-between">
+					{/* <div className="mx-auto relative flex flex-wrap items-center justify-between px-2 py-3 mb-3"> */}
+					<div className="mx-auto relative ">
+						<div className="container px-4 mx-auto   items-center justify-between">
 							{productsData.length < 1 ? (
 								<h1 className="text-xl sm:text-2xl  md:text-6xl mt-10">
 									Sorry, No items could be found
 								</h1>
 							) : null}
-							<div className="flex pt-8 pb-16 lg:pb-20">
+							<div className="flex pt-8 pb-16 lg:pb-20 ">
 								<Filters />
-								<div className="flex flex-col">
+								<div className="flex flex-col w-full">
 									<div className="flex flex-row-reverse mb-2 ">
 										<SortMenu />
 										<ViewChange gridView={gridView} setGridView={setGridView} />
