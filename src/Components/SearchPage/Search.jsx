@@ -13,10 +13,17 @@ import { sastodeal_filter } from "../../utils/DataFilters/sastodealFilter";
 
 // For dummy data
 import { dummy_data } from "../../utils/dummy_data";
-import { useProductsStore, useSearchStore } from "../../utils/store";
+import {
+	useProductsStore,
+	useSearchStore,
+	useSortStore,
+} from "../../utils/store";
+import { sortProductListBySeller } from "../../Services/SortBySeller";
 
 export default function Search() {
 	const { register, handleSubmit } = useForm();
+	let sellerOrder = useProductsStore((state) => state.sellerOrder);
+	console.log(sellerOrder);
 
 	const setProducts = useProductsStore((state) => state.setProducts);
 	const setProductsFiltered = useProductsStore(
@@ -60,13 +67,18 @@ export default function Search() {
 				let filtered_sastodeal_data = sastodeal_filter(
 					res.data.sastodealResponses
 				);
-				setProductsFiltered([
+
+				let filtered_data = [
 					...filtered_daraz_data,
 					...filtered_gyapu_data,
 					...filtered_ryzen_data,
 					...filtered_hamrobazaar_data,
 					...filtered_sastodeal_data,
-				]);
+				];
+
+				setProductsFiltered(
+					sortProductListBySeller(filtered_data, sellerOrder)
+				);
 			});
 			await setLoading(false);
 			await navigate("/searchresults", { state: data });
@@ -95,13 +107,16 @@ export default function Search() {
 			let filtered_sastodeal_data = sastodeal_filter(
 				dummy_data.sastodealResponses
 			);
-			setProductsFiltered([
+
+			let filtered_data = [
 				...filtered_daraz_data,
 				...filtered_gyapu_data,
 				...filtered_ryzen_data,
 				...filtered_hamrobazaar_data,
 				...filtered_sastodeal_data,
-			]);
+			];
+
+			setProductsFiltered(sortProductListBySeller(filtered_data, sellerOrder));
 			await setLoading(false);
 			await navigate("/searchresults", { state: data });
 		} catch (error) {

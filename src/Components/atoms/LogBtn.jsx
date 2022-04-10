@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link, useNavigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
 import axiosInstance from "../../utils/axios/axios";
 import { useAuthStore } from "../../utils/store";
-import Modal from "./Modal";
+import Modal from '../Modals/Modal';
+
 
 export default function LogBtn() {
-	const navigate = useNavigate();
 	// For Modal
 	let isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 	let setUserName = useAuthStore((state) => state.setUserName);

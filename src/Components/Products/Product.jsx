@@ -10,7 +10,7 @@ import {
 } from "../../utils/store";
 import ShopButton from "../atoms/ShopButton";
 import axiosInstance from "../../utils/axios/axios";
-import Modal from "../atoms/Modal";
+import Modal from "../Modals/Modal";
 import { Link } from "react-router-dom";
 import SessionExpired from "../Modals/SessionExpired";
 import AlreadyExists from "../Modals/AlreadyExists";

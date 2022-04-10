@@ -9,12 +9,12 @@ export function hamrobazaar_filter(hamrobazaar_data) {
 		newObj.image_url = item.imageUrl;
 		newObj.description = item.description;
 		newObj.productUrl =
-			"https://www.hamrobazaar.com/" +
+			"https://hamrobazaar.com/" +
 			string_to_slug(item.categoryName) +
 			"/" +
-			string_to_slug(item.name) +
+			string_to_slug(item.name.replaceAll("/", "")) +
 			"/" +
-			string_to_slug(item.id) +
+			item.id.replaceAll("-", "") +
 			"/";
 		newObj.ratingScore = "0";
 		newObj.reviewCount = item.totalViews;

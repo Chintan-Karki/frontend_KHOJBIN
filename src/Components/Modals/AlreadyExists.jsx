@@ -1,14 +1,11 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
 import illustration from "..//..//assets//images//illustration2.png";
 
 export default function AlreadyExists({ isOpen, setIsOpen, onClickModel }) {
 	function closeModal() {
 		setIsOpen(false);
 	}
-
-	let navigate = useNavigate();
 
 	return (
 		<>

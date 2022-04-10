@@ -22,7 +22,7 @@ export default function WishedItems() {
 			.get("/wishlist")
 			.then((res) => {
 				setWishList(res.data);
-				console.log(res.data);
+				// console.log(res.data);
 				// sleep for a second
 				setLoading(false);
 			})

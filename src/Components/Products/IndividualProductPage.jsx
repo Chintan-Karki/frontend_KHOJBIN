@@ -5,13 +5,13 @@ import likeBtn from "../../assets/icons/like.png";
 import ImageNotFound from "../../assets/images/ImgNotFound.png";
 
 import axiosInstance from "../../utils/axios/axios";
-import Modal from "../atoms/Modal";
+
 import GoToWeb from "../../assets/icons/GoToWeb";
 import BreadCrumb from "./BreadCrumb";
 import RecommendedProducts from "./Recommendation/RecommendedProducts";
 import SessionExpired from "../Modals/SessionExpired";
 import AlreadyExists from "../Modals/AlreadyExists";
-import SearchDetailHeader from "../SearchResults/SearchDetailHeader";
+import Modal from '../Modals/Modal';
 
 export default function IndividualProductPage() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);

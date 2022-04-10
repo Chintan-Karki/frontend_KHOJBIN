@@ -5,7 +5,6 @@ import Compare from "../../assets/icons/Compare.jsx";
 import logo from "../../assets/images/newLogo.png";
 import { useAuthStore, useCompareStore } from "../../utils/store.js";
 import LogBtn from "../atoms/LogBtn.jsx";
-import axiosInstance from "../../utils/axios/axios";
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -25,9 +24,8 @@ export default function Navbar() {
 	};
 
 	useEffect(() => {
-		if (isLoggedIn) {
-		}
-	}, []);
+		console.log("");
+	}, [isLoggedIn]);
 
 	return (
 		<>

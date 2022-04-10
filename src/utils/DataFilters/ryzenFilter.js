@@ -13,7 +13,7 @@ export function ryzen_filter(ryzen_data) {
 			"https://ecommerce.thexpresstimes.com/product/" + item.slug;
 		newObj.ratingScore = "0";
 		newObj.reviewCount = "0";
-		newObj.sellerName = "ryzen";
+		newObj.sellerName = "Ryzen";
 		newObj.sellerImageUrl =
 			"https://ecommerce.thexpresstimes.com/uploads/logo.png";
 		filteredRyzenData.push(newObj);

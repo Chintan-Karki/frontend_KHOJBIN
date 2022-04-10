@@ -6,9 +6,10 @@ import Trash from "../../assets/icons/Trash";
 import Like from "..//..//assets//icons//like.png";
 import LinkIcon from "../../assets/icons/LinkIcon";
 import axiosInstance from "../../utils/axios//axios.js";
-import Modal from "../atoms/Modal";
+// import Modal from "../atoms/Modal";
 import SessionExpired from "../Modals/SessionExpired";
 import AlreadyExists from "../Modals/AlreadyExists";
+import Modal from '../Modals/Modal';
 
 export default function ComparePage() {
 	let compareProduct = useCompareStore((state) => state.compareProducts);

@@ -6,6 +6,7 @@ import { useAuthStore } from "../../utils/store";
 import { useNavigate } from "react-router-dom";
 import SessionExpired from "../Modals/SessionExpired";
 // import MainLoader from "../atoms/MainLoader.jsx";
+import SellerRankSetter from '../atoms/SellerRankSetter';
 
 export default function Profile() {
 	let [userDetails, setUserDetails] = useState({});
@@ -21,7 +22,7 @@ export default function Profile() {
 		axiosInstance
 			.get("/user")
 			.then((res) => {
-				console.log(res.data);
+				// console.log(res.data);
 				setUserDetails(res.data);
 				setLoading(false);
 			})
@@ -101,6 +102,7 @@ export default function Profile() {
 									</div>
 								</form>
 							)}
+							<SellerRankSetter />
 
 							<WishedItems />
 							<hr className="mt-6 border-b-1 border-blueGray-300" />

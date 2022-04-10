@@ -1,5 +1,6 @@
 import create from "zustand";
 import { devtools, persist } from "zustand/middleware";
+import { defaultRank } from "../Services/RankFind";
 
 let nameFromStorage = localStorage.getItem("userName");
 let access_token = localStorage.getItem("access_token");
@@ -46,6 +47,9 @@ let productsStore = (set) => ({
 		),
 	setGridView: (gridView) =>
 		set((state) => ({ gridView: gridView }), false, "SetGridView"),
+	sellerOrder: [],
+	setSellerOrder: (sellerOrder) =>
+		set((state) => ({ sellerOrder: sellerOrder }), false, "Set Seller Order"),
 });
 
 let compareStore = (set) => ({
