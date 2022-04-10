@@ -1,14 +1,16 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./index.css";
+import { useProductsStore } from "./utils/store";
+
+// Getting route pages
 import NavBar from "./Components/NavBar/NavBar";
 import SearchPage from "./Components/SearchPage/SearchPage";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LogIn from "./Components/LogIn/index";
 import SearchResults from "./Components/SearchResults/index";
 import SignUp from "./Components/SignUp/Index";
-import "./index.css";
 import Profile from "./Components/Profile/Profile";
 import IndividualProductPage from "./Components/Products/IndividualProductPage";
-import { useProductsStore } from "./utils/store";
 import WishListPage from "./Components/WishList/WishListPage";
 import NotFound from "./Components/404/NotFound";
 import ComparePage from "./Components/ComparePage/index";

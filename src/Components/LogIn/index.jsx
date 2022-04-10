@@ -55,7 +55,6 @@ export default function LogIn() {
 				client_id: "vlQJ3U0zTvlvdh42gLRs2DIl8VhIul5JGhWV46rK",
 			})
 			.then((res) => {
-				
 				axiosInstance.defaults.headers["Authorization"] =
 					"Bearer " + res.data.access_token;
 				axiosInstanceOther.defaults.headers["Authorization"] =
@@ -67,7 +66,6 @@ export default function LogIn() {
 					set_user_name(res.data.username);
 				});
 
-				
 				handleAuthentication(res.data);
 			});
 	};
@@ -130,7 +128,7 @@ export default function LogIn() {
 											className="peer w-full px-4 py-2 text-sm border rounded-md bg-white focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600  disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600"
 											placeholder="Email Address"
-											autocomplete="email"
+											autoComplete="email"
 										/>
 										{errors.email && (
 											<ErrorMessage message={errors.email.message} />

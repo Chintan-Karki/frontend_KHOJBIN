@@ -1,4 +1,4 @@
-/* table {
+table {
 	display: table;
 }
 table tr {
@@ -7,4 +7,5 @@ table tr {
 }
 table tr td {
 	display: block;
-} */
+}
+

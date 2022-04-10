@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 
 import tailwindCommonClasses from "../../assets/commonClasses.tailwind";
 import axiosInstance from "../../utils/axios/axios";
@@ -20,12 +20,6 @@ export default function LogBtn() {
 	let [bodyTextForModal, setBodyTextForModal] = useState("");
 
 	const handleClick = () => {
-		// getting from the store
-		// axiosInstance
-		// 	.post("user/logout/blacklist", {
-		// 		refresh_token: localStorage.getItem("refresh_token"),
-		// 	})
-		// 	.then((res) => {
 		localStorage.removeItem("access_token");
 		localStorage.removeItem("refresh_token");
 		localStorage.removeItem("userName");
@@ -40,8 +34,8 @@ export default function LogBtn() {
 			`You can log in to the system again using the login page🙂`
 		);
 		setIsLoggedIn(false);
-		navigate("/");
-		// });
+		// navigate("/");
+		window.location.reload();
 	};
 
 	return (
@@ -55,8 +49,8 @@ export default function LogBtn() {
 			{isLoggedIn ? (
 				<>
 					<button
+						to="/profile"
 						className={tailwindCommonClasses.smallButtonFocus}
-						style={{ marginLeft: "10px" }}
 						onClick={() => {
 							setIsOpen(true);
 							handleClick();
@@ -66,9 +60,16 @@ export default function LogBtn() {
 					</button>
 				</>
 			) : (
-				<Link to="/login" className={tailwindCommonClasses.smallButtonFocus}>
+				<NavLink
+					to="/login"
+					className={({ isActive }) =>
+						isActive
+							? tailwindCommonClasses.smallButtonFocus
+							: tailwindCommonClasses.smallButtonNofocus
+					}
+				>
 					LOG IN
-				</Link>
+				</NavLink>
 			)}
 		</>
 	);
