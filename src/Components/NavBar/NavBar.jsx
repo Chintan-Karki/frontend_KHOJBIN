@@ -18,7 +18,7 @@ export default function Navbar() {
 		navDivClasses:
 			"relative flex flex-wrap items-center justify-between px-2 py-3 mb-3",
 		activeNavBtnClasses:
-			"transition h-10 px-3 py-2 mr-2 border-2 text-orange-50 border-orange-500 bg-orange-500 font-bold font-mono shadow-lg shadow-orange-400/60 flex items-center text-xs uppercase  rounded-md",
+			"transition h-10 px-3 py-2 mr-2 border-2 text-orange-50 border-orange-500 bg-orange-500 font-bold font-mono  flex items-center text-xs uppercase  rounded-md",
 		inActiveNavBtnClasses:
 			"transition h-10 px-3 bg-white py-2 mr-2 border-2 hover:text-orange-50 hover:border-orange-500 hover:bg-orange-500 border-indigo-300 font-bold font-mono hover:shadow-lg hover:shadow-orange-400/60 focus:shadow-none flex items-center text-xs uppercase  text-indigo-900 rounded-md",
 	};
@@ -111,19 +111,7 @@ export default function Navbar() {
 									>
 										{userName ? userName : "Profile"}
 									</NavLink>
-									<NavLink
-										to="/compare"
-										className={({ isActive }) =>
-											isActive
-												? twNavBarClasses.activeNavBtnClasses
-												: twNavBarClasses.inActiveNavBtnClasses
-										}
-									>
-										<Compare />
-										<span className="group-hover:bg-yellow-800  group-hover:text-orange-50 text-md ml-3 bg-orange-500 p-2 text-white rounded -mr-[0.6rem]">
-											{compareProducts.length}
-										</span>
-									</NavLink>
+
 									<NavLink
 										to="/wishlist"
 										className={({ isActive }) =>
@@ -146,6 +134,19 @@ export default function Navbar() {
 												d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
 											/>
 										</svg>
+									</NavLink>
+									<NavLink
+										to="/compare"
+										className={({ isActive }) =>
+											isActive
+												? twNavBarClasses.activeNavBtnClasses
+												: twNavBarClasses.inActiveNavBtnClasses
+										}
+									>
+										<Compare />
+										<span className="group-hover:bg-yellow-800  group-hover:text-orange-50 text-md ml-3 bg-orange-500 p-2 text-white rounded -mr-[0.6rem]">
+											{compareProducts.length}
+										</span>
 									</NavLink>
 								</>
 							)}

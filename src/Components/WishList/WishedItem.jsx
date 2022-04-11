@@ -9,7 +9,7 @@ export default function WishedItem({ item, onDelete }) {
 			initial={{ opacity: 1 }}
 			exit={{ scale: 0 }}
 			transition={{ duration: 0.5 }}
-			className=" bg-white border border-white shadow-lg rounded-3xl w-full p-4 xl:w-[600px]"
+			className=" bg-white border border-white shadow-md rounded-3xl p-4 "
 		>
 			<div className="flex-none sm:flex">
 				<div className=" relative rounded-xl flex items-start sm:w-36bg-white">
@@ -95,7 +95,7 @@ export default function WishedItem({ item, onDelete }) {
 						<a
 							href={item.product_url}
 							target="_blank"
-							className="flex-no-shrink bg-indigo-600 hover:bg-indigo-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 hover:border-indigo-900 text-white rounded-full transition ease-in duration-150"
+							className="flex-no-shrink bg-indigo-500 hover:bg-indigo-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider hover:border-indigo-900 text-white rounded-full transition ease-in duration-150"
 							rel="noreferrer"
 						>
 							Go to store

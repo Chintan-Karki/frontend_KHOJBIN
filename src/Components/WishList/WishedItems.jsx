@@ -16,7 +16,6 @@ export default function WishedItems() {
 	let setIsLoggedIn = useAuthStore((state) => state.setIsLoggedIn);
 	let [isErrorOpen, setIsErrorOpen] = useState(false);
 
-
 	useEffect(() => {
 		axiosInstance
 			.get("/wishlist")
@@ -28,6 +27,7 @@ export default function WishedItems() {
 			})
 			.catch((err) => {
 				console.log(err);
+				setLoading(false);
 				localStorage.removeItem("access_token");
 				localStorage.removeItem("refresh_token");
 				localStorage.removeItem("userName");
@@ -53,7 +53,6 @@ export default function WishedItems() {
 	};
 
 	return (
-		
 		<div className="transition">
 			<SessionExpired isOpen={isErrorOpen} setIsOpen={setIsErrorOpen} />
 
@@ -63,24 +62,32 @@ export default function WishedItems() {
 				</div>
 			) : (
 				<section>
-					<hr className="mt-6 border-b-1 border-blueGray-300" />
-					<h6 className="text-indigo-700 text-sm mt-3 mb-6 font-bold uppercase">
-						My WishList
-					</h6>
+					<div className="px-4 my-6 ">
+						<h6 className="text-indigo-500 text-lg mt-3  font-bold uppercase">
+							YOUR WISHLIST
+						</h6>
+						<label className="my-6 text-xs text-gray-500">
+							Seems like you have an excellent product selections. 😀
+						</label>
+					</div>
 					<motion.div
 						layout
-						className="flex flex-row transition-all flex-wrap justify-center gap-4 w-full items-start"
+						// className="flex flex-row transition-all flex-wrap justify-between gap-4 w-full items-start"
+						className="grid grid-cols-1 lg:grid-cols-2  gap-x-5  xl:gap-x-7 gap-y-3 xl:gap-y-5 2xl:gap-y-8 "
 					>
 						<AnimatePresence>
-							{wishList.map((item) => (
-								<WishedItem
-									key={item.id}
-									item={item}
-									onDelete={handleDeleteFromWishlist}
-								/>
-							))}
+							{wishList.length > 0 &&
+								wishList.map((item) => (
+									<WishedItem
+										key={item.id}
+										item={item}
+										onDelete={handleDeleteFromWishlist}
+									/>
+								))}
 						</AnimatePresence>
 					</motion.div>
+					
+					
 				</section>
 			)}
 		</div>
