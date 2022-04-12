@@ -38,7 +38,7 @@ export default function SearchResults() {
 	const navigate = useNavigate();
 	let currentPage = useSortStore((state) => state.currentPage);
 	let setCurrentPage = useSortStore((state) => state.setCurrentPage);
-	let [postsPerPage, setPostsPerPage] = useState(8);
+	let [postsPerPage, setPostsPerPage] = useState(16);
 
 	//Get currentPosts
 	const indexOfLastPost = currentPage * postsPerPage;

@@ -119,10 +119,10 @@ export default function ComparePage() {
 											}
 											key={index}
 										>
-											<td className="px-6 py-4 h-40 bg-white">
+											<td className="px-6 py-4 h-40 bg-white w-full">
 												<img
 													src={product.image_url}
-													className="object-scale-down h-32"
+													className="object-scale-down h-32 rounded-lg"
 													alt={product.name}
 												/>
 											</td>{" "}
