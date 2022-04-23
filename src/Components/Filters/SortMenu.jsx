@@ -8,6 +8,8 @@ import DownArrow from "../../assets/icons/DownArrow";
 import Star from "../../assets/icons/Star";
 import { useProductsStore, useSortStore } from "../../utils/store";
 import ChevronDown from "../../assets/icons/ChevronDown";
+import anchorIcon from "../../assets/icons/anchor.svg";
+import Relevance from "../../assets/icons/Relevance";
 // import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export default function SortMenu() {
@@ -17,6 +19,7 @@ export default function SortMenu() {
 	let setProductsFiltered = useProductsStore(
 		(state) => state.setProductsFiltered
 	);
+
 	// let [sortOption, setSortOption] = useState();
 
 	useEffect(() => {
@@ -46,6 +49,9 @@ export default function SortMenu() {
 				_.orderBy(productsFiltered, ["ratingScore"], ["desc"])
 			);
 		}
+		if (sortOption === 4) {
+			setProductsFiltered(productsFiltered);
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sortOption]);
 
@@ -69,6 +75,25 @@ export default function SortMenu() {
 				>
 					<Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 						<div className="px-1 py-1 ">
+							<Menu.Item>
+								{({ active }) => (
+									<button
+										className={`${
+											sortOption === 4
+												? "bg-violet-500 text-white"
+												: "text-gray-900"
+										} group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+										onClick={() => {
+											setSortOption(4);
+
+											// setProductsFiltered(sortedProducts);
+										}}
+									>
+										<Relevance className="w-5 h-5" />
+										Relevance
+									</button>
+								)}
+							</Menu.Item>
 							<Menu.Item>
 								{({ active }) => (
 									<button

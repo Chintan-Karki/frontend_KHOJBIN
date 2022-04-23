@@ -13,11 +13,7 @@ import { sastodeal_filter } from "../../utils/DataFilters/sastodealFilter";
 
 // For dummy data
 import { dummy_data } from "../../utils/dummy_data";
-import {
-	useProductsStore,
-	useSearchStore,
-	useSortStore,
-} from "../../utils/store";
+import { useProductsStore, useSearchStore } from "../../utils/store";
 import { sortProductListBySeller } from "../../Services/SortBySeller";
 
 export default function Search() {

@@ -3,7 +3,7 @@ import axiosInstance from "../../utils/axios/axios";
 import WishedItems from "../WishList/WishedItems";
 import loaderGif from "../../assets/images/loaderGif2.gif";
 import { useAuthStore } from "../../utils/store";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SessionExpired from "../Modals/SessionExpired";
 import SellerRankSetter from "../atoms/SellerRankSetter";
 
@@ -105,6 +105,14 @@ export default function Profile() {
 												/>
 											</div>
 										</div>
+									</div>
+									<div className="mx-4 mt-4">
+										<Link
+											to="/wishlist"
+											className="text-orange-400 hover:px-4 hover:text-indigo-500/90 rounded-2xl cursor-pointer py-2 w-fit text-lg font-bold hover:bg-indigo-100 transition-all"
+										>
+											view your wish list ➹
+										</Link>
 									</div>
 								</form>
 							)}

@@ -67,6 +67,12 @@ export default function LogIn() {
 				});
 
 				handleAuthentication(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+				err.response.data.error_description === "Invalid credentials given."
+					? alert("Invalid credentials provided.")
+					: console.log(err.response.data.error_description);
 			});
 	};
 

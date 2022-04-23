@@ -110,13 +110,13 @@ export default function ProductListView({ product, altText, seller, price }) {
 					isOpen={isAlreadyExistErrorOpen}
 					setIsOpen={setIsAlreadyExistErrorOpen}
 				/>
-				<div className="relative flex w-full flex-col sm:flex-row mb-4  bg-white rounded-xl shadow-sm h-auto">
+				<div className="relative flex w-full flex-row mb-4  bg-white rounded-xl shadow-sm h-auto">
 					<Link to={`/searchresults/${product.itemId}`} className="p-4">
 						<img
 							src={product.image_url ? product.image_url : ImageNotFound}
 							alt={product.name}
 							loading="lazy"
-							className="  h-64 w-full sm:w-72 object-scale-down hover:border-2 hover:border-indigo-200 border-2 border-indigo-100 bg-white object-center rounded-xl  hover:shadow-sm "
+							className=" h-full w-48 sm:h-64  sm:w-72 object-scale-down hover:border-2 hover:border-indigo-200 border-2 border-indigo-100 bg-white object-center rounded-xl  hover:shadow-sm "
 							onClick={() => setCurrentProduct(product)}
 						></img>
 					</Link>
@@ -124,7 +124,7 @@ export default function ProductListView({ product, altText, seller, price }) {
 					<div className="relative w-full p-4 flex ">
 						<div className=" w-full flex flex-col justify-between">
 							<div className="flex flex-col justify-start">
-								<div className="flex items-center justify-between ">
+								<div className="flex items-start justify-between ">
 									<a
 										target="_blank"
 										href={
@@ -143,7 +143,7 @@ export default function ProductListView({ product, altText, seller, price }) {
 														? product.sellerImageUrl
 														: ImageNotFound
 												}
-												alt={product.name.replace(/(<([^>]+)>)/gi, "")}
+												alt={product.sellerName.replace(/(<([^>]+)>)/gi, "")}
 												className=" object-scale-down bg-white w-full h-4 object-center  "
 											></img>
 										</span>
@@ -188,7 +188,7 @@ export default function ProductListView({ product, altText, seller, price }) {
 											<Compare className="cursor-pointer" />
 										</div>
 										<div>
-										<img
+											<img
 												src={Like}
 												alt="Like button for adding product to the wishlist"
 												className="transform h-6 hover:scale-150 transition ease-in duration-75 focus:scale-95 cursor-pointer"

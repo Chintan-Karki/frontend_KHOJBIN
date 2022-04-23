@@ -129,6 +129,8 @@ export default function Product({ product, altText, seller, price }) {
 											? "https://www." + product.sellerName + ".com.np/"
 											: product.sellerName === "ryzen"
 											? "https://ecommerce.thexpresstimes.com/"
+											: product.sellerName === "ryzen"
+											? "https://" + product.sellerName + ".com.np/"
 											: "https://www." + product.sellerName + ".com/"
 									}
 									rel="noreferrer"
@@ -176,7 +178,7 @@ export default function Product({ product, altText, seller, price }) {
 								{isLoggedIn && (
 									<div className="relative">
 										<div
-											className="absolute hover:text-indigo-600 text-red-700/80 cursor-pointer bottom-10 hover:scale-105 active:scale-95"
+											className="absolute hover:text-indigo-600 text-red-700/80 hover:bg-indigo-100 hover:rounded-full p-1 -ml-2 cursor-pointer bottom-10 hover:scale-105 active:scale-95"
 											onClick={handleAddToCompare}
 										>
 											<Compare className="cursor-pointer" />

@@ -22,7 +22,11 @@ export default function RecommendedProducts({
 			size
 		);
 		console.log(recommendationsGenerated);
-		setRecommendations(recommendationsGenerated);
+		setRecommendations(_.filter(
+			recommendationsGenerated,
+			(product) => typeof product !== "undefined"
+			
+		));
 		setLoading(false);
 	}
 
