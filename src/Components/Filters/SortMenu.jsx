@@ -8,9 +8,7 @@ import DownArrow from "../../assets/icons/DownArrow";
 import Star from "../../assets/icons/Star";
 import { useProductsStore, useSortStore } from "../../utils/store";
 import ChevronDown from "../../assets/icons/ChevronDown";
-import anchorIcon from "../../assets/icons/anchor.svg";
 import Relevance from "../../assets/icons/Relevance";
-// import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export default function SortMenu() {
 	let sortOption = useSortStore((state) => state.sortOrder);

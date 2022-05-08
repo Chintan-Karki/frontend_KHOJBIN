@@ -14,6 +14,7 @@ import IndividualProductPage from "./Components/Products/IndividualProductPage";
 import WishListPage from "./Components/WishList/WishListPage";
 import NotFound from "./Components/404/NotFound";
 import ComparePage from "./Components/ComparePage/index";
+import TutorialPage from "./Components/TutorialPage/TutorialPage";
 
 function App() {
 	let currentProduct = useProductsStore((state) => state.currentProduct);
@@ -39,6 +40,7 @@ function App() {
 					<Route path="profile" element={<Profile />} />
 					<Route path="compare" element={<ComparePage />} />
 					<Route path="wishlist" element={<WishListPage />} />
+					<Route path="tutorial" element={<TutorialPage />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>

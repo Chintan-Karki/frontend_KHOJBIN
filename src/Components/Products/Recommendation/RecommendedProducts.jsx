@@ -22,11 +22,12 @@ export default function RecommendedProducts({
 			size
 		);
 		console.log(recommendationsGenerated);
-		setRecommendations(_.filter(
-			recommendationsGenerated,
-			(product) => typeof product !== "undefined"
-			
-		));
+		setRecommendations(
+			_.filter(
+				recommendationsGenerated,
+				(product) => typeof product !== "undefined"
+			)
+		);
 		setLoading(false);
 	}
 
@@ -47,7 +48,9 @@ export default function RecommendedProducts({
 
 	return (
 		<div>
-			<h1 className="text-3xl my-12 mb-8 text-gray-700">Recommended Products</h1>
+			<h1 className="text-3xl my-12 mb-8 text-gray-700">
+				Recommended Products
+			</h1>
 			{loading ? (
 				<div>Loading...</div>
 			) : (

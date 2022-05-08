@@ -137,9 +137,9 @@ export default function Search() {
 			data = { ...data, searchTime, userId };
 			console.log(data);
 			//! FOR REAL-TIME DATA ::
-			// getData(data, searchTime, userId);
+			getData(data, searchTime, userId);
 			//* FOR DUMMY DATA ::
-			getDummyData(data, searchTime, userId);
+			// getDummyData(data, searchTime, userId);
 		}
 	};
 

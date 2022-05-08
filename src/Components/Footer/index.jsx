@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "..//..//assets//images//LOGO-MINI.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import FooterBase from "./FooterBase";
 
 export default function Footer() {
@@ -22,9 +22,9 @@ export default function Footer() {
 						</h2>
 						<ul className="text-gray-600 ">
 							<li className="mb-4">
-								<a href="https://khojbin.com" className="hover:underline">
+								<Link to="/tutorial" className="hover:underline">
 									Khojbin
-								</a>	
+								</Link>
 							</li>
 							<li>
 								<a href="https://tailwindcss.com/" className="hover:underline">
@@ -40,7 +40,7 @@ export default function Footer() {
 						<ul className="text-gray-600 ">
 							<li className="mb-4">
 								<a
-									href="https://github.com/themesberg/khojbin"
+									href="https://github.com/Chintan-Karki"
 									className="hover:underline "
 								>
 									Github
@@ -48,10 +48,10 @@ export default function Footer() {
 							</li>
 							<li>
 								<a
-									href="https://discord.gg/4eeurUVvTy"
+									href="https://www.instagram.com/chintankarki/"
 									className="hover:underline"
 								>
-									Discord
+									Instagram
 								</a>
 							</li>
 						</ul>
@@ -75,7 +75,7 @@ export default function Footer() {
 					</div>
 				</div>
 			</div>
-			<FooterBase/>
+			<FooterBase />
 		</footer>
 	);
 }

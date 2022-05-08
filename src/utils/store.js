@@ -1,5 +1,6 @@
 import create from "zustand";
 import { devtools, persist } from "zustand/middleware";
+// eslint-disable-next-line no-unused-vars
 import { defaultRank } from "../Services/RankFind";
 
 let nameFromStorage = localStorage.getItem("userName");
