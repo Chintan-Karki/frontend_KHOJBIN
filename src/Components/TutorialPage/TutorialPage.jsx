@@ -3,7 +3,6 @@ import homePage from "..//..//assets//images//homeui.png";
 import results from "..//..//assets//images//searchresults.png";
 import smile from "..//..//assets//images//smile.png";
 import Description from "./Description";
-import SearchResults from "../SearchResults/index";
 
 export default function TutorialPage() {
 	return (
@@ -100,7 +99,7 @@ export default function TutorialPage() {
 							alt="homePage"
 						/>
 					</div>
-					
+
 					<Description />
 
 					{/*Footer*/}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../utils/axios/axios";
-import WishedItems from "../WishList/WishedItems";
 import loaderGif from "../../assets/images/loaderGif2.gif";
 import { useAuthStore } from "../../utils/store";
 import { Link, useNavigate } from "react-router-dom";

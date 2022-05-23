@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Compare from "../../assets/icons/Compare";
 import logo from "../../assets/images/LOGO-MINI.png";
 
 export default function Description() {

@@ -20,6 +20,7 @@ import Pagination from "./Pagination/Pagination";
 export default function SearchResults() {
 	let searchTime = useSearchStore((state) => state.search.searchTime) || 0;
 	let searchQuery = useSearchStore((state) => state.search.search_query);
+
 	let [loading, setLoading] = useState(true);
 
 	let gridView = useProductsStore((state) => state.gridView);
@@ -30,6 +31,7 @@ export default function SearchResults() {
 
 	// Passed to sorting
 	let productsFiltered = useProductsStore((state) => state.productsFiltered);
+	
 
 	// Setting up the product's data
 	let productsData = useProductsStore((state) => state.productsFiltered);

@@ -1,7 +1,6 @@
 import React from "react";
 import WishedItems from "../WishList/WishedItems";
 import { Link } from "react-router-dom";
-import SearchResults from "../SearchResults/index";
 
 export default function WishListPage() {
 	return (

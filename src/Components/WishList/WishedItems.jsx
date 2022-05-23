@@ -21,8 +21,6 @@ export default function WishedItems() {
 			.get("/wishlist")
 			.then((res) => {
 				setWishList(res.data);
-				// console.log(res.data);
-				// sleep for a second
 				setLoading(false);
 			})
 			.catch((err) => {
@@ -40,6 +38,10 @@ export default function WishedItems() {
 			});
 	}, [navigate, setIsLoggedIn, setUserName, set_user_name]);
 
+	/**
+	 * It takes an event and an item as parameters, prevents the default action, deletes the item from the
+	 * wishlist, and then filters the wishlist to remove the item
+	 */
 	const handleDeleteFromWishlist = async (e, item) => {
 		e.preventDefault();
 		console.log(item.id);
@@ -86,8 +88,6 @@ export default function WishedItems() {
 								))}
 						</AnimatePresence>
 					</motion.div>
-					
-					
 				</section>
 			)}
 		</div>
